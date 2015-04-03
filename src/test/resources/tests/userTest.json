@@ -1,0 +1,35 @@
+{
+  "user": [
+    {
+      "segment": {
+        "membership": "basic membership"
+      },
+      "profile": [
+        {
+          "profileInfo": {
+            "profileID": "humanbeing12345",
+            "userName": "me",
+            "email": "me@humanbeing12345.nl",
+            "language": "nl",
+            "returningStatus": "new",
+            "type": "user"
+          },
+          "address": {
+            "line1": "673 My Street",
+            "line2": "Apt 1",
+            "city": "Austin",
+            "stateProvince": "TX",
+            "postalCode": "78610",
+            "country": "USA"
+          },
+          "social": {
+            "twitter:": "somebody"
+          },
+          "attributes": {
+            "example": "something"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "component": [
+    {
+      "componentInfo": {
+        "componentID": "rog300v",
+        "componentName": "How to Use Rogaine",
+        "description": "Hair Treatment Video"
+      },
+      "category": {
+        "primaryCategory": "test",
+        "customcat": "testCat"
+      },
+      "attributes": {
+        "testAttribuut": "testattr"
+      }
+    },
+    {
+      "componentInfo": {
+        "componentID": "rog400v"
+      }
+    }
+  ]
+}

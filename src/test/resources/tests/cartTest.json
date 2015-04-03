@@ -1,0 +1,57 @@
+{
+  "cart": {
+    "cartID": "test1234",
+    "price": {
+      "basePrice": 200.2,
+      "voucherCode": "Alpha",
+      "voucherDiscount": 0.5,
+      "currency": "EUR",
+      "taxRate": 0.2,
+      "shipping": 5.0,
+      "shippingMethod": "UPS",
+      "priceWithTax": 120.0,
+      "cartTotal": 120.0,
+      "customString": "example",
+      "customDouble": 123.0
+    },
+    "attributes": {
+      "customAttribuut": "example"
+    },
+    "item": [
+      {
+        "productInfo": {
+          "productID": "testproductid"
+        },
+        "category": {
+          "primaryCategory": "testCategory"
+        },
+        "quantity": 10,
+        "price": {
+          "basePrice": 20.2,
+          "voucherCode": "AlphaProduct",
+          "voucherDiscount": 0.55,
+          "currency": "USD",
+          "taxRate": 0.3,
+          "shipping": 6.0,
+          "shippingMethod": "None",
+          "priceWithTax": 300.0
+        },
+        "linkedProducts": [
+          {
+            "productInfo": {
+              "productID": "linkedProd1"
+            }
+          },
+          {
+            "productInfo": {
+              "productID": "linkedProd2"
+            }
+          }
+        ],
+        "attributes": {
+          "test1": "test2"
+        }
+      }
+    ]
+  }
+}

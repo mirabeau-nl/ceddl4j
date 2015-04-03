@@ -1,0 +1,18 @@
+{
+  "pageInstanceID": "MyHomePage-Production",
+  "page": {
+    "pageInfo": {
+      "pageID": "Home Page",
+      "destinationURL": "http://mysite.com/index.html"
+    },
+    "category": {
+      "primaryCategory": "FAQ Pages",
+      "subCategory1": "ProductInfo",
+      "pageType": "FAQ"
+    },
+    "attributes": {
+      "country": "US",
+      "language": "en-US"
+    }
+  }
+}
