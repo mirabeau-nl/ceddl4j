@@ -2,7 +2,7 @@
 
 ## What is CEDDL4J? ##
 
-CEDDL4J is a Java Library, with a fluent API, for creating a Data Layer (JavaScript Object) that follows the Customer Experience Digital Data Layer (CEDDL) specification.
+CEDDL4J is a Java Library, with a fluent API, for creating a Data Layer (in JavaScript Object format) that follows the Customer Experience Digital Data Layer (CEDDL) specification.
 
 The CEDDL specification 
 > "describes a method for surfacing customer experience digital data on a web or other digital resource as a JavaScript Object which can be used for communicating this data to digital analytics and reporting servers."

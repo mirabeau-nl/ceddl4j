@@ -3,12 +3,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>nl.mirabeau</groupId>
-	<artifactId>ceddl</artifactId>
+	<artifactId>ceddl4j</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>ceddl</name>
-	<url>http://maven.apache.org</url>
+	<name>ceddl4j</name>
+	<url>https://github.com/mirabeau-nl/</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -30,6 +30,29 @@
 			<groupId>org.skyscreamer</groupId>
 			<artifactId>jsonassert</artifactId>
 			<version>1.2.3</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eluder.coveralls</groupId>
+				<artifactId>coveralls-maven-plugin</artifactId>
+				<version>2.1.0</version>
+			</plugin>
+		</plugins>
+	</build>
+	<organization>
+		<name>Mirabeau B.V.</name>
+		<url>https://www.mirabeau.nl/</url>
+	</organization>
+	<scm>
+		<connection>https://github.com/mirabeau-nl/ceddl4j</connection>
+	</scm>
+	<issueManagement>
+		<url>https://github.com/mirabeau-nl/ceddl4j/issues</url>
+	</issueManagement>
+	<inceptionYear>2015</inceptionYear>
+	<description>CEDDL4J is a Java Library, with a fluent API, for creating a Data Layer (in JavaScript Object format) that follows the Customer Experience Digital Data Layer (CEDDL) specification.</description>
 </project>
