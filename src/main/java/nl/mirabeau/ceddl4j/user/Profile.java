@@ -24,7 +24,7 @@ public class Profile {
 	private AddressImpl<Profile> address;
 
 	@Expose
-	private AttributesImpl<Profile> social;
+	private SocialImpl social;
 
 	@Expose
 	private AttributesImpl<Profile> attributes;
@@ -92,9 +92,9 @@ public class Profile {
 	 * 
 	 * @return Social object for the Profile
 	 */
-	public Attributes<Profile> social() {
+	public Social social() {
 		if (social == null) {
-			social = new AttributesImpl<Profile>(this);
+			social = new SocialImpl(this);
 		}
 		return social;
 	}
@@ -110,9 +110,9 @@ public class Profile {
 	 */
 	public Profile addSocial(final String name, final String value) {
 		if (social == null) {
-			social = new AttributesImpl<Profile>(this);
+			social = new SocialImpl(this);
 		}
-		social.attribute(name, value);
+		social.social(name, value);
 		return this;
 	}
 
@@ -146,5 +146,4 @@ public class Profile {
 		attributes.attribute(name, value);
 		return this;
 	}
-
 }
