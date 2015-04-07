@@ -24,8 +24,6 @@ public class AddressImpl<T> extends LinkedHashMap<String, Object> implements Add
 
 	/**
 	 * Constructor, does not set the parent
-	 * 
-	 * @param parent
 	 */
 	public AddressImpl() {
 		super();

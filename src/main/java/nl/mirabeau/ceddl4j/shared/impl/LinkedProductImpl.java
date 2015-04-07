@@ -18,8 +18,6 @@ public class LinkedProductImpl<T> {
 
 	/**
 	 * Constructor, does not set the parent
-	 * 
-	 * @param parent
 	 */
 	public LinkedProductImpl() {
 		super();

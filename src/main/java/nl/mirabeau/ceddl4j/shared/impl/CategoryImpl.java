@@ -18,8 +18,6 @@ public class CategoryImpl<T> extends LinkedHashMap<String, Object> implements Ca
 
 	/**
 	 * Constructor, does not set the parent
-	 * 
-	 * @param parent
 	 */
 	public CategoryImpl() {
 		super();

@@ -19,8 +19,6 @@ public class AttributesImpl<T> extends LinkedHashMap<String, Object> implements 
 
 	/**
 	 * Constructor, does not set the parent
-	 * 
-	 * @param parent
 	 */
 	public AttributesImpl() {
 		super();
