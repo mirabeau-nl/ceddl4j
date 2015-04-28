@@ -1,6 +1,7 @@
 package nl.mirabeau.ceddl4j;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import nl.mirabeau.ceddl4j.cart.Cart;
@@ -450,8 +451,8 @@ public class DigitalData {
 	public String toString() {
 		final Gson gson = new GsonBuilder().setPrettyPrinting()
 				.excludeFieldsWithoutExposeAnnotation()
-				.setDateFormat("yyyy-MM-dd'T'HH:mm:ss").create();
-		// return rootJSO + " = " + gson.toJson(this);
+				.registerTypeAdapter(Date.class, new GmtDateTypeAdapter())
+				.create();
 		return gson.toJson(this);
 	}
 

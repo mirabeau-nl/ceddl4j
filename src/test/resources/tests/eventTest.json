@@ -6,7 +6,7 @@
         "eventAction": "addportal",
         "eventPoints": 200.0,
         "type": "contentModifier",
-        "timeStamp": "1970-01-01T01:00:00",
+        "timeStamp": "1970-01-01T00:00:00Z",
         "effect": "include portal 1234"
       },
       "category": {

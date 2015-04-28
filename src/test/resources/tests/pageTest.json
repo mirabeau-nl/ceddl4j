@@ -16,7 +16,7 @@
       ],
       "author": "S. Veenstra",
       "issueDate": "1970-01-01",
-      "effectiveDate": "1970-01-01T01:00:00",
+      "effectiveDate": "1970-01-01T00:00:00Z",
       "expiryDate": "2050-01-01",
       "language": "nl",
       "industryCodes": "test",
@@ -28,7 +28,7 @@
     },
     "attributes": {
       "Seasonal": "Christmas",
-      "customdateattribuut": "1970-01-01T01:00:00",
+      "customdateattribuut": "1970-01-01T00:00:00Z",
       "customnumberattribuut": 100
     }
   }
