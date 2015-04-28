@@ -60,7 +60,7 @@ This section will be completed when we release.
 * Try to stick to the existing coding style.
 * Give a short description in the pull request what you're doing and why.
 
-### Contribution guidelines ###
+### License information ###
 
 	Copyright (c) 2015, Mirabeau B.V.
 	All rights reserved.
