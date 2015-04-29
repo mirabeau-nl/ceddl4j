@@ -1,17 +1,18 @@
 # CEDDL4J #
 
 [![Build Status](https://travis-ci.org/mirabeau-nl/ceddl4j.svg?branch=master)](https://travis-ci.org/mirabeau-nl/ceddl4j)
+[![Coverage Status](https://coveralls.io/repos/mirabeau-nl/ceddl4j/badge.svg)](https://coveralls.io/r/mirabeau-nl/ceddl4j)
 
 ## What is CEDDL4J? ##
 
-CEDDL4J is a Java Library, with a fluent API, for creating a Data Layer (in JavaScript Object format) that follows the Customer Experience Digital Data Layer (CEDDL) specification.
+CEDDL4J is a Java Library for creating a Data Layer that follows the Customer Experience Digital Data Layer (CEDDL) specification.
 
 The CEDDL specification 
 > "describes a method for surfacing customer experience digital data on a web or other digital resource as a JavaScript Object which can be used for communicating this data to digital analytics and reporting servers."
 
 The complete CEDDL specification can be found at http://www.w3.org/2013/12/ceddl-201312.pdf
 
-CEDDL4J currently implements the full CEDDL specification except for the Privacy an Security objects.
+CEDDL4J currently implements the full CEDDL specification except for the Privacy and Security objects.
 
 ### Example ###
 This code:
@@ -29,7 +30,7 @@ This code:
                 .addAttribute("language", "en-US")
                 .endPage();
 
-Will generate this Data Layer:
+Will generate the following Data Layer:
                 
             digitalData = {
                 pageInstanceID: "MyHomePage-Production",
