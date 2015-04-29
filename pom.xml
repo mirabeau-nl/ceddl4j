@@ -4,11 +4,26 @@
 
 	<groupId>nl.mirabeau</groupId>
 	<artifactId>ceddl4j</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1.0</version>
 	<packaging>jar</packaging>
 
 	<name>ceddl4j</name>
 	<url>https://github.com/mirabeau-nl/</url>
+
+	<licenses>
+		<license>
+			<name>The BSD 3-Clause License</name>
+			<url>https://github.com/mirabeau-nl/ceddl4j/raw/master/LICENSE</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>Sieger Veenstra</name>
+			<email>sveenstra@mirabeau.nl</email>
+			<organization>Mirabeau B.V.</organization>
+			<organizationUrl>http://www.mirabeau.nl</organizationUrl>
+		</developer>
+	</developers>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -54,6 +69,43 @@
 				<artifactId>coveralls-maven-plugin</artifactId>
 				<version>3.1.0</version>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.2.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.3</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 	<organization>
@@ -62,10 +114,15 @@
 	</organization>
 	<scm>
 		<connection>https://github.com/mirabeau-nl/ceddl4j</connection>
+		<developerConnection>https://github.com/mirabeau-nl/ceddl4j</developerConnection>
+		<url>https://github.com/mirabeau-nl/ceddl4j</url>
 	</scm>
 	<issueManagement>
 		<url>https://github.com/mirabeau-nl/ceddl4j/issues</url>
 	</issueManagement>
 	<inceptionYear>2015</inceptionYear>
 	<description>CEDDL4J is a Java Library, with a fluent API, for creating a Data Layer (in JavaScript Object format) that follows the Customer Experience Digital Data Layer (CEDDL) specification.</description>
+	<ciManagement>
+		<url>https://travis-ci.org/mirabeau-nl/ceddl4j</url>
+	</ciManagement>
 </project>
