@@ -1,5 +1,7 @@
 # CEDDL4J #
 
+[![Build Status](https://travis-ci.org/mirabeau-nl/ceddl4j.svg?branch=master)](https://travis-ci.org/mirabeau-nl/ceddl4j)
+
 ## What is CEDDL4J? ##
 
 CEDDL4J is a Java Library, with a fluent API, for creating a Data Layer (in JavaScript Object format) that follows the Customer Experience Digital Data Layer (CEDDL) specification.
