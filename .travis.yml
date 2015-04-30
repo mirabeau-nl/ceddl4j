@@ -1,4 +1,15 @@
-language: java
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "RbVu5Bn7qtE5/QEUpSJ0M/psZUIFpQO0uBWwT4ylavCiSeKUlL+sFMgbRdbwn7HgGUOSyrdJ5ododESz6hvRwfvM8HJ19UYrMmMpxvDooCNHjgXhg9cmfU8vtYkZyh/y99TTxfQ3OsAUUnMysp1sPHytupxMPlopj5bhMcj2BBw="
 
-after_success:
-  - mvn clean test jacoco:report coveralls:report
+addons:
+  coverity_scan:
+    project:
+      name: "mirabeau-nl/ceddl4j"
+      description: "Build submitted via Travis CI"
+    notification_email: sveenstra@mirabeau.nl
+    build_command_prepend: "mvn clean"
+    build_command:   "mvn -DskipTests=true compile"
+    branch_pattern: coverity_scan
