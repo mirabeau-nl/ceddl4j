@@ -24,7 +24,8 @@
     },
     "category": {
       "primaryCategory": "Cameras",
-      "subCategory1": "Nikon"
+      "subCategory1": "Nikon",
+      "test": "testvalue"
     },
     "attributes": {
       "Seasonal": "Christmas",

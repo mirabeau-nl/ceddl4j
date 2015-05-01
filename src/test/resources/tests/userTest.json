@@ -23,7 +23,8 @@
             "country": "USA"
           },
           "social": {
-            "twitter:": "somebody"
+            "twitter:": "somebody",
+            "facebook": "othervalue"
           },
           "attributes": {
             "example": "something"

@@ -8,10 +8,12 @@
       },
       "category": {
         "primaryCategory": "test",
-        "customcat": "testCat"
+        "customcat": "testCat",
+        "customcat2": "testCat2"
       },
       "attributes": {
-        "testAttribuut": "testattr"
+        "testAttribuut": "testattr",
+        "testAttribuut2": "testattr2"
       }
     },
     {

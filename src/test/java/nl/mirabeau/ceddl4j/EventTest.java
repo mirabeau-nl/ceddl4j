@@ -22,7 +22,9 @@ public class EventTest {
 				.eventPoints(200d)
 				.type("contentModifier")
 				.timeStamp(date)
+				.cause("hurricane")
 				.effect("include portal 1234")
+				.custom("customEventInfo", "customValue")
 				.endEventInfo()
 				.addAttribute("customAttribuut", "example")
 				.addPrimaryCategory("content events")
@@ -37,7 +39,7 @@ public class EventTest {
 
 		final String expected = new TestUtil().loadJsonFromFile("/tests/eventTest.json");
 
-		JSONAssert.assertEquals(expected, ddb.toString(), false);
+		JSONAssert.assertEquals(expected, ddb.toString(), true);
 	}
 
 

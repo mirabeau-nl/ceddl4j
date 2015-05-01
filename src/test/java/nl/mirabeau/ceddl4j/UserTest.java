@@ -33,6 +33,9 @@ public class UserTest {
 				.country("USA")
 				.endAddress()
 				.addSocial("twitter:", "somebody")
+				.social()
+				.social("facebook", "othervalue")
+				.endSocial()
 				.addAttribute("example", "something")
 				.endProfile()
 				.endUser();
@@ -41,7 +44,7 @@ public class UserTest {
 
 		final String expected = new TestUtil().loadJsonFromFile("/tests/userTest.json");
 
-		JSONAssert.assertEquals(expected, ddb.toString(), false);
+		JSONAssert.assertEquals(expected, ddb.toString(), true);
 	}
 
 

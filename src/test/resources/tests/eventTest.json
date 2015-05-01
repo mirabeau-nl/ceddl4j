@@ -7,7 +7,9 @@
         "eventPoints": 200.0,
         "type": "contentModifier",
         "timeStamp": "1970-01-01T00:00:00Z",
-        "effect": "include portal 1234"
+        "cause": "hurricane",
+        "effect": "include portal 1234",
+        "customEventInfo": "customValue"
       },
       "category": {
         "primaryCategory": "content events",

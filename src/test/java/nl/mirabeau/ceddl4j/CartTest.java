@@ -51,7 +51,7 @@ public class CartTest {
 
 		final String expected = new TestUtil().loadJsonFromFile("/tests/cartTest.json");
 
-		JSONAssert.assertEquals(expected, ddb.toString(), false);
+		JSONAssert.assertEquals(expected, ddb.toString(), true);
 	}
 
 }

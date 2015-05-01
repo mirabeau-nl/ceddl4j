@@ -71,7 +71,7 @@ public class TransactionTest {
 
 		final String expected = new TestUtil().loadJsonFromFile("/tests/transactionTest.json");
 
-		JSONAssert.assertEquals(expected, ddb.toString(), false);
+		JSONAssert.assertEquals(expected, ddb.toString(), true);
 	}
 
 }

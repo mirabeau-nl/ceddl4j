@@ -52,6 +52,6 @@ public class DigitalDataTest {
 		final String expected = new TestUtil()
 		.loadJsonFromFile("/tests/settersTest.json");
 
-		JSONAssert.assertEquals(expected, ddb.toString(), false);
+		JSONAssert.assertEquals(expected, ddb.toString(), true);
 	}
 }

@@ -27,10 +27,13 @@
         "customprop1": "example2"
       },
       "category": {
-        "primaryCategory": "Hair"
+        "primaryCategory": "Hair",
+        "testcategory": "testvalue",
+        "anothertestcategory": "anothertestvalue"
       },
       "attributes": {
-        "testattribuut": "testvalue"
+        "testattribuut": "testvalue",
+        "anothertestattribuut": "anothertestvalue"
       }
     }
   ]

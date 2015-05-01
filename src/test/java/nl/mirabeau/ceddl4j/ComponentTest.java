@@ -20,8 +20,14 @@ public class ComponentTest {
 				.custom("description", "Hair Treatment Video")
 				.endComponentInfo()
 				.addAttribuut("testAttribuut", "testattr")
+				.attributes()
+				.attribute("testAttribuut2", "testattr2")
+				.endAttributes()
 				.addPrimaryCategory("test")
 				.addCategory("customcat", "testCat")
+				.category()
+				.category("customcat2", "testCat2")
+				.endCategory()
 				.endComponent()
 				.addComponent()
 				.componentInfo()
@@ -33,7 +39,7 @@ public class ComponentTest {
 
 		final String expected = new TestUtil().loadJsonFromFile("/tests/componentTest.json");
 
-		JSONAssert.assertEquals(expected, ddb.toString(), false);
+		JSONAssert.assertEquals(expected, ddb.toString(), true);
 	}
 
 

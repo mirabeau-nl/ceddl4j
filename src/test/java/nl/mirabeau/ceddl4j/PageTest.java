@@ -38,13 +38,18 @@ public class PageTest {
 				.addCategory("subCategory1", "Nikon")
 				.addAttribute("Seasonal", "Christmas")
 				.addAttribute("customdateattribuut", date)
-				.addAttribute("customnumberattribuut", 100)
+				.attributes()
+				.attribute("customnumberattribuut", 100)
+				.endAttributes()
+				.category()
+				.category("test", "testvalue")
+				.endCategory()
 				.endPage();
 
 		System.out.println(ddb.toString());
 
 		final String expected = new TestUtil().loadJsonFromFile("/tests/pageTest.json");
 
-		JSONAssert.assertEquals(expected, ddb.toString(), false);
+		JSONAssert.assertEquals(expected, ddb.toString(), true);
 	}
 }

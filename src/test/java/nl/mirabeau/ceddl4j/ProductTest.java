@@ -31,14 +31,21 @@ public class ProductTest {
 				.custom("customprop1", "example2")
 				.endProductInfo()
 				.addPrimaryCategory("Hair")
+				.category()
+				.category("testcategory", "testvalue")
+				.endCategory()
+				.addCategory("anothertestcategory", "anothertestvalue")
 				.addAttribute("testattribuut", "testvalue")
+				.attributes()
+				.attribute("anothertestattribuut", "anothertestvalue")
+				.endAttributes()
 				.endProduct();
 
 		System.out.println(ddb.toString());
 
 		final String expected = new TestUtil().loadJsonFromFile("/tests/productTest.json");
 
-		JSONAssert.assertEquals(expected, ddb.toString(), false);
+		JSONAssert.assertEquals(expected, ddb.toString(), true);
 
 	}
 
