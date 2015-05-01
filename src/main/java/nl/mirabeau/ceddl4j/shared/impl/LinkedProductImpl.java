@@ -47,7 +47,7 @@ public class LinkedProductImpl<T> {
 	/**
 	 * Provides access to the linked product ProductInfo object.
 	 * 
-	 * @return
+	 * @return ProductInfo object for this LinkedProduct
 	 */
 	public ProductInfo<LinkedProductImpl<T>> productInfo() {
 		if (productInfo == null) {

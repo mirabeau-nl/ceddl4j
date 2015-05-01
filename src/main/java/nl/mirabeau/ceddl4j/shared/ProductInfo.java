@@ -11,7 +11,7 @@ public interface ProductInfo<T> {
 	/**
 	 * Return to the parent object
 	 * 
-	 * @return parent object or {@code null) when not available
+	 * @return parent object or {@code null} when not available
 	 */
 	T endProductInfo();
 

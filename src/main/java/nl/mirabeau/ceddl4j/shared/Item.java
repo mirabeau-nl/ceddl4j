@@ -61,34 +61,33 @@ public interface Item<T> {
 	/**
 	 * Provides access to the attributes object.
 	 * 
-	 * @return
+	 * @return Attributes object for this Item
 	 */
 	Attributes<ItemImpl<T>> attributes();
 
 	/**
 	 * Directly add a new attribute to the Item's attributes
 	 * 
-	 * @param name
-	 * @param value
-	 * @return
+	 * @param name Name of the attribute
+	 * @param value Value for the attribute
+	 * @return {@code this}
 	 */
 	Item<T> addAttribuut(final String name, final Object value);
 
 	/**
 	 * Directly add the primary category to the Item's categories
 	 * 
-	 * @param name
-	 * @param value
-	 * @return
+	 * @param primaryCategory Value for the primary category
+	 * @return {@code this}
 	 */
 	Item<T> addPrimaryCategory(final Object primaryCategory);
 
 	/**
 	 * Directly add a custom category to the Page categories
 	 * 
-	 * @param name
-	 * @param value
-	 * @return
+	 * @param name Name of the category
+	 * @param value Value for the attribute
+	 * @return {@code this}
 	 */
 	Item<T> addCategory(final String name, final Object value);
 }
