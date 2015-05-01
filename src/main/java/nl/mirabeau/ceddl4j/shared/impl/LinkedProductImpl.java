@@ -10,18 +10,10 @@ import com.google.gson.annotations.Expose;
  */
 public class LinkedProductImpl<T> {
 
-	private T parent;
+	private final T parent;
 
 	@Expose
 	private ProductInfoImpl<LinkedProductImpl<T>> productInfo;
-
-
-	/**
-	 * Constructor, does not set the parent
-	 */
-	public LinkedProductImpl() {
-		super();
-	}
 
 
 	/**

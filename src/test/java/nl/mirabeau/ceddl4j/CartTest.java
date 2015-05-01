@@ -45,6 +45,14 @@ public class CartTest {
 				.addLinkedProduct().productInfo().productID("linkedProd2").endProductInfo().endLinkedProduct()
 				.addAttribuut("test1", "test2")
 				.endItem()
+				.addItem()
+				.category()
+				.category("examplecategory", "test")
+				.endCategory()
+				.attributes()
+				.attribute("exampleattribuut", "value")
+				.endAttributes()
+				.endItem()
 				.endCart();
 
 		System.out.println(ddb.toString());

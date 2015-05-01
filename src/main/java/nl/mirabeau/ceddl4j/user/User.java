@@ -15,7 +15,7 @@ import com.google.gson.annotations.Expose;
  */
 public class User {
 
-	private DigitalData parent;
+	private final DigitalData parent;
 
 	@Expose
 	private AttributesImpl<User> segment;
@@ -31,13 +31,6 @@ public class User {
 	public User(final DigitalData parent) {
 		super();
 		this.parent = parent;
-	}
-
-	/**
-	 * Constructor. Does not set the parent.
-	 */
-	public User() {
-		super();
 	}
 
 	/**
