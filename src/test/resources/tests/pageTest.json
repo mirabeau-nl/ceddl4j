@@ -19,8 +19,12 @@
       "effectiveDate": "1970-01-01T00:00:00Z",
       "expiryDate": "2050-01-01",
       "language": "nl",
+      "geoRegion": "The Netherlands",
       "industryCodes": "test",
-      "publisher": "me"
+      "publisher": "me",
+      "onsiteSearchTerm": "search terms",
+      "onsiteSearchResults": 42,
+      "custom pageinfo": "example"
     },
     "category": {
       "primaryCategory": "Cameras",

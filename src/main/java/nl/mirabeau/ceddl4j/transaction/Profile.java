@@ -13,7 +13,7 @@ import com.google.gson.annotations.Expose;
  */
 public class Profile {
 
-	private Transaction parent;
+	private final Transaction parent;
 
 	@Expose
 	private ProfileInfoImpl<Profile> profileInfo;
@@ -23,13 +23,6 @@ public class Profile {
 
 	@Expose
 	private AddressImpl<Profile> shippingAddress;
-
-	/**
-	 * Constructor, does not set the parent
-	 */
-	public Profile() {
-		super();
-	}
 
 	/**
 	 * Constructor, sets the parent

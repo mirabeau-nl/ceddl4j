@@ -15,7 +15,8 @@
       "customDouble": 123
     },
     "attributes": {
-      "customAttribuut": "example"
+      "customAttribuut": "example",
+      "customAttribuut2": "example2"
     },
     "item": [
       {
