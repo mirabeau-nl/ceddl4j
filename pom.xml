@@ -4,7 +4,7 @@
 
 	<groupId>nl.mirabeau</groupId>
 	<artifactId>ceddl4j</artifactId>
-	<version>0.1.0-SNAPSHOT</version>
+	<version>0.1.0</version>
 	<packaging>jar</packaging>
 
 	<dependencies>
