@@ -20,14 +20,7 @@ public class ProfileInfoImpl<T> extends LinkedHashMap<String, Object> implements
 	private static final String RETURNING_STATUS = "returningStatus";
 	private static final String TYPE = "type";
 
-	private T parent;
-
-	/**
-	 * Constructor, does not set the parent
-	 */
-	public ProfileInfoImpl() {
-		super();
-	}
+	private final T parent;
 
 	/**
 	 * Constructor, sets the parent

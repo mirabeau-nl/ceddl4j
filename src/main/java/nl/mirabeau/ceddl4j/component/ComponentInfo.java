@@ -8,7 +8,7 @@ public interface ComponentInfo {
 	/**
 	 * Return to the parent Component object
 	 * 
-	 * @return parent Component object or {@code null} when not available
+	 * @return parent Component object
 	 */
 	Component endComponentInfo();
 

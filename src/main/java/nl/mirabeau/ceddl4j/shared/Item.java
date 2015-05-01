@@ -14,7 +14,7 @@ public interface Item<T> {
 	/**
 	 * Return to the parent object
 	 * 
-	 * @return parent object or {@code null) when not available
+	 * @return parent object
 	 */
 	T endItem();
 

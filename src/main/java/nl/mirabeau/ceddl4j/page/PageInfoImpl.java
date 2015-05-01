@@ -28,14 +28,8 @@ public class PageInfoImpl extends LinkedHashMap<String, Object> implements PageI
 	private static final String VARIANT = "variant";
 	private static final String VERSION = "version";
 
-	private Page parent;
+	private final Page parent;
 
-	/**
-	 * Constructor. Does not set the parent.
-	 */
-	public PageInfoImpl() {
-		super();
-	}
 
 	/**
 	 * Constructor. Sets the parent.

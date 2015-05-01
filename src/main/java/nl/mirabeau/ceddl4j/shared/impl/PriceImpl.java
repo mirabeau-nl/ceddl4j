@@ -13,7 +13,7 @@ public class PriceImpl<T> extends LinkedHashMap<String, Object> implements Price
 
 	private static final long serialVersionUID = 9040917798618516574L;
 
-	private T parent;
+	private final T parent;
 
 	private static final String BASE_PRICE = "basePrice";
 	private static final String VOUCHER_CODE = "voucherCode";
@@ -26,12 +26,6 @@ public class PriceImpl<T> extends LinkedHashMap<String, Object> implements Price
 	private static final String CART_TOTAL = "cartTotal";
 	private static final String TRANSACTION_TOTAL = "transactionTotal";
 
-	/**
-	 * Constructor, does not set the parent
-	 */
-	public PriceImpl() {
-		super();
-	}
 
 	/**
 	 * Constructor, sets the parent

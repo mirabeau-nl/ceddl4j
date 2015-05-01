@@ -8,7 +8,6 @@ import org.skyscreamer.jsonassert.JSONAssert;
 
 public class UserTest {
 
-
 	@Test
 	public void testUser() throws IOException, JSONException {
 
@@ -33,9 +32,7 @@ public class UserTest {
 				.country("USA")
 				.endAddress()
 				.addSocial("twitter:", "somebody")
-				.social()
-				.social("facebook", "othervalue")
-				.endSocial()
+				.addSocial("facebook", "othervalue")
 				.addAttribute("example", "something")
 				.endProfile()
 				.endUser();
@@ -46,6 +43,49 @@ public class UserTest {
 
 		JSONAssert.assertEquals(expected, ddb.toString(), true);
 	}
+
+	@Test
+	public void testUser2() throws IOException, JSONException {
+
+		final DigitalData ddb = DigitalData.create()
+				.addUser()
+				.segment()
+				.attribute("membership", "basic membership")
+				.endAttributes()
+				.addProfile()
+				.profileInfo()
+				.profileID("humanbeing12345")
+				.userName("me")
+				.email("me@humanbeing12345.nl")
+				.language("nl")
+				.returningStatus("new")
+				.type("user")
+				.endProfileInfo()
+				.address()
+				.line1("673 My Street")
+				.line2("Apt 1")
+				.city("Austin")
+				.stateProvince("TX")
+				.postalCode("78610")
+				.country("USA")
+				.endAddress()
+				.social()
+				.social("twitter:", "somebody")
+				.social("facebook", "othervalue")
+				.endSocial()
+				.attributes()
+				.attribute("example", "something")
+				.endAttributes()
+				.endProfile()
+				.endUser();
+
+		System.out.println(ddb.toString());
+
+		final String expected = new TestUtil().loadJsonFromFile("/tests/userTest.json");
+
+		JSONAssert.assertEquals(expected, ddb.toString(), true);
+	}
+
 
 
 

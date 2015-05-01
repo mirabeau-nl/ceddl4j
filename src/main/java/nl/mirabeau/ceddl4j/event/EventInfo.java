@@ -8,7 +8,7 @@ public interface EventInfo {
 	/**
 	 * Return to the parent Event object
 	 * 
-	 * @return parent Product object or null when not available
+	 * @return parent Product object
 	 */
 	Event endEventInfo();
 

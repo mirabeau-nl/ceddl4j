@@ -24,14 +24,7 @@ public class ProductInfoImpl<T> extends LinkedHashMap<String, Object> implements
 	private static final String COLOR = "color";
 	private static final String SIZE = "size";
 
-	private T parent;
-
-	/**
-	 * Constructor, does not set the parent
-	 */
-	public ProductInfoImpl() {
-		super();
-	}
+	private final T parent;
 
 	/**
 	 * Constructor, sets the parent
