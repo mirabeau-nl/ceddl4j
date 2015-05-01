@@ -11,7 +11,7 @@ import com.google.gson.annotations.Expose;
 /**
  * The Component object is intended to capture information about a content
  * component included as part of a page, such as a video. Interactions with the
- * component — such as playing the video — would be an Event.
+ * component such as playing the video would be an Event.
  */
 public class Component {
 

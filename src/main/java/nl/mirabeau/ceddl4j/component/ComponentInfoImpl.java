@@ -11,14 +11,7 @@ public class ComponentInfoImpl extends LinkedHashMap<String, Object> implements 
 
 	private final static String COMPONENT_ID_NAME = "componentID";
 
-	private Component parent;
-
-	/**
-	 * Constructor, does not set the parent
-	 */
-	public ComponentInfoImpl() {
-		super();
-	}
+	private final Component parent;
 
 	/**
 	 * Constructor, sets the parent

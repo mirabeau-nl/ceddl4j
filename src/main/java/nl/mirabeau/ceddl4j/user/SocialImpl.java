@@ -11,14 +11,7 @@ public class SocialImpl extends LinkedHashMap<String, Object> implements Social 
 
 	private static final long serialVersionUID = -25138847794874317L;
 
-	private Profile parent;
-
-	/**
-	 * Constructor, does not set the parent
-	 */
-	public SocialImpl() {
-		super();
-	}
+	private final Profile parent;
 
 	/**
 	 * Constructor, sets the parent

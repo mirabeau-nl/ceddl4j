@@ -20,14 +20,7 @@ public class AddressImpl<T> extends LinkedHashMap<String, Object> implements Add
 	private static final String POSTAL_CODE = "postalCode";
 	private static final String COUNTRY = "country";
 
-	private T parent;
-
-	/**
-	 * Constructor, does not set the parent
-	 */
-	public AddressImpl() {
-		super();
-	}
+	private final T parent;
 
 	/**
 	 * Constructor, sets the parent

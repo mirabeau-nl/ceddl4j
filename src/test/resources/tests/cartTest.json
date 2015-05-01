@@ -9,10 +9,10 @@
       "taxRate": 0.2,
       "shipping": 5.0,
       "shippingMethod": "UPS",
-      "priceWithTax": 120.0,
-      "cartTotal": 120.0,
+      "priceWithTax": 120,
+      "cartTotal": 120,
       "customString": "example",
-      "customDouble": 123.0
+      "customDouble": 123
     },
     "attributes": {
       "customAttribuut": "example"
@@ -34,7 +34,7 @@
           "taxRate": 0.3,
           "shipping": 6.0,
           "shippingMethod": "None",
-          "priceWithTax": 300.0
+          "priceWithTax": 300
         },
         "linkedProducts": [
           {
@@ -50,6 +50,14 @@
         ],
         "attributes": {
           "test1": "test2"
+        }
+      },
+      {
+        "category": {
+          "examplecategory": "test"
+        },
+        "attributes": {
+          "exampleattribuut": "value"
         }
       }
     ]

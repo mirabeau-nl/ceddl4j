@@ -15,14 +15,7 @@ public class AttributesImpl<T> extends LinkedHashMap<String, Object> implements 
 
 	private static final long serialVersionUID = -5285208369222816655L;
 
-	private T parent;
-
-	/**
-	 * Constructor, does not set the parent
-	 */
-	public AttributesImpl() {
-		super();
-	}
+	private final T parent;
 
 	/**
 	 * Constructor, sets the parent

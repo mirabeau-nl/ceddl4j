@@ -9,7 +9,7 @@ public class EventInfoImpl extends LinkedHashMap<String, Object> implements Even
 
 	private static final long serialVersionUID = -1914214466224476883L;
 
-	private Event parent;
+	private final Event parent;
 
 	private static final String EVENT_NAME = "eventName";
 	private static final String EVENT_ACTION = "eventAction";
@@ -18,14 +18,6 @@ public class EventInfoImpl extends LinkedHashMap<String, Object> implements Even
 	private static final String TIME_STAMP = "timeStamp";
 	private static final String CAUSE = "cause";
 	private static final String EFFECT = "effect";
-
-
-	/**
-	 * Constructor, does not set the parent
-	 */
-	public EventInfoImpl() {
-		super();
-	}
 
 	/**
 	 * Constructor, sets the parent

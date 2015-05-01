@@ -70,7 +70,7 @@ public class Event {
 	/**
 	 * Provides access to the Category object for the Event.
 	 * 
-	 * @return
+	 * @return Category object for this Event
 	 */
 	public Category<Event> category() {
 		if (category == null) {
@@ -82,7 +82,7 @@ public class Event {
 	/**
 	 * Provides access to the Attributes object for this Event.
 	 * 
-	 * @return
+	 * @return Attributes object for this Event
 	 */
 	public Attributes<Event> attributes() {
 		if (attributes == null) {
@@ -96,7 +96,7 @@ public class Event {
 	 * 
 	 * @param name Name of the attribute
 	 * @param value Value for the attribute
-	 * @return The current Event object
+	 * @return  {@code this}
 	 */
 	public Event addAttribute(final String name, final Object value) {
 		if (attributes == null) {
@@ -110,7 +110,7 @@ public class Event {
 	 * Directly set the primary category for the Event
 	 * 
 	 * @param primaryCategory Value for the primary category
-	 * @return The current Event object
+	 * @return  {@code this}
 	 */
 	public Event addPrimaryCategory(final Object primaryCategory) {
 		if (category == null) {
@@ -124,9 +124,9 @@ public class Event {
 	/**
 	 * Directly add a custom category to the Event's categories
 	 * 
-	 * @param name
-	 * @param value
-	 * @return
+	 * @param name Name of the category
+	 * @param value Value for the attribute
+	 * @return  {@code this}
 	 */
 	public Event addCategory(final String name, final Object value) {
 		if (category == null) {

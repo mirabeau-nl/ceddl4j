@@ -11,7 +11,7 @@ public interface PageInfo {
 	/**
 	 * Return to the parent Page object
 	 * 
-	 * @return Page parent object or {@code null} when not available
+	 * @return Page parent object
 	 */
 	Page endPageInfo();
 

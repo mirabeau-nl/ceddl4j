@@ -20,10 +20,12 @@
             "city": "Austin",
             "stateProvince": "TX",
             "postalCode": "78610",
-            "country": "USA"
+            "country": "USA",
+            "extra adress info": "ring twice"
           },
           "social": {
-            "twitter:": "somebody"
+            "twitter:": "somebody",
+            "facebook": "othervalue"
           },
           "attributes": {
             "example": "something"

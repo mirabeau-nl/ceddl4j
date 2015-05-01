@@ -14,14 +14,7 @@ public class CategoryImpl<T> extends LinkedHashMap<String, Object> implements Ca
 
 	private static final long serialVersionUID = -3019902756647091451L;
 
-	private T parent;
-
-	/**
-	 * Constructor, does not set the parent
-	 */
-	public CategoryImpl() {
-		super();
-	}
+	private final T parent;
 
 	/**
 	 * Constructor, sets the parent

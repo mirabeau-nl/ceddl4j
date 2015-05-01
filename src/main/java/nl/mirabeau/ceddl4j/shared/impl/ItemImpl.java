@@ -18,7 +18,7 @@ import com.google.gson.annotations.Expose;
  */
 public class ItemImpl<T> implements Item<T> {
 
-	private T parent;
+	private final T parent;
 
 	@Expose
 	private ProductInfoImpl<ItemImpl<T>> productInfo;
@@ -37,13 +37,6 @@ public class ItemImpl<T> implements Item<T> {
 
 	@Expose
 	private AttributesImpl<ItemImpl<T>> attributes;
-
-	/**
-	 * Constructor, does not set the parent
-	 */
-	public ItemImpl() {
-		super();
-	}
 
 	/**
 	 * Constructor, sets the parent
