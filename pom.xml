@@ -4,30 +4,8 @@
 
 	<groupId>nl.mirabeau</groupId>
 	<artifactId>ceddl4j</artifactId>
-	<version>0.1.0</version>
+	<version>0.1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
-
-	<name>ceddl4j</name>
-	<url>https://github.com/mirabeau-nl/</url>
-
-	<licenses>
-		<license>
-			<name>The BSD 3-Clause License</name>
-			<url>https://github.com/mirabeau-nl/ceddl4j/raw/master/LICENSE</url>
-		</license>
-	</licenses>
-	<developers>
-		<developer>
-			<name>Sieger Veenstra</name>
-			<email>sveenstra@mirabeau.nl</email>
-			<organization>Mirabeau B.V.</organization>
-			<organizationUrl>http://www.mirabeau.nl</organizationUrl>
-		</developer>
-	</developers>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
 
 	<dependencies>
 		<dependency>
@@ -49,6 +27,10 @@
 		</dependency>
 	</dependencies>
 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -69,60 +51,143 @@
 				<artifactId>coveralls-maven-plugin</artifactId>
 				<version>3.1.0</version>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<version>2.2.1</version>
-				<executions>
-					<execution>
-						<id>attach-sources</id>
-						<goals>
-							<goal>jar-no-fork</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.9.1</version>
-				<executions>
-					<execution>
-						<id>attach-javadocs</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.3</version>
-				<extensions>true</extensions>
-				<configuration>
-					<serverId>ossrh</serverId>
-					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-					<autoReleaseAfterClose>true</autoReleaseAfterClose>
-				</configuration>
-			</plugin>
 		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.jacoco</groupId>
+										<artifactId>
+											jacoco-maven-plugin
+										</artifactId>
+										<versionRange>
+											[0.7.2.201409121644,)
+										</versionRange>
+										<goals>
+											<goal>prepare-agent</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
+
+	<name>ceddl4j</name>
+	<description>CEDDL4J is a Java Library, with a fluent API, for creating a Data Layer that follows the Customer Experience Digital Data Layer (CEDDL) specification.</description>
+	<url>https://github.com/mirabeau-nl/</url>
+	<inceptionYear>2015</inceptionYear>
+	<licenses>
+		<license>
+			<name>The BSD 3-Clause License</name>
+			<url>https://github.com/mirabeau-nl/ceddl4j/raw/master/LICENSE</url>
+		</license>
+	</licenses>
 	<organization>
 		<name>Mirabeau B.V.</name>
 		<url>https://www.mirabeau.nl/</url>
 	</organization>
+	<developers>
+		<developer>
+			<name>Sieger Veenstra</name>
+			<email>sveenstra@mirabeau.nl</email>
+			<organization>Mirabeau B.V.</organization>
+			<organizationUrl>http://www.mirabeau.nl</organizationUrl>
+		</developer>
+	</developers>
+
+	<issueManagement>
+		<url>https://github.com/mirabeau-nl/ceddl4j/issues</url>
+	</issueManagement>
+	<ciManagement>
+		<url>https://travis-ci.org/mirabeau-nl/ceddl4j</url>
+	</ciManagement>
 	<scm>
 		<connection>https://github.com/mirabeau-nl/ceddl4j</connection>
 		<developerConnection>https://github.com/mirabeau-nl/ceddl4j</developerConnection>
 		<url>https://github.com/mirabeau-nl/ceddl4j</url>
 	</scm>
-	<issueManagement>
-		<url>https://github.com/mirabeau-nl/ceddl4j/issues</url>
-	</issueManagement>
-	<inceptionYear>2015</inceptionYear>
-	<description>CEDDL4J is a Java Library, with a fluent API, for creating a Data Layer (in JavaScript Object format) that follows the Customer Experience Digital Data Layer (CEDDL) specification.</description>
-	<ciManagement>
-		<url>https://travis-ci.org/mirabeau-nl/ceddl4j</url>
-	</ciManagement>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<profiles>
+		<profile>
+			<id>release</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>2.2.1</version>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<goals>
+									<goal>jar-no-fork</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>2.9.1</version>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+						<version>1.6.3</version>
+						<extensions>true</extensions>
+						<configuration>
+							<serverId>ossrh</serverId>
+							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+							<autoReleaseAfterClose>true</autoReleaseAfterClose>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.5</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
 </project>
