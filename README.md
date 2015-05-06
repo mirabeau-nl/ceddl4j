@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/mirabeau-nl/ceddl4j.svg?branch=master)](https://travis-ci.org/mirabeau-nl/ceddl4j)
 [![Coverage Status](https://coveralls.io/repos/mirabeau-nl/ceddl4j/badge.svg)](https://coveralls.io/r/mirabeau-nl/ceddl4j)
 [![Coverity Scan Status] (https://scan.coverity.com/projects/4986/badge.svg)](https://scan.coverity.com/projects/4986)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/nl.mirabeau/ceddl4j/badge.svg)](https://maven-badges.herokuapp.com/maven-central/nl.mirabeau/ceddl4j)
 
 ## What is CEDDL4J? ##
 
@@ -55,8 +56,15 @@ Will generate the following Data Layer:
             
 
 ### How do I get set up? ###
-This section will be completed when we release. 
+Add the following dependency to your project's Maven POM. 
 
+        <dependency>
+            <groupId>nl.mirabeau</groupId>
+            <artifactId>ceddl4j</artifactId>
+            <version>0.1.0</version>
+        </dependency>
+        
+For other build tools see: https://maven-badges.herokuapp.com/maven-central/nl.mirabeau/ceddl4j
 
 ### Contribution guidelines ###
 * Comments, methods and variables in English.
