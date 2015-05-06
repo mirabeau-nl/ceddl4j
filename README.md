@@ -16,6 +16,8 @@ The complete CEDDL specification can be found at http://www.w3.org/2013/12/ceddl
 
 CEDDL4J currently implements the full CEDDL specification except for the Privacy and Security objects.
 
+For the API/ JavaDoc see: http://www.javadoc.io/doc/nl.mirabeau/ceddl4j/
+
 ### Example ###
 This code:
 
