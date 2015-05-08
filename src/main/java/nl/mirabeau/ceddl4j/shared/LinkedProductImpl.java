@@ -1,8 +1,6 @@
-package nl.mirabeau.ceddl4j.shared.impl;
+package nl.mirabeau.ceddl4j.shared;
 
-import nl.mirabeau.ceddl4j.shared.ProductInfo;
-
-import com.google.gson.annotations.Expose;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Product linked to main product
@@ -12,9 +10,8 @@ public class LinkedProductImpl<T> {
 
 	private final T parent;
 
-	@Expose
-	private ProductInfoImpl<LinkedProductImpl<T>> productInfo;
-
+	@JsonProperty
+	private ProductInfo<LinkedProductImpl<T>> productInfo;
 
 	/**
 	 * Constructor, sets the parent
@@ -25,7 +22,6 @@ public class LinkedProductImpl<T> {
 		super();
 		this.parent = parent;
 	}
-
 
 	/**
 	 * Return to the parent Item object
@@ -43,7 +39,7 @@ public class LinkedProductImpl<T> {
 	 */
 	public ProductInfo<LinkedProductImpl<T>> productInfo() {
 		if (productInfo == null) {
-			productInfo = new ProductInfoImpl<LinkedProductImpl<T>>(this);
+			productInfo = new ProductInfo<LinkedProductImpl<T>>(this);
 		}
 		return productInfo;
 	}

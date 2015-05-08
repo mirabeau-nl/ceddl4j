@@ -3,11 +3,8 @@ package nl.mirabeau.ceddl4j.user;
 import nl.mirabeau.ceddl4j.shared.Address;
 import nl.mirabeau.ceddl4j.shared.Attributes;
 import nl.mirabeau.ceddl4j.shared.ProfileInfo;
-import nl.mirabeau.ceddl4j.shared.impl.AddressImpl;
-import nl.mirabeau.ceddl4j.shared.impl.AttributesImpl;
-import nl.mirabeau.ceddl4j.shared.impl.ProfileInfoImpl;
 
-import com.google.gson.annotations.Expose;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * A profile for information about the user, typically associated with a
@@ -17,17 +14,17 @@ public class Profile {
 
 	private User parent;
 
-	@Expose
-	private ProfileInfoImpl<Profile> profileInfo;
+	@JsonProperty
+	private ProfileInfo<Profile> profileInfo;
 
-	@Expose
-	private AddressImpl<Profile> address;
+	@JsonProperty
+	private Address<Profile> address;
 
-	@Expose
-	private SocialImpl social;
+	@JsonProperty
+	private Social social;
 
-	@Expose
-	private AttributesImpl<Profile> attributes;
+	@JsonProperty
+	private Attributes<Profile> attributes;
 
 	/**
 	 * Constructor, does not set the parent.
@@ -65,7 +62,7 @@ public class Profile {
 	 */
 	public ProfileInfo<Profile> profileInfo() {
 		if (profileInfo == null) {
-			profileInfo = new ProfileInfoImpl<Profile>(this);
+			profileInfo = new ProfileInfo<Profile>(this);
 		}
 		return profileInfo;
 	}
@@ -79,7 +76,7 @@ public class Profile {
 	 */
 	public Address<Profile> address() {
 		if (address == null) {
-			address = new AddressImpl<Profile>(this);
+			address = new Address<Profile>(this);
 		}
 		return address;
 	}
@@ -94,7 +91,7 @@ public class Profile {
 	 */
 	public Social social() {
 		if (social == null) {
-			social = new SocialImpl(this);
+			social = new Social(this);
 		}
 		return social;
 	}
@@ -110,7 +107,7 @@ public class Profile {
 	 */
 	public Profile addSocial(final String name, final String value) {
 		if (social == null) {
-			social = new SocialImpl(this);
+			social = new Social(this);
 		}
 		social.social(name, value);
 		return this;
@@ -125,7 +122,7 @@ public class Profile {
 	 */
 	public Attributes<Profile> attributes() {
 		if (attributes == null) {
-			attributes = new AttributesImpl<Profile>(this);
+			attributes = new Attributes<Profile>(this);
 		}
 		return attributes;
 	}
@@ -141,7 +138,7 @@ public class Profile {
 	 */
 	public Profile addAttribute(final String name, final String value) {
 		if (attributes == null) {
-			attributes = new AttributesImpl<Profile>(this);
+			attributes = new Attributes<Profile>(this);
 		}
 		attributes.attribute(name, value);
 		return this;

@@ -6,13 +6,10 @@ import java.util.List;
 import nl.mirabeau.ceddl4j.DigitalData;
 import nl.mirabeau.ceddl4j.shared.Attributes;
 import nl.mirabeau.ceddl4j.shared.Category;
+import nl.mirabeau.ceddl4j.shared.LinkedProductImpl;
 import nl.mirabeau.ceddl4j.shared.ProductInfo;
-import nl.mirabeau.ceddl4j.shared.impl.AttributesImpl;
-import nl.mirabeau.ceddl4j.shared.impl.CategoryImpl;
-import nl.mirabeau.ceddl4j.shared.impl.LinkedProductImpl;
-import nl.mirabeau.ceddl4j.shared.impl.ProductInfoImpl;
 
-import com.google.gson.annotations.Expose;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * The Product object carries details about a particular product with frequently
@@ -25,17 +22,17 @@ public class Product {
 
 	private DigitalData parent;
 
-	@Expose
-	private ProductInfoImpl<Product> productInfo;
+	@JsonProperty
+	private ProductInfo<Product> productInfo;
 
-	@Expose
-	private CategoryImpl<Product> category;
+	@JsonProperty
+	private Category<Product> category;
 
-	@Expose
+	@JsonProperty
 	private List<LinkedProductImpl<Product>> linkedProducts;
 
-	@Expose
-	private AttributesImpl<Product> attributes;
+	@JsonProperty
+	private Attributes<Product> attributes;
 
 	/**
 	 * Constructor, does not set the parent
@@ -71,7 +68,7 @@ public class Product {
 	 */
 	public ProductInfo<Product> productInfo() {
 		if (productInfo == null) {
-			productInfo = new ProductInfoImpl<Product>(this);
+			productInfo = new ProductInfo<Product>(this);
 		}
 		return productInfo;
 	}
@@ -91,7 +88,7 @@ public class Product {
 	 */
 	public Category<Product> category() {
 		if (category == null) {
-			category = new CategoryImpl<Product>(this);
+			category = new Category<Product>(this);
 		}
 		return category;
 	}
@@ -124,7 +121,7 @@ public class Product {
 	 */
 	public Attributes<Product> attributes() {
 		if (attributes == null) {
-			attributes = new AttributesImpl<Product>(this);
+			attributes = new Attributes<Product>(this);
 		}
 		return attributes;
 	}
@@ -138,7 +135,7 @@ public class Product {
 	 */
 	public Product addAttribute(final String name, final Object value) {
 		if (attributes == null) {
-			attributes = new AttributesImpl<Product>(this);
+			attributes = new Attributes<Product>(this);
 		}
 		attributes.attribute(name, value);
 		return this;
@@ -152,7 +149,7 @@ public class Product {
 	 */
 	public Product addPrimaryCategory(final Object primaryCategory) {
 		if (category == null) {
-			category = new CategoryImpl<Product>(this);
+			category = new Category<Product>(this);
 		}
 
 		category.category(Category.PRIMARY_CATEGORY_NAME, primaryCategory);
@@ -168,11 +165,10 @@ public class Product {
 	 */
 	public Product addCategory(final String name, final Object value) {
 		if (category == null) {
-			category = new CategoryImpl<Product>(this);
+			category = new Category<Product>(this);
 		}
 
 		category.category(name, value);
 		return this;
 	}
-
 }

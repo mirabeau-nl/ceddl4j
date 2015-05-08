@@ -1,8 +1,11 @@
 package nl.mirabeau.ceddl4j;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+import java.util.TimeZone;
 
 import nl.mirabeau.ceddl4j.cart.Cart;
 import nl.mirabeau.ceddl4j.component.Component;
@@ -12,9 +15,10 @@ import nl.mirabeau.ceddl4j.product.Product;
 import nl.mirabeau.ceddl4j.transaction.Transaction;
 import nl.mirabeau.ceddl4j.user.User;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.annotations.Expose;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * CEDDL4J is a Java Library, with a fluent API, for creating a Data Layer
@@ -87,31 +91,31 @@ public class DigitalData {
 	 */
 	public static final String ROOT_JSO = "digitalData";
 
-	@Expose
+	@JsonProperty
 	private String pageInstanceID;
 
-	@Expose
+	@JsonProperty
 	private Page page;
 
-	@Expose
+	@JsonProperty
 	private List<Product> product;
 
-	@Expose
+	@JsonProperty
 	private Cart cart;
 
-	@Expose
+	@JsonProperty
 	private Transaction transaction;
 
-	@Expose
+	@JsonProperty
 	private List<Event> event;
 
-	@Expose
+	@JsonProperty
 	private List<Component> component;
 
-	@Expose
+	@JsonProperty
 	private List<User> user;
 
-	@Expose
+	@JsonProperty
 	private Object version;
 
 	/**
@@ -449,11 +453,19 @@ public class DigitalData {
 	 */
 	@Override
 	public String toString() {
-		final Gson gson = new GsonBuilder().setPrettyPrinting()
-				.excludeFieldsWithoutExposeAnnotation()
-				.registerTypeAdapter(Date.class, new GmtDateTypeAdapter())
-				.create();
-		return gson.toJson(this);
+		final ObjectMapper mapper = new ObjectMapper();
+
+		final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.US);
+		dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+		mapper.setDateFormat(dateFormat);
+
+		mapper.setSerializationInclusion(Include.NON_NULL);
+
+		try {
+			return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(this);
+		} catch (final JsonProcessingException e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 	/**

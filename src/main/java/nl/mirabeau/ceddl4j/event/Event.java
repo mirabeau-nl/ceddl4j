@@ -3,10 +3,8 @@ package nl.mirabeau.ceddl4j.event;
 import nl.mirabeau.ceddl4j.DigitalData;
 import nl.mirabeau.ceddl4j.shared.Attributes;
 import nl.mirabeau.ceddl4j.shared.Category;
-import nl.mirabeau.ceddl4j.shared.impl.AttributesImpl;
-import nl.mirabeau.ceddl4j.shared.impl.CategoryImpl;
 
-import com.google.gson.annotations.Expose;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * The Event object collects information about an interaction event by the user.
@@ -18,14 +16,14 @@ public class Event {
 
 	private DigitalData parent;
 
-	@Expose
-	private EventInfoImpl eventInfo;
+	@JsonProperty
+	private EventInfo eventInfo;
 
-	@Expose
-	private CategoryImpl<Event> category;
+	@JsonProperty
+	private Category<Event> category;
 
-	@Expose
-	private AttributesImpl<Event> attributes;
+	@JsonProperty
+	private Attributes<Event> attributes;
 
 	/**
 	 * Constructor. Sets the parent.
@@ -62,7 +60,7 @@ public class Event {
 	 */
 	public EventInfo eventInfo() {
 		if (eventInfo == null) {
-			eventInfo = new EventInfoImpl(this);
+			eventInfo = new EventInfo(this);
 		}
 		return eventInfo;
 	}
@@ -74,7 +72,7 @@ public class Event {
 	 */
 	public Category<Event> category() {
 		if (category == null) {
-			category = new CategoryImpl<Event>(this);
+			category = new Category<Event>(this);
 		}
 		return category;
 	}
@@ -86,7 +84,7 @@ public class Event {
 	 */
 	public Attributes<Event> attributes() {
 		if (attributes == null) {
-			attributes = new AttributesImpl<Event>(this);
+			attributes = new Attributes<Event>(this);
 		}
 		return attributes;
 	}
@@ -100,7 +98,7 @@ public class Event {
 	 */
 	public Event addAttribute(final String name, final Object value) {
 		if (attributes == null) {
-			attributes = new AttributesImpl<Event>(this);
+			attributes = new Attributes<Event>(this);
 		}
 		attributes.attribute(name, value);
 		return this;
@@ -114,7 +112,7 @@ public class Event {
 	 */
 	public Event addPrimaryCategory(final Object primaryCategory) {
 		if (category == null) {
-			category = new CategoryImpl<Event>(this);
+			category = new Category<Event>(this);
 		}
 
 		category.category(Category.PRIMARY_CATEGORY_NAME, primaryCategory);
@@ -130,7 +128,7 @@ public class Event {
 	 */
 	public Event addCategory(final String name, final Object value) {
 		if (category == null) {
-			category = new CategoryImpl<Event>(this);
+			category = new Category<Event>(this);
 		}
 
 		category.category(name, value);

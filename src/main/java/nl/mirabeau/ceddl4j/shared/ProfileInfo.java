@@ -1,18 +1,41 @@
 package nl.mirabeau.ceddl4j.shared;
 
+import nl.mirabeau.ceddl4j.BaseItem;
+
 /**
  * An extensible object for providing information about the user.
  *
  * @param <T> Parent object type
  */
-public interface ProfileInfo<T> {
+public class ProfileInfo<T> extends BaseItem {
+
+	private static final String PROFILE_ID = "profileID";
+	private static final String USER_NAME = "userName";
+	private static final String EMAIL = "email";
+	private static final String LANGUAGE = "language";
+	private static final String RETURNING_STATUS = "returningStatus";
+	private static final String TYPE = "type";
+
+	private final T parent;
+
+	/**
+	 * Constructor, sets the parent
+	 * 
+	 * @param parent
+	 */
+	public ProfileInfo(final T parent) {
+		super();
+		this.parent = parent;
+	}
 
 	/**
 	 * Return to the parent object
 	 * 
 	 * @return parent object
 	 */
-	T endProfileInfo();
+	public T endProfileInfo() {
+		return parent;
+	}
 
 	/**
 	 * profileID
@@ -20,7 +43,10 @@ public interface ProfileInfo<T> {
 	 * @param profileID String
 	 * @return {@code this}
 	 */
-	ProfileInfo<T> profileID(Object profileID);
+	public ProfileInfo<T> profileID(final Object profileID) {
+		items.put(PROFILE_ID, profileID);
+		return this;
+	}
 
 	/**
 	 * userName
@@ -28,7 +54,10 @@ public interface ProfileInfo<T> {
 	 * @param userName String
 	 * @return {@code this}
 	 */
-	ProfileInfo<T> userName(Object userName);
+	public ProfileInfo<T> userName(final Object userName) {
+		items.put(USER_NAME, userName);
+		return this;
+	}
 
 	/**
 	 * email
@@ -36,7 +65,10 @@ public interface ProfileInfo<T> {
 	 * @param email String
 	 * @return {@code this}
 	 */
-	ProfileInfo<T> email(Object email);
+	public ProfileInfo<T> email(final Object email) {
+		items.put(EMAIL, email);
+		return this;
+	}
 
 	/**
 	 * language
@@ -44,7 +76,10 @@ public interface ProfileInfo<T> {
 	 * @param language String
 	 * @return {@code this}
 	 */
-	ProfileInfo<T> language(Object language);
+	public ProfileInfo<T> language(final Object language) {
+		items.put(LANGUAGE, language);
+		return this;
+	}
 
 	/**
 	 * returningStatus
@@ -52,7 +87,10 @@ public interface ProfileInfo<T> {
 	 * @param returningStatus String
 	 * @return {@code this}
 	 */
-	ProfileInfo<T> returningStatus(Object returningStatus);
+	public ProfileInfo<T> returningStatus(final Object returningStatus) {
+		items.put(RETURNING_STATUS, returningStatus);
+		return this;
+	}
 
 	/**
 	 * type
@@ -60,7 +98,10 @@ public interface ProfileInfo<T> {
 	 * @param type String
 	 * @return {@code this}
 	 */
-	ProfileInfo<T> type(Object type);
+	public ProfileInfo<T> type(final Object type) {
+		items.put(TYPE, type);
+		return this;
+	}
 
 	/**
 	 * Custom ProfileInfo property
@@ -69,6 +110,8 @@ public interface ProfileInfo<T> {
 	 * @param value Value for the custom property
 	 * @return {@code this}
 	 */
-	ProfileInfo<T> custom(String name, Object value);
-
+	public ProfileInfo<T> custom(final String name, final Object value) {
+		items.put(name, value);
+		return this;
+	}
 }

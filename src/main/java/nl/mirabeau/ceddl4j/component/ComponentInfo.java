@@ -1,16 +1,34 @@
 package nl.mirabeau.ceddl4j.component;
 
+import nl.mirabeau.ceddl4j.BaseItem;
+
 /**
  * This object describes the component.
  */
-public interface ComponentInfo {
+public class ComponentInfo extends BaseItem {
+
+	private final static String COMPONENT_ID_NAME = "componentID";
+
+	private final Component parent;
+
+	/**
+	 * Constructor, sets the parent
+	 * 
+	 * @param parent
+	 */
+	public ComponentInfo(final Component parent) {
+		super();
+		this.parent = parent;
+	}
 
 	/**
 	 * Return to the parent Component object
 	 * 
 	 * @return parent Component object
 	 */
-	Component endComponentInfo();
+	public Component endComponentInfo() {
+		return parent;
+	}
 
 	/**
 	 * componentID
@@ -18,7 +36,10 @@ public interface ComponentInfo {
 	 * @param componentID String
 	 * @return {@code this}
 	 */
-	ComponentInfoImpl componentID(String componentID);
+	public ComponentInfo componentID(final String componentID) {
+		items.put(COMPONENT_ID_NAME, componentID);
+		return this;
+	}
 
 	/**
 	 * Custom ComponentInfo property
@@ -27,6 +48,8 @@ public interface ComponentInfo {
 	 * @param value Custom property value
 	 * @return {@code this}
 	 */
-	ComponentInfoImpl custom(String name, Object value);
-
+	public ComponentInfo custom(final String name, final Object value) {
+		items.put(name, value);
+		return this;
+	}
 }

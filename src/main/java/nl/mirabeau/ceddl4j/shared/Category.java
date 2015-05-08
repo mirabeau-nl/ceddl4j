@@ -1,22 +1,37 @@
 package nl.mirabeau.ceddl4j.shared;
 
+import nl.mirabeau.ceddl4j.BaseItem;
+
 /**
  * Because of the wide range of methods for categorization, an object literal is
  * provided for categories.
  * 
- * @param <T>
- *            Parent object type
+ * @param <T> Parent object type
  */
-public interface Category<T> {
+public class Category<T> extends BaseItem {
 
-	final static String PRIMARY_CATEGORY_NAME = "primaryCategory";
+	public final static String PRIMARY_CATEGORY_NAME = "primaryCategory";
+
+	private final T parent;
+
+	/**
+	 * Constructor, sets the parent
+	 * 
+	 * @param parent
+	 */
+	public Category(final T parent) {
+		super();
+		this.parent = parent;
+	}
 
 	/**
 	 * Return to the parent object
 	 * 
 	 * @return parent object
 	 */
-	T endCategory();
+	public T endCategory() {
+		return parent;
+	}
 
 	/**
 	 * Set the primaryCategory.
@@ -28,7 +43,10 @@ public interface Category<T> {
 	 *            primaryCategory value
 	 * @return {@code this}
 	 */
-	Category<T> primaryCategory(Object primaryCategory);
+	public Category<T> primaryCategory(final Object primaryCategory) {
+		items.put(PRIMARY_CATEGORY_NAME, primaryCategory);
+		return this;
+	}
 
 	/**
 	 * Custom category
@@ -39,6 +57,8 @@ public interface Category<T> {
 	 *            Custom category value
 	 * @return {@code this}
 	 */
-	Category<T> category(String name, Object value);
-
+	public Category<T> category(final String name, final Object value) {
+		items.put(name, value);
+		return this;
+	}
 }

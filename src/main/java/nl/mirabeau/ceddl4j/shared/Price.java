@@ -1,19 +1,46 @@
 package nl.mirabeau.ceddl4j.shared;
 
+import nl.mirabeau.ceddl4j.BaseItem;
+
 /**
  * This object provides details of the Price.
- * 
- * @param <T>
- *            Parent object type
+ *
+ * @param <T> Parent object type
  */
-public interface Price<T> {
+public class Price<T> extends BaseItem {
+
+	private static final String BASE_PRICE = "basePrice";
+	private static final String VOUCHER_CODE = "voucherCode";
+	private static final String VOUCHER_DISCOUNT = "voucherDiscount";
+	private static final String CURRENCY = "currency";
+	private static final String TAX_RATE = "taxRate";
+	private static final String SHIPPING = "shipping";
+	private static final String SHIPPING_METHOD = "shippingMethod";
+	private static final String PRICE_WITH_TAX = "priceWithTax";
+	private static final String CART_TOTAL = "cartTotal";
+	private static final String TRANSACTION_TOTAL = "transactionTotal";
+
+	private final T parent;
+
+	/**
+	 * Constructor, sets the parent
+	 * 
+	 * @param parent
+	 */
+	public Price(final T parent) {
+		super();
+		this.parent = parent;
+	}
 
 	/**
 	 * Return to the parent object
 	 * 
-	 * @return parent object
+	 * @return parent object
+
 	 */
-	T endPrice();
+	public T endPrice() {
+		return parent;
+	}
 
 	/**
 	 * 
@@ -24,7 +51,10 @@ public interface Price<T> {
 	 *            Number
 	 * @return {@code this}
 	 */
-	Price<T> basePrice(Object basePrice);
+	public Price<T> basePrice(final Object basePrice) {
+		items.put(BASE_PRICE, basePrice);
+		return this;
+	}
 
 	/**
 	 * voucherCode
@@ -33,7 +63,10 @@ public interface Price<T> {
 	 *            String
 	 * @return {@code this}
 	 */
-	Price<T> voucherCode(Object voucherCode);
+	public Price<T> voucherCode(final Object voucherCode) {
+		items.put(VOUCHER_CODE, voucherCode);
+		return this;
+	}
 
 	/**
 	 * voucherDiscount
@@ -42,7 +75,10 @@ public interface Price<T> {
 	 *            Number
 	 * @return {@code this}
 	 */
-	Price<T> voucherDiscount(Object voucherDiscount);
+	public Price<T> voucherDiscount(final Object voucherDiscount) {
+		items.put(VOUCHER_DISCOUNT, voucherDiscount);
+		return this;
+	}
 
 	/**
 	 * Currency.
@@ -51,7 +87,10 @@ public interface Price<T> {
 	 *            String. For currency values, ISO 4217 is RECOMMENDED.
 	 * @return {@code this}
 	 */
-	Price<T> currency(Object currency);
+	public Price<T> currency(final Object currency) {
+		items.put(CURRENCY, currency);
+		return this;
+	}
 
 	/**
 	 * Taxrate
@@ -60,7 +99,10 @@ public interface Price<T> {
 	 *            Number
 	 * @return {@code this}
 	 */
-	Price<T> taxRate(Object taxRate);
+	public Price<T> taxRate(final Object taxRate) {
+		items.put(TAX_RATE, taxRate);
+		return this;
+	}
 
 	/**
 	 * Shipping
@@ -69,7 +111,10 @@ public interface Price<T> {
 	 *            Number
 	 * @return {@code this}
 	 */
-	Price<T> shipping(Object shipping);
+	public Price<T> shipping(final Object shipping) {
+		items.put(SHIPPING, shipping);
+		return this;
+	}
 
 	/**
 	 * ShippingMethod
@@ -78,7 +123,10 @@ public interface Price<T> {
 	 *            String
 	 * @return {@code this}
 	 */
-	Price<T> shippingMethod(Object shippingMethod);
+	public Price<T> shippingMethod(final Object shippingMethod) {
+		items.put(SHIPPING_METHOD, shippingMethod);
+		return this;
+	}
 
 	/**
 	 * PriceWithTax
@@ -87,7 +135,10 @@ public interface Price<T> {
 	 *            Number
 	 * @return {@code this}
 	 */
-	Price<T> priceWithTax(Object priceWithTax);
+	public Price<T> priceWithTax(final Object priceWithTax) {
+		items.put(PRICE_WITH_TAX, priceWithTax);
+		return this;
+	}
 
 	/**
 	 * The cartTotal SHOULD be the total price inclusive of all discounts,
@@ -97,7 +148,10 @@ public interface Price<T> {
 	 *            Number
 	 * @return {@code this}
 	 */
-	Price<T> cartTotal(Object cartTotal);
+	public Price<T> cartTotal(final Object cartTotal) {
+		items.put(CART_TOTAL, cartTotal);
+		return this;
+	}
 
 	/**
 	 * The transactionTotal SHOULD be the total price inclusive of all
@@ -106,7 +160,10 @@ public interface Price<T> {
 	 * @param transactionTotal Number
 	 * @return {@code this}
 	 */
-	Price<T> transactionTotal(Object transactionTotal);
+	public Price<T> transactionTotal(final Object transactionTotal) {
+		items.put(TRANSACTION_TOTAL, transactionTotal);
+		return this;
+	}
 
 	/**
 	 * Custom Price property
@@ -117,6 +174,8 @@ public interface Price<T> {
 	 *            Value for the custom property
 	 * @return {@code this}
 	 */
-	Price<T> custom(String name, Object value);
-
+	public Price<T> custom(final String name, final Object value) {
+		items.put(name, value);
+		return this;
+	}
 }

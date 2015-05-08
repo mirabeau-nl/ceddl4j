@@ -7,11 +7,8 @@ import nl.mirabeau.ceddl4j.DigitalData;
 import nl.mirabeau.ceddl4j.shared.Attributes;
 import nl.mirabeau.ceddl4j.shared.Item;
 import nl.mirabeau.ceddl4j.shared.Price;
-import nl.mirabeau.ceddl4j.shared.impl.AttributesImpl;
-import nl.mirabeau.ceddl4j.shared.impl.ItemImpl;
-import nl.mirabeau.ceddl4j.shared.impl.PriceImpl;
 
-import com.google.gson.annotations.Expose;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * The Cart object carries details about a shopping cart or basket and the
@@ -23,17 +20,17 @@ public class Cart {
 
 	private DigitalData parent;
 
-	@Expose
+	@JsonProperty
 	private Object cartID;
 
-	@Expose
-	private PriceImpl<Cart> price;
+	@JsonProperty
+	private Price<Cart> price;
 
-	@Expose
-	private AttributesImpl<Cart> attributes;
+	@JsonProperty
+	private Attributes<Cart> attributes;
 
-	@Expose
-	private List<ItemImpl<Cart>> item;
+	@JsonProperty
+	private List<Item<Cart>> item;
 
 	/**
 	 * Constructor, does set the parent
@@ -86,7 +83,7 @@ public class Cart {
 	 */
 	public Price<Cart> price() {
 		if (price == null) {
-			price = new PriceImpl<Cart>(this);
+			price = new Price<Cart>(this);
 		}
 		return price;
 	}
@@ -103,7 +100,7 @@ public class Cart {
 	 */
 	public Attributes<Cart> attributes() {
 		if (attributes == null) {
-			attributes = new AttributesImpl<Cart>(this);
+			attributes = new Attributes<Cart>(this);
 		}
 		return attributes;
 	}
@@ -117,7 +114,7 @@ public class Cart {
 	 */
 	public Cart addAttribuut(final String name, final Object value) {
 		if (attributes == null) {
-			attributes = new AttributesImpl<Cart>(this);
+			attributes = new Attributes<Cart>(this);
 		}
 		attributes.attribute(name, value);
 		return this;
@@ -130,9 +127,9 @@ public class Cart {
 	 */
 	public Item<Cart> addItem() {
 		if (item == null) {
-			item = new ArrayList<ItemImpl<Cart>>();
+			item = new ArrayList<Item<Cart>>();
 		}
-		final ItemImpl<Cart> newItem = new ItemImpl<Cart>(this);
+		final Item<Cart> newItem = new Item<Cart>(this);
 		item.add(newItem);
 		return newItem;
 	}

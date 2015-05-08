@@ -7,11 +7,8 @@ import nl.mirabeau.ceddl4j.DigitalData;
 import nl.mirabeau.ceddl4j.shared.Attributes;
 import nl.mirabeau.ceddl4j.shared.Item;
 import nl.mirabeau.ceddl4j.shared.Price;
-import nl.mirabeau.ceddl4j.shared.impl.AttributesImpl;
-import nl.mirabeau.ceddl4j.shared.impl.ItemImpl;
-import nl.mirabeau.ceddl4j.shared.impl.PriceImpl;
 
-import com.google.gson.annotations.Expose;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * The Transaction object is similar to the Cart object, but represents a
@@ -22,20 +19,20 @@ public class Transaction {
 
 	private DigitalData parent;
 
-	@Expose
+	@JsonProperty
 	private String transactionID;
 
-	@Expose
+	@JsonProperty
 	private Profile profile;
 
-	@Expose
-	private PriceImpl<Transaction> total;
+	@JsonProperty
+	private Price<Transaction> total;
 
-	@Expose
-	private AttributesImpl<Transaction> attributes;
+	@JsonProperty
+	private Attributes<Transaction> attributes;
 
-	@Expose
-	private List<ItemImpl<Transaction>> item;
+	@JsonProperty
+	private List<Item<Transaction>> item;
 
 	/**
 	 * Constructor, sets the parent
@@ -103,7 +100,7 @@ public class Transaction {
 	 */
 	public Price<Transaction> total() {
 		if (total == null) {
-			total = new PriceImpl<Transaction>(this);
+			total = new Price<Transaction>(this);
 		}
 		return total;
 	}
@@ -120,7 +117,7 @@ public class Transaction {
 	 */
 	public Attributes<Transaction> attributes() {
 		if (attributes == null) {
-			attributes = new AttributesImpl<Transaction>(this);
+			attributes = new Attributes<Transaction>(this);
 		}
 		return attributes;
 	}
@@ -134,7 +131,7 @@ public class Transaction {
 	 */
 	public Transaction addAttribuut(final String name, final Object value) {
 		if (attributes == null) {
-			attributes = new AttributesImpl<Transaction>(this);
+			attributes = new Attributes<Transaction>(this);
 		}
 		attributes.attribute(name, value);
 		return this;
@@ -147,11 +144,10 @@ public class Transaction {
 	 */
 	public Item<Transaction> addItem() {
 		if (item == null) {
-			item = new LinkedList<ItemImpl<Transaction>>();
+			item = new LinkedList<Item<Transaction>>();
 		}
-		final ItemImpl<Transaction> newItem = new ItemImpl<Transaction>(this);
+		final Item<Transaction> newItem = new Item<Transaction>(this);
 		item.add(newItem);
 		return newItem;
 	}
-
 }
