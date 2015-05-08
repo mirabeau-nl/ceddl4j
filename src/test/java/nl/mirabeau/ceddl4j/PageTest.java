@@ -27,9 +27,9 @@ public class PageTest {
 				.version("78")
 				.breadCrumbs("camera", "Nikon", "SLR")
 				.author("S. Veenstra")
-				.issueDate("1970-01-01")
+				.issueDate(date)
 				.effectiveDate(date)
-				.expiryDate("2050-01-01")
+				.expiryDate(date)
 				.language("nl")
 				.geoRegion("The Netherlands")
 				.industryCodes("test")
@@ -48,7 +48,57 @@ public class PageTest {
 				.category()
 				.category("test", "testvalue")
 				.endCategory()
-				.endPage();
+				.endPage()
+				.version();
+
+		System.out.println(ddb.toString());
+
+		final String expected = new TestUtil().loadJsonFromFile("/tests/pageTest.json");
+
+		JSONAssert.assertEquals(expected, ddb.toString(), true);
+	}
+
+	@Test
+	public void testPage2() throws IOException, JSONException {
+
+		final Date date = new Date(0);
+
+		final DigitalData ddb = DigitalData.create()
+				.pageInstanceId("ProductDetailPageNikonCamera-Staging")
+				.page()
+				.pageInfo()
+				.pageID("ProductDetailPageNikonCamera")
+				.pageName("Nikon SLR Camera")
+				.destinationURL("http://www,testshop.nl/nikon/")
+				.referringURL("http://www,testshop.nl/home/")
+				.sysEnv("staging")
+				.variant("Variant A")
+				.version("78")
+				.breadCrumbs("camera", "Nikon", "SLR")
+				.author("S. Veenstra")
+				.issueDate("1970-01-01T00:00:00Z")
+				.effectiveDate("1970-01-01T00:00:00Z")
+				.expiryDate("1970-01-01T00:00:00Z")
+				.language("nl")
+				.geoRegion("The Netherlands")
+				.industryCodes("test")
+				.publisher("me")
+				.onsiteSearchTerm("search terms")
+				.onsiteSearchResults(42)
+				.custom("custom pageinfo", "example")
+				.endPageInfo()
+				.addPrimaryCategory("Cameras")
+				.addCategory("subCategory1", "Nikon")
+				.addAttribute("Seasonal", "Christmas")
+				.addAttribute("customdateattribuut", date)
+				.attributes()
+				.attribute("customnumberattribuut", 100)
+				.endAttributes()
+				.category()
+				.category("test", "testvalue")
+				.endCategory()
+				.endPage()
+				.version();
 
 		System.out.println(ddb.toString());
 

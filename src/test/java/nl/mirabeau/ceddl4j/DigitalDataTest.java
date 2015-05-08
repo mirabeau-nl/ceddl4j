@@ -8,6 +8,7 @@ import nl.mirabeau.ceddl4j.event.Event;
 import nl.mirabeau.ceddl4j.page.Page;
 import nl.mirabeau.ceddl4j.product.Product;
 import nl.mirabeau.ceddl4j.transaction.Transaction;
+import nl.mirabeau.ceddl4j.user.User;
 
 import org.json.JSONException;
 import org.junit.Test;
@@ -19,8 +20,7 @@ public class DigitalDataTest {
 	@Test
 	public void testDigitalDataSetters() throws IOException, JSONException {
 
-		final DigitalData ddb = DigitalData.create();
-		ddb.pageInstanceId("pageInstanceID");
+		final DigitalData ddb = DigitalData.create("pageInstanceID");
 
 		final Page page = new Page();
 		page.pageInfo().pageID("pageID");
@@ -41,6 +41,9 @@ public class DigitalDataTest {
 		final Event event = new Event();
 		event.eventInfo().eventName("ëventName");
 		ddb.addEvent(event);
+
+		final User user = new User();
+		ddb.addUser(user);
 
 		final Component component = new Component();
 		component.componentInfo().componentID("componentID");

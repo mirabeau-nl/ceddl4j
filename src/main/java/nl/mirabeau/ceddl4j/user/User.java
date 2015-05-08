@@ -13,13 +13,20 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class User {
 
-	private final DigitalData parent;
+	private DigitalData parent;
 
 	@JsonProperty
 	private Segment segment;
 
 	@JsonProperty
 	private List<Profile> profile;
+
+	/**
+	 * Constructor. Does not set the parent.
+	 */
+	public User() {
+		super();
+	}
 
 	/**
 	 * Constructor. Sets the parent.

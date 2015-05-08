@@ -1,36 +1,31 @@
 {
-  "pageInstanceID": "pageInstanceID",
-  "page": {
-    "pageInfo": {
-      "pageID": "pageID"
+  "pageInstanceID" : "pageInstanceID",
+  "page" : {
+    "pageInfo" : {
+      "pageID" : "pageID"
     }
   },
-  "product": [
-    {
-      "productInfo": {
-        "productID": "productID"
-      }
+  "product" : [ {
+    "productInfo" : {
+      "productID" : "productID"
     }
-  ],
-  "cart": {
-    "cartID": "cartID"
+  } ],
+  "cart" : {
+    "cartID" : "cartID"
   },
-  "transaction": {
-    "transactionID": "transactionID"
+  "transaction" : {
+    "transactionID" : "transactionID"
   },
-  "event": [
-    {
-      "eventInfo": {
-        "eventName": "ëventName"
-      }
+  "event" : [ {
+    "eventInfo" : {
+      "eventName" : "ëventName"
     }
-  ],
-  "component": [
-    {
-      "componentInfo": {
-        "componentID": "componentID"
-      }
+  } ],
+  "component" : [ {
+    "componentInfo" : {
+      "componentID" : "componentID"
     }
-  ],
-  "version": "1.0"
+  } ],
+  "user" : [ { } ],
+  "version" : "1.0"
 }
