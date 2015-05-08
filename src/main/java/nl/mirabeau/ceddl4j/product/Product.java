@@ -6,7 +6,7 @@ import java.util.List;
 import nl.mirabeau.ceddl4j.DigitalData;
 import nl.mirabeau.ceddl4j.shared.Attributes;
 import nl.mirabeau.ceddl4j.shared.Category;
-import nl.mirabeau.ceddl4j.shared.LinkedProductImpl;
+import nl.mirabeau.ceddl4j.shared.LinkedProduct;
 import nl.mirabeau.ceddl4j.shared.ProductInfo;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -29,7 +29,7 @@ public class Product {
 	private Category<Product> category;
 
 	@JsonProperty
-	private List<LinkedProductImpl<Product>> linkedProducts;
+	private List<LinkedProduct<Product>> linkedProducts;
 
 	@JsonProperty
 	private Attributes<Product> attributes;
@@ -98,11 +98,11 @@ public class Product {
 	 * 
 	 * @return a new Linked Product
 	 */
-	public LinkedProductImpl<Product> addLinkedProduct() {
+	public LinkedProduct<Product> addLinkedProduct() {
 		if (linkedProducts == null) {
-			linkedProducts = new ArrayList<LinkedProductImpl<Product>>();
+			linkedProducts = new ArrayList<LinkedProduct<Product>>();
 		}
-		final LinkedProductImpl<Product> newProduct = new LinkedProductImpl<Product>(
+		final LinkedProduct<Product> newProduct = new LinkedProduct<Product>(
 				this);
 		linkedProducts.add(newProduct);
 
@@ -147,12 +147,11 @@ public class Product {
 	 * @param primaryCategory Value for the primary category
 	 * @return The current Product object
 	 */
-	public Product addPrimaryCategory(final Object primaryCategory) {
+	public Product addPrimaryCategory(final String primaryCategory) {
 		if (category == null) {
 			category = new Category<Product>(this);
 		}
-
-		category.category(Category.PRIMARY_CATEGORY_NAME, primaryCategory);
+		category.primaryCategory(primaryCategory);
 		return this;
 	}
 

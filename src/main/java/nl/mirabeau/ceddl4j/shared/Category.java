@@ -43,7 +43,7 @@ public class Category<T> extends BaseItem {
 	 *            primaryCategory value
 	 * @return {@code this}
 	 */
-	public Category<T> primaryCategory(final Object primaryCategory) {
+	public Category<T> primaryCategory(final String primaryCategory) {
 		items.put(PRIMARY_CATEGORY_NAME, primaryCategory);
 		return this;
 	}

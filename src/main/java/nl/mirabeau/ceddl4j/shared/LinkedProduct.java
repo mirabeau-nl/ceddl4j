@@ -6,19 +6,19 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Product linked to main product
  *
  */
-public class LinkedProductImpl<T> {
+public class LinkedProduct<T> {
 
 	private final T parent;
 
 	@JsonProperty
-	private ProductInfo<LinkedProductImpl<T>> productInfo;
+	private ProductInfo<LinkedProduct<T>> productInfo;
 
 	/**
 	 * Constructor, sets the parent
 	 * 
 	 * @param parent
 	 */
-	public LinkedProductImpl(final T parent) {
+	public LinkedProduct(final T parent) {
 		super();
 		this.parent = parent;
 	}
@@ -37,9 +37,9 @@ public class LinkedProductImpl<T> {
 	 * 
 	 * @return ProductInfo object for this LinkedProduct
 	 */
-	public ProductInfo<LinkedProductImpl<T>> productInfo() {
+	public ProductInfo<LinkedProduct<T>> productInfo() {
 		if (productInfo == null) {
-			productInfo = new ProductInfo<LinkedProductImpl<T>>(this);
+			productInfo = new ProductInfo<LinkedProduct<T>>(this);
 		}
 		return productInfo;
 	}

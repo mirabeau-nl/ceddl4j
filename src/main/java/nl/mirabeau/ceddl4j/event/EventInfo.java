@@ -1,5 +1,7 @@
 package nl.mirabeau.ceddl4j.event;
 
+import java.util.Date;
+
 import nl.mirabeau.ceddl4j.BaseItem;
 
 /**
@@ -44,7 +46,7 @@ public class EventInfo extends BaseItem {
 	 * @param eventName String
 	 * @return  {@code this}
 	 */
-	public EventInfo eventName(final Object eventName) {
+	public EventInfo eventName(final String eventName) {
 		items.put(EVENT_NAME, eventName);
 		return this;
 	}
@@ -55,7 +57,7 @@ public class EventInfo extends BaseItem {
 	 * @param eventAction String
 	 * @return {@code this}
 	 */
-	public EventInfo eventAction(final Object eventAction) {
+	public EventInfo eventAction(final String eventAction) {
 		items.put(EVENT_ACTION, eventAction);
 		return this;
 	}
@@ -66,7 +68,7 @@ public class EventInfo extends BaseItem {
 	 * @param eventPoints Number
 	 * @return  {@code this}
 	 */
-	public EventInfo eventPoints(final Object eventPoints) {
+	public EventInfo eventPoints(final Number eventPoints) {
 		items.put(EVENT_POINTS, eventPoints);
 		return this;
 	}
@@ -77,7 +79,7 @@ public class EventInfo extends BaseItem {
 	 * @param type String
 	 * @return  {@code this}
 	 */
-	public EventInfo type(final Object type) {
+	public EventInfo type(final String type) {
 		items.put(TYPE, type);
 		return this;
 	}
@@ -85,10 +87,21 @@ public class EventInfo extends BaseItem {
 	/**
 	 * TimeStamp
 	 * 
-	 * @param timeStamp String or Date
+	 * @param timeStamp String
 	 * @return  {@code this}
 	 */
-	public EventInfo timeStamp(final Object timeStamp) {
+	public EventInfo timeStamp(final String timeStamp) {
+		items.put(TIME_STAMP, timeStamp);
+		return this;
+	}
+
+	/**
+	 * TimeStamp
+	 * 
+	 * @param timeStamp Date
+	 * @return  {@code this}
+	 */
+	public EventInfo timeStamp(final Date timeStamp) {
 		items.put(TIME_STAMP, timeStamp);
 		return this;
 	}
@@ -99,7 +112,7 @@ public class EventInfo extends BaseItem {
 	 * @param cause String
 	 * @return  {@code this}
 	 */
-	public EventInfo cause(final Object cause) {
+	public EventInfo cause(final String cause) {
 		items.put(CAUSE, cause);
 		return this;
 	}
@@ -110,7 +123,7 @@ public class EventInfo extends BaseItem {
 	 * @param effect String
 	 * @return  {@code this}
 	 */
-	public EventInfo effect(final Object effect) {
+	public EventInfo effect(final String effect) {
 		items.put(EFFECT, effect);
 		return this;
 	}

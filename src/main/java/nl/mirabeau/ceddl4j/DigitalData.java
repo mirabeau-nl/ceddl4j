@@ -428,7 +428,7 @@ public class DigitalData {
 	 *            Custom version value
 	 * @return The current DigitalData object
 	 */
-	public DigitalData version(final Object version) {
+	public DigitalData version(final String version) {
 		this.version = version;
 		return this;
 	}

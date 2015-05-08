@@ -49,7 +49,7 @@ public class ProductInfo<T> extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public ProductInfo<T> productID(final Object productID) {
+	public ProductInfo<T> productID(final String productID) {
 		items.put(PRODUCT_ID, productID);
 		return this;
 	}
@@ -61,7 +61,7 @@ public class ProductInfo<T> extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public ProductInfo<T> productName(final Object productName) {
+	public ProductInfo<T> productName(final String productName) {
 		items.put(PRODUCT_NAME, productName);
 		return this;
 	}
@@ -73,7 +73,7 @@ public class ProductInfo<T> extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public ProductInfo<T> description(final Object description) {
+	public ProductInfo<T> description(final String description) {
 		items.put(DESCRIPTION, description);
 		return this;
 	}
@@ -85,7 +85,7 @@ public class ProductInfo<T> extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public ProductInfo<T> productURL(final Object productURL) {
+	public ProductInfo<T> productURL(final String productURL) {
 		items.put(PRODUCT_URL, productURL);
 		return this;
 	}
@@ -97,7 +97,7 @@ public class ProductInfo<T> extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public ProductInfo<T> productImage(final Object productImage) {
+	public ProductInfo<T> productImage(final String productImage) {
 		items.put(PRODUCT_IMAGE, productImage);
 		return this;
 	}
@@ -109,7 +109,7 @@ public class ProductInfo<T> extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public ProductInfo<T> productThumbnail(final Object productThumbnail) {
+	public ProductInfo<T> productThumbnail(final String productThumbnail) {
 		items.put(PRODUCT_THUMBNAIL, productThumbnail);
 		return this;
 	}
@@ -121,7 +121,7 @@ public class ProductInfo<T> extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public ProductInfo<T> manufacturer(final Object manufacturer) {
+	public ProductInfo<T> manufacturer(final String manufacturer) {
 		items.put(MANUFACTURER, manufacturer);
 		return this;
 	}
@@ -133,7 +133,7 @@ public class ProductInfo<T> extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public ProductInfo<T> sku(final Object sku) {
+	public ProductInfo<T> sku(final String sku) {
 		items.put(SKU, sku);
 		return this;
 	}
@@ -145,7 +145,7 @@ public class ProductInfo<T> extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public ProductInfo<T> color(final Object color) {
+	public ProductInfo<T> color(final String color) {
 		items.put(COLOR, color);
 		return this;
 	}
@@ -157,7 +157,7 @@ public class ProductInfo<T> extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public ProductInfo<T> size(final Object size) {
+	public ProductInfo<T> size(final String size) {
 		items.put(SIZE, size);
 		return this;
 	}

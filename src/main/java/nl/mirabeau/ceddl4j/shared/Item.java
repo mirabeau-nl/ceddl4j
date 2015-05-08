@@ -21,13 +21,13 @@ public class Item<T> {
 	private Category<Item<T>> category;
 
 	@JsonProperty
-	private Object quantity;
+	private Number quantity;
 
 	@JsonProperty
 	private Price<Item<T>> price;
 
 	@JsonProperty
-	private List<LinkedProductImpl<Item<T>>> linkedProducts;
+	private List<LinkedProduct<Item<T>>> linkedProducts;
 
 	@JsonProperty
 	private Attributes<Item<T>> attributes;
@@ -85,7 +85,7 @@ public class Item<T> {
 	 * 
 	 * @return {@code this}
 	 */
-	public Item<T> quantity(final Object quantity) {
+	public Item<T> quantity(final Number quantity) {
 		this.quantity = quantity;
 		return this;
 	}
@@ -107,11 +107,11 @@ public class Item<T> {
 	 * 
 	 * @return new LinkedProduct object for the Item
 	 */
-	public LinkedProductImpl<Item<T>> addLinkedProduct() {
+	public LinkedProduct<Item<T>> addLinkedProduct() {
 		if (linkedProducts == null) {
-			linkedProducts = new ArrayList<LinkedProductImpl<Item<T>>>();
+			linkedProducts = new ArrayList<LinkedProduct<Item<T>>>();
 		}
-		final LinkedProductImpl<Item<T>> newProduct = new LinkedProductImpl<Item<T>>(this);
+		final LinkedProduct<Item<T>> newProduct = new LinkedProduct<Item<T>>(this);
 		linkedProducts.add(newProduct);
 
 		return newProduct;
@@ -150,7 +150,7 @@ public class Item<T> {
 	 * @param primaryCategory Value for the primary category
 	 * @return {@code this}
 	 */
-	public Item<T> addPrimaryCategory(final Object primaryCategory) {
+	public Item<T> addPrimaryCategory(final String primaryCategory) {
 		if (category == null) {
 			category = new Category<Item<T>>(this);
 		}
