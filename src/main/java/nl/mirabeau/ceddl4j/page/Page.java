@@ -120,11 +120,11 @@ public class Page {
 	 * @param primaryCategory Value for the primary category
 	 * @return  {@code this}
 	 */
-	public Page addPrimaryCategory(final Object primaryCategory) {
+	public Page addPrimaryCategory(final String primaryCategory) {
 		if (category == null) {
 			category = new Category<Page>(this);
 		}
-		category.category(Category.PRIMARY_CATEGORY_NAME, primaryCategory);
+		category.primaryCategory(primaryCategory);
 		return this;
 	}
 

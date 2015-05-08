@@ -51,7 +51,7 @@ public class Price<T> extends BaseItem {
 	 *            Number
 	 * @return {@code this}
 	 */
-	public Price<T> basePrice(final Object basePrice) {
+	public Price<T> basePrice(final Number basePrice) {
 		items.put(BASE_PRICE, basePrice);
 		return this;
 	}
@@ -63,7 +63,7 @@ public class Price<T> extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public Price<T> voucherCode(final Object voucherCode) {
+	public Price<T> voucherCode(final String voucherCode) {
 		items.put(VOUCHER_CODE, voucherCode);
 		return this;
 	}
@@ -75,7 +75,7 @@ public class Price<T> extends BaseItem {
 	 *            Number
 	 * @return {@code this}
 	 */
-	public Price<T> voucherDiscount(final Object voucherDiscount) {
+	public Price<T> voucherDiscount(final Number voucherDiscount) {
 		items.put(VOUCHER_DISCOUNT, voucherDiscount);
 		return this;
 	}
@@ -87,7 +87,7 @@ public class Price<T> extends BaseItem {
 	 *            String. For currency values, ISO 4217 is RECOMMENDED.
 	 * @return {@code this}
 	 */
-	public Price<T> currency(final Object currency) {
+	public Price<T> currency(final String currency) {
 		items.put(CURRENCY, currency);
 		return this;
 	}
@@ -99,7 +99,7 @@ public class Price<T> extends BaseItem {
 	 *            Number
 	 * @return {@code this}
 	 */
-	public Price<T> taxRate(final Object taxRate) {
+	public Price<T> taxRate(final Number taxRate) {
 		items.put(TAX_RATE, taxRate);
 		return this;
 	}
@@ -111,7 +111,7 @@ public class Price<T> extends BaseItem {
 	 *            Number
 	 * @return {@code this}
 	 */
-	public Price<T> shipping(final Object shipping) {
+	public Price<T> shipping(final Number shipping) {
 		items.put(SHIPPING, shipping);
 		return this;
 	}
@@ -123,7 +123,7 @@ public class Price<T> extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public Price<T> shippingMethod(final Object shippingMethod) {
+	public Price<T> shippingMethod(final String shippingMethod) {
 		items.put(SHIPPING_METHOD, shippingMethod);
 		return this;
 	}
@@ -135,7 +135,7 @@ public class Price<T> extends BaseItem {
 	 *            Number
 	 * @return {@code this}
 	 */
-	public Price<T> priceWithTax(final Object priceWithTax) {
+	public Price<T> priceWithTax(final Number priceWithTax) {
 		items.put(PRICE_WITH_TAX, priceWithTax);
 		return this;
 	}
@@ -148,7 +148,7 @@ public class Price<T> extends BaseItem {
 	 *            Number
 	 * @return {@code this}
 	 */
-	public Price<T> cartTotal(final Object cartTotal) {
+	public Price<T> cartTotal(final Number cartTotal) {
 		items.put(CART_TOTAL, cartTotal);
 		return this;
 	}
@@ -160,7 +160,7 @@ public class Price<T> extends BaseItem {
 	 * @param transactionTotal Number
 	 * @return {@code this}
 	 */
-	public Price<T> transactionTotal(final Object transactionTotal) {
+	public Price<T> transactionTotal(final Number transactionTotal) {
 		items.put(TRANSACTION_TOTAL, transactionTotal);
 		return this;
 	}

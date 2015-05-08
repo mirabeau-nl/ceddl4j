@@ -21,7 +21,7 @@ public class Cart {
 	private DigitalData parent;
 
 	@JsonProperty
-	private Object cartID;
+	private String cartID;
 
 	@JsonProperty
 	private Price<Cart> price;
@@ -66,7 +66,7 @@ public class Cart {
 	 *            An identifier for a particular shopping cart.
 	 * @return The current Cart object
 	 */
-	public Cart cartID(final Object cartID) {
+	public Cart cartID(final String cartID) {
 		this.cartID = cartID;
 		return this;
 	}

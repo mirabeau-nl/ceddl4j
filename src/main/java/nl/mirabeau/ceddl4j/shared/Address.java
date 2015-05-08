@@ -44,7 +44,7 @@ public class Address<T> extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public Address<T> line1(final Object line1) {
+	public Address<T> line1(final String line1) {
 		items.put(LINE1, line1);
 		return this;
 	}
@@ -55,7 +55,7 @@ public class Address<T> extends BaseItem {
 	 * @param line2
 	 *            String
 	 */
-	public Address<T> line2(final Object line2) {
+	public Address<T> line2(final String line2) {
 		items.put(LINE2, line2);
 		return this;
 	}
@@ -64,7 +64,7 @@ public class Address<T> extends BaseItem {
 	 * @param city
 	 * @return {@code this}
 	 */
-	public Address<T> city(final Object city) {
+	public Address<T> city(final String city) {
 		items.put(CITY, city);
 		return this;
 	}
@@ -76,7 +76,7 @@ public class Address<T> extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public Address<T> stateProvince(final Object stateProvince) {
+	public Address<T> stateProvince(final String stateProvince) {
 		items.put(STATE_PROVINCE, stateProvince);
 		return this;
 	}
@@ -88,7 +88,7 @@ public class Address<T> extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public Address<T> postalCode(final Object postalCode) {
+	public Address<T> postalCode(final String postalCode) {
 		items.put(POSTAL_CODE, postalCode);
 		return this;
 	}
@@ -100,7 +100,7 @@ public class Address<T> extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public Address<T> country(final Object country) {
+	public Address<T> country(final String country) {
 		items.put(COUNTRY, country);
 		return this;
 	}

@@ -110,12 +110,11 @@ public class Event {
 	 * @param primaryCategory Value for the primary category
 	 * @return  {@code this}
 	 */
-	public Event addPrimaryCategory(final Object primaryCategory) {
+	public Event addPrimaryCategory(final String primaryCategory) {
 		if (category == null) {
 			category = new Category<Event>(this);
 		}
-
-		category.category(Category.PRIMARY_CATEGORY_NAME, primaryCategory);
+		category.primaryCategory(primaryCategory);
 		return this;
 	}
 

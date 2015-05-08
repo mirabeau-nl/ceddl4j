@@ -43,7 +43,7 @@ public class ProfileInfo<T> extends BaseItem {
 	 * @param profileID String
 	 * @return {@code this}
 	 */
-	public ProfileInfo<T> profileID(final Object profileID) {
+	public ProfileInfo<T> profileID(final String profileID) {
 		items.put(PROFILE_ID, profileID);
 		return this;
 	}
@@ -54,7 +54,7 @@ public class ProfileInfo<T> extends BaseItem {
 	 * @param userName String
 	 * @return {@code this}
 	 */
-	public ProfileInfo<T> userName(final Object userName) {
+	public ProfileInfo<T> userName(final String userName) {
 		items.put(USER_NAME, userName);
 		return this;
 	}
@@ -65,7 +65,7 @@ public class ProfileInfo<T> extends BaseItem {
 	 * @param email String
 	 * @return {@code this}
 	 */
-	public ProfileInfo<T> email(final Object email) {
+	public ProfileInfo<T> email(final String email) {
 		items.put(EMAIL, email);
 		return this;
 	}
@@ -76,7 +76,7 @@ public class ProfileInfo<T> extends BaseItem {
 	 * @param language String
 	 * @return {@code this}
 	 */
-	public ProfileInfo<T> language(final Object language) {
+	public ProfileInfo<T> language(final String language) {
 		items.put(LANGUAGE, language);
 		return this;
 	}
@@ -87,7 +87,7 @@ public class ProfileInfo<T> extends BaseItem {
 	 * @param returningStatus String
 	 * @return {@code this}
 	 */
-	public ProfileInfo<T> returningStatus(final Object returningStatus) {
+	public ProfileInfo<T> returningStatus(final String returningStatus) {
 		items.put(RETURNING_STATUS, returningStatus);
 		return this;
 	}
@@ -98,7 +98,7 @@ public class ProfileInfo<T> extends BaseItem {
 	 * @param type String
 	 * @return {@code this}
 	 */
-	public ProfileInfo<T> type(final Object type) {
+	public ProfileInfo<T> type(final String type) {
 		items.put(TYPE, type);
 		return this;
 	}

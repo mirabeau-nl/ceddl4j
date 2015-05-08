@@ -1,5 +1,7 @@
 package nl.mirabeau.ceddl4j.page;
 
+import java.util.Date;
+
 import nl.mirabeau.ceddl4j.BaseItem;
 
 
@@ -57,7 +59,7 @@ public class PageInfo extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public PageInfo pageID(final Object pageID) {
+	public PageInfo pageID(final String pageID) {
 		items.put(PAGE_ID, pageID);
 		return this;
 	}
@@ -69,7 +71,7 @@ public class PageInfo extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public PageInfo pageName(final Object pageName) {
+	public PageInfo pageName(final String pageName) {
 		items.put(PAGE_NAME, pageName);
 		return this;
 	}
@@ -83,7 +85,7 @@ public class PageInfo extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public PageInfo destinationURL(final Object destinationURL) {
+	public PageInfo destinationURL(final String destinationURL) {
 		items.put(DESTINATION_URL, destinationURL);
 		return this;
 	}
@@ -97,7 +99,7 @@ public class PageInfo extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public PageInfo referringURL(final Object referringURL) {
+	public PageInfo referringURL(final String referringURL) {
 		items.put(REFERRING_URL, referringURL);
 		return this;
 	}
@@ -109,7 +111,7 @@ public class PageInfo extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public PageInfo sysEnv(final Object sysEnv) {
+	public PageInfo sysEnv(final String sysEnv) {
 		items.put(SYS_ENV, sysEnv);
 		return this;
 	}
@@ -121,7 +123,7 @@ public class PageInfo extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public PageInfo variant(final Object variant) {
+	public PageInfo variant(final String variant) {
 		items.put(VARIANT, variant);
 		return this;
 	}
@@ -133,7 +135,7 @@ public class PageInfo extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public PageInfo version(final Object version) {
+	public PageInfo version(final String version) {
 		items.put(VERSION, version);
 		return this;
 	}
@@ -145,7 +147,7 @@ public class PageInfo extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public PageInfo breadCrumbs(final Object... breadCrumbs) {
+	public PageInfo breadCrumbs(final String... breadCrumbs) {
 		items.put(BREADCRUMBS, breadCrumbs);
 		return this;
 	}
@@ -157,7 +159,7 @@ public class PageInfo extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public PageInfo author(final Object author) {
+	public PageInfo author(final String author) {
 		items.put(AUTHOR, author);
 		return this;
 	}
@@ -165,11 +167,21 @@ public class PageInfo extends BaseItem {
 	/**
 	 * issueDate
 	 * 
-	 * @param issueDate
-	 *            String or Date Object
+	 * @param issueDate Date Object
 	 * @return {@code this}
 	 */
-	public PageInfo issueDate(final Object issueDate) {
+	public PageInfo issueDate(final String issueDate) {
+		items.put(ISSUE_DATE, issueDate);
+		return this;
+	}
+
+	/**
+	 * issueDate
+	 * 
+	 * @param issueDate String
+	 * @return {@code this}
+	 */
+	public PageInfo issueDate(final Date issueDate) {
 		items.put(ISSUE_DATE, issueDate);
 		return this;
 	}
@@ -177,23 +189,44 @@ public class PageInfo extends BaseItem {
 	/**
 	 * effectiveDate
 	 * 
-	 * @param effectiveDate
-	 *            String or Date Object
+	 * @param effectiveDate String
 	 * @return {@code this}
 	 */
-	public PageInfo effectiveDate(final Object effectiveDate) {
+	public PageInfo effectiveDate(final String effectiveDate) {
 		items.put(EFFECTIVE_DATE, effectiveDate);
+		return this;
+	}
+
+	/**
+	 * effectiveDate
+	 * 
+	 * @param effectiveDate Date Object
+	 * @return {@code this}
+	 */
+	public PageInfo effectiveDate(final Date effectiveDate) {
+		items.put(EFFECTIVE_DATE, effectiveDate);
+		return this;
+	}
+
+
+	/**
+	 * expiryDate
+	 * 
+	 * @param expiryDate String
+	 * @return {@code this}
+	 */
+	public PageInfo expiryDate(final String expiryDate) {
+		items.put(EXPIRY_DATE, expiryDate);
 		return this;
 	}
 
 	/**
 	 * expiryDate
 	 * 
-	 * @param expiryDate
-	 *            String or Date Object
+	 * @param expiryDate Date
 	 * @return {@code this}
 	 */
-	public PageInfo expiryDate(final Object expiryDate) {
+	public PageInfo expiryDate(final Date expiryDate) {
 		items.put(EXPIRY_DATE, expiryDate);
 		return this;
 	}
@@ -208,7 +241,7 @@ public class PageInfo extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public PageInfo language(final Object language) {
+	public PageInfo language(final String language) {
 		items.put(LANGUAGE, language);
 		return this;
 	}
@@ -220,7 +253,7 @@ public class PageInfo extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public PageInfo geoRegion(final Object geoRegion) {
+	public PageInfo geoRegion(final String geoRegion) {
 		items.put(GEO_REGION, geoRegion);
 		return this;
 	}
@@ -232,7 +265,7 @@ public class PageInfo extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public PageInfo industryCodes(final Object industryCodes) {
+	public PageInfo industryCodes(final String industryCodes) {
 		items.put(INDUSTRY_CODES, industryCodes);
 		return this;
 	}
@@ -244,7 +277,7 @@ public class PageInfo extends BaseItem {
 	 *            String
 	 * @return {@code this}
 	 */
-	public PageInfo publisher(final Object publisher) {
+	public PageInfo publisher(final String publisher) {
 		items.put(PUBLISHER, publisher);
 		return this;
 	}
@@ -259,7 +292,7 @@ public class PageInfo extends BaseItem {
 	 * @param onsiteSearchTerm String
 	 * @return {@code this}
 	 */
-	public PageInfo onsiteSearchTerm(final Object onsiteSearchTerm) {
+	public PageInfo onsiteSearchTerm(final String onsiteSearchTerm) {
 		items.put(ONSITE_SEARCH_TERMS, onsiteSearchTerm);
 		return this;
 	}
@@ -274,7 +307,7 @@ public class PageInfo extends BaseItem {
 	 * @param onsiteSearchResults String
 	 * @return {@code this}
 	 */
-	public PageInfo onsiteSearchResults(final Object onsiteSearchResults) {
+	public PageInfo onsiteSearchResults(final Number onsiteSearchResults) {
 		items.put(ONSITE_SEARCH_RESULTS, onsiteSearchResults);
 		return this;
 	}
