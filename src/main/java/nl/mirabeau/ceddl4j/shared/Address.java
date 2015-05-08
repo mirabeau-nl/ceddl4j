@@ -1,19 +1,41 @@
 package nl.mirabeau.ceddl4j.shared;
 
+import nl.mirabeau.ceddl4j.BaseItem;
+
 /**
  * An extensible object for providing address information for the user.
- * 
- * @param <T>
- *            Parent object type
+ *
+ * @param <T> Parent object type
  */
-public interface Address<T> {
+public class Address<T> extends BaseItem {
+
+	private static final String LINE1 = "line1";
+	private static final String LINE2 = "line2";
+	private static final String CITY = "city";
+	private static final String STATE_PROVINCE = "stateProvince";
+	private static final String POSTAL_CODE = "postalCode";
+	private static final String COUNTRY = "country";
+
+	private final T parent;
+
+	/**
+	 * Constructor, sets the parent
+	 * 
+	 * @param parent
+	 */
+	public Address(final T parent) {
+		super();
+		this.parent = parent;
+	}
 
 	/**
 	 * Return to the parent object
 	 * 
 	 * @return parent object
 	 */
-	T endAddress();
+	public T endAddress() {
+		return parent;
+	}
 
 	/**
 	 * Address line 1
@@ -22,7 +44,10 @@ public interface Address<T> {
 	 *            String
 	 * @return {@code this}
 	 */
-	Address<T> line1(Object line1);
+	public Address<T> line1(final Object line1) {
+		items.put(LINE1, line1);
+		return this;
+	}
 
 	/**
 	 * Address line 2
@@ -30,13 +55,19 @@ public interface Address<T> {
 	 * @param line2
 	 *            String
 	 */
-	Address<T> line2(Object line2);
+	public Address<T> line2(final Object line2) {
+		items.put(LINE2, line2);
+		return this;
+	}
 
 	/**
 	 * @param city
 	 * @return {@code this}
 	 */
-	Address<T> city(Object city);
+	public Address<T> city(final Object city) {
+		items.put(CITY, city);
+		return this;
+	}
 
 	/**
 	 * State or Province
@@ -45,7 +76,10 @@ public interface Address<T> {
 	 *            String
 	 * @return {@code this}
 	 */
-	Address<T> stateProvince(Object stateProvince);
+	public Address<T> stateProvince(final Object stateProvince) {
+		items.put(STATE_PROVINCE, stateProvince);
+		return this;
+	}
 
 	/**
 	 * PostalCode
@@ -54,7 +88,10 @@ public interface Address<T> {
 	 *            String
 	 * @return {@code this}
 	 */
-	Address<T> postalCode(Object postalCode);
+	public Address<T> postalCode(final Object postalCode) {
+		items.put(POSTAL_CODE, postalCode);
+		return this;
+	}
 
 	/**
 	 * Country
@@ -63,7 +100,10 @@ public interface Address<T> {
 	 *            String
 	 * @return {@code this}
 	 */
-	Address<T> country(Object country);
+	public Address<T> country(final Object country) {
+		items.put(COUNTRY, country);
+		return this;
+	}
 
 	/**
 	 * Custom Address property
@@ -74,6 +114,8 @@ public interface Address<T> {
 	 *            Custom property value
 	 * @return {@code this}
 	 */
-	Address<T> custom(String name, Object value);
-
+	public Address<T> custom(final String name, final Object value) {
+		items.put(name, value);
+		return this;
+	}
 }

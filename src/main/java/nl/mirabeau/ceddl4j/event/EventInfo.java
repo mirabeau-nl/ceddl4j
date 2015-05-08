@@ -1,16 +1,40 @@
 package nl.mirabeau.ceddl4j.event;
 
+import nl.mirabeau.ceddl4j.BaseItem;
+
 /**
  * This object describes the event.
  */
-public interface EventInfo {
+public class EventInfo extends BaseItem {
+
+	private static final String EVENT_NAME = "eventName";
+	private static final String EVENT_ACTION = "eventAction";
+	private static final String EVENT_POINTS = "eventPoints";
+	private static final String TYPE = "type";
+	private static final String TIME_STAMP = "timeStamp";
+	private static final String CAUSE = "cause";
+	private static final String EFFECT = "effect";
+
+	private final Event parent;
+
+	/**
+	 * Constructor, sets the parent
+	 * 
+	 * @param parent
+	 */
+	public EventInfo(final Event parent) {
+		super();
+		this.parent = parent;
+	}
 
 	/**
 	 * Return to the parent Event object
 	 * 
 	 * @return parent Product object
 	 */
-	Event endEventInfo();
+	public Event endEventInfo() {
+		return parent;
+	}
 
 	/**
 	 * eventName.
@@ -20,7 +44,10 @@ public interface EventInfo {
 	 * @param eventName String
 	 * @return  {@code this}
 	 */
-	EventInfo eventName(Object eventName);
+	public EventInfo eventName(final Object eventName) {
+		items.put(EVENT_NAME, eventName);
+		return this;
+	}
 
 	/**
 	 * eventAction.
@@ -28,7 +55,10 @@ public interface EventInfo {
 	 * @param eventAction String
 	 * @return {@code this}
 	 */
-	EventInfo eventAction(Object eventAction);
+	public EventInfo eventAction(final Object eventAction) {
+		items.put(EVENT_ACTION, eventAction);
+		return this;
+	}
 
 	/**
 	 * eventPoints
@@ -36,7 +66,10 @@ public interface EventInfo {
 	 * @param eventPoints Number
 	 * @return  {@code this}
 	 */
-	EventInfo eventPoints(Object eventPoints);
+	public EventInfo eventPoints(final Object eventPoints) {
+		items.put(EVENT_POINTS, eventPoints);
+		return this;
+	}
 
 	/**
 	 * Type
@@ -44,7 +77,10 @@ public interface EventInfo {
 	 * @param type String
 	 * @return  {@code this}
 	 */
-	EventInfo type(Object type);
+	public EventInfo type(final Object type) {
+		items.put(TYPE, type);
+		return this;
+	}
 
 	/**
 	 * TimeStamp
@@ -52,7 +88,10 @@ public interface EventInfo {
 	 * @param timeStamp String or Date
 	 * @return  {@code this}
 	 */
-	EventInfo timeStamp(Object timeStamp);
+	public EventInfo timeStamp(final Object timeStamp) {
+		items.put(TIME_STAMP, timeStamp);
+		return this;
+	}
 
 	/**
 	 * Cause
@@ -60,7 +99,10 @@ public interface EventInfo {
 	 * @param cause String
 	 * @return  {@code this}
 	 */
-	EventInfo cause(Object cause);
+	public EventInfo cause(final Object cause) {
+		items.put(CAUSE, cause);
+		return this;
+	}
 
 	/**
 	 * Effect
@@ -68,7 +110,10 @@ public interface EventInfo {
 	 * @param effect String
 	 * @return  {@code this}
 	 */
-	EventInfo effect(Object effect);
+	public EventInfo effect(final Object effect) {
+		items.put(EFFECT, effect);
+		return this;
+	}
 
 	/**
 	 * Custom EventInfo property
@@ -77,6 +122,8 @@ public interface EventInfo {
 	 * @param value Custom property value
 	 * @return {@code this}
 	 */
-	EventInfo custom(String name, Object value);
-
+	public EventInfo custom(final String name, final Object value) {
+		items.put(name, value);
+		return this;
+	}
 }

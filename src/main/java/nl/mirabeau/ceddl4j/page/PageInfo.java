@@ -1,19 +1,53 @@
 package nl.mirabeau.ceddl4j.page;
 
+import nl.mirabeau.ceddl4j.BaseItem;
+
+
 /**
- * The Page object carries significant details about the page, and the most
- * commonly used data elements are captured by the specification below. The Page
- * object and its children, where included, MUST have the following Object Names
- * & Types.
+ * Describes details about the page.
  */
-public interface PageInfo {
+public class PageInfo extends BaseItem {
+
+	private static final String AUTHOR = "author";
+	private static final String BREADCRUMBS = "breadcrumbs";
+	private static final String DESTINATION_URL = "destinationURL";
+	private static final String EFFECTIVE_DATE = "effectiveDate";
+	private static final String EXPIRY_DATE = "expiryDate";
+	private static final String GEO_REGION = "geoRegion";
+	private static final String INDUSTRY_CODES = "industryCodes";
+	private static final String ISSUE_DATE = "issueDate";
+	private static final String LANGUAGE = "language";
+	private static final String ONSITE_SEARCH_RESULTS = "onsiteSearchResults";
+	private static final String ONSITE_SEARCH_TERMS = "onsiteSearchTerm";
+	private static final String PAGE_ID = "pageID";
+	private static final String PAGE_NAME = "pageName";
+	private static final String PUBLISHER = "publisher";
+	private static final String REFERRING_URL = "referringURL";
+	private static final String SYS_ENV = "sysEnv";
+	private static final String VARIANT = "variant";
+	private static final String VERSION = "version";
+
+	private final Page parent;
+
+	/**
+	 * Constructor. Sets the parent.
+	 * 
+	 * @param parent
+	 *            Page parent Object
+	 */
+	protected PageInfo(final Page parent) {
+		super();
+		this.parent = parent;
+	}
 
 	/**
 	 * Return to the parent Page object
 	 * 
 	 * @return Page parent object
 	 */
-	Page endPageInfo();
+	public Page endPageInfo() {
+		return parent;
+	}
 
 	/**
 	 * An identifier for a page or other piece of content, may be unique only
@@ -23,7 +57,10 @@ public interface PageInfo {
 	 *            String
 	 * @return {@code this}
 	 */
-	PageInfoImpl pageID(Object pageID);
+	public PageInfo pageID(final Object pageID) {
+		items.put(PAGE_ID, pageID);
+		return this;
+	}
 
 	/**
 	 * pageName
@@ -32,7 +69,10 @@ public interface PageInfo {
 	 *            String
 	 * @return {@code this}
 	 */
-	PageInfoImpl pageName(Object pageName);
+	public PageInfo pageName(final Object pageName) {
+		items.put(PAGE_NAME, pageName);
+		return this;
+	}
 
 	/**
 	 * destinationURL
@@ -43,7 +83,10 @@ public interface PageInfo {
 	 *            String
 	 * @return {@code this}
 	 */
-	PageInfoImpl destinationURL(Object destinationURL);
+	public PageInfo destinationURL(final Object destinationURL) {
+		items.put(DESTINATION_URL, destinationURL);
+		return this;
+	}
 
 	/**
 	 * referringURL
@@ -54,7 +97,10 @@ public interface PageInfo {
 	 *            String
 	 * @return {@code this}
 	 */
-	PageInfoImpl referringURL(Object referringURL);
+	public PageInfo referringURL(final Object referringURL) {
+		items.put(REFERRING_URL, referringURL);
+		return this;
+	}
 
 	/**
 	 * sysEnv
@@ -63,7 +109,10 @@ public interface PageInfo {
 	 *            String
 	 * @return {@code this}
 	 */
-	PageInfoImpl sysEnv(Object sysEnv);
+	public PageInfo sysEnv(final Object sysEnv) {
+		items.put(SYS_ENV, sysEnv);
+		return this;
+	}
 
 	/**
 	 * variant
@@ -72,7 +121,10 @@ public interface PageInfo {
 	 *            String
 	 * @return {@code this}
 	 */
-	PageInfoImpl variant(Object variant);
+	public PageInfo variant(final Object variant) {
+		items.put(VARIANT, variant);
+		return this;
+	}
 
 	/**
 	 * version
@@ -81,7 +133,10 @@ public interface PageInfo {
 	 *            String
 	 * @return {@code this}
 	 */
-	PageInfoImpl version(Object version);
+	public PageInfo version(final Object version) {
+		items.put(VERSION, version);
+		return this;
+	}
 
 	/**
 	 * breadCrumb
@@ -90,7 +145,10 @@ public interface PageInfo {
 	 *            String
 	 * @return {@code this}
 	 */
-	PageInfoImpl breadCrumbs(Object... breadCrumbs);
+	public PageInfo breadCrumbs(final Object... breadCrumbs) {
+		items.put(BREADCRUMBS, breadCrumbs);
+		return this;
+	}
 
 	/**
 	 * author
@@ -99,7 +157,10 @@ public interface PageInfo {
 	 *            String
 	 * @return {@code this}
 	 */
-	PageInfoImpl author(Object author);
+	public PageInfo author(final Object author) {
+		items.put(AUTHOR, author);
+		return this;
+	}
 
 	/**
 	 * issueDate
@@ -108,7 +169,10 @@ public interface PageInfo {
 	 *            String or Date Object
 	 * @return {@code this}
 	 */
-	PageInfoImpl issueDate(Object issueDate);
+	public PageInfo issueDate(final Object issueDate) {
+		items.put(ISSUE_DATE, issueDate);
+		return this;
+	}
 
 	/**
 	 * effectiveDate
@@ -117,7 +181,10 @@ public interface PageInfo {
 	 *            String or Date Object
 	 * @return {@code this}
 	 */
-	PageInfoImpl effectiveDate(Object effectiveDate);
+	public PageInfo effectiveDate(final Object effectiveDate) {
+		items.put(EFFECTIVE_DATE, effectiveDate);
+		return this;
+	}
 
 	/**
 	 * expiryDate
@@ -126,7 +193,10 @@ public interface PageInfo {
 	 *            String or Date Object
 	 * @return {@code this}
 	 */
-	PageInfoImpl expiryDate(Object expiryDate);
+	public PageInfo expiryDate(final Object expiryDate) {
+		items.put(EXPIRY_DATE, expiryDate);
+		return this;
+	}
 
 	/**
 	 * language
@@ -138,7 +208,10 @@ public interface PageInfo {
 	 *            String
 	 * @return {@code this}
 	 */
-	PageInfoImpl language(Object language);
+	public PageInfo language(final Object language) {
+		items.put(LANGUAGE, language);
+		return this;
+	}
 
 	/**
 	 * geoRegion
@@ -147,7 +220,10 @@ public interface PageInfo {
 	 *            String
 	 * @return {@code this}
 	 */
-	PageInfoImpl geoRegion(Object geoRegion);
+	public PageInfo geoRegion(final Object geoRegion) {
+		items.put(GEO_REGION, geoRegion);
+		return this;
+	}
 
 	/**
 	 * industryCodes
@@ -156,7 +232,10 @@ public interface PageInfo {
 	 *            String
 	 * @return {@code this}
 	 */
-	PageInfoImpl industryCodes(Object industryCodes);
+	public PageInfo industryCodes(final Object industryCodes) {
+		items.put(INDUSTRY_CODES, industryCodes);
+		return this;
+	}
 
 	/**
 	 * publisher
@@ -165,7 +244,10 @@ public interface PageInfo {
 	 *            String
 	 * @return {@code this}
 	 */
-	PageInfoImpl publisher(Object publisher);
+	public PageInfo publisher(final Object publisher) {
+		items.put(PUBLISHER, publisher);
+		return this;
+	}
 
 	/**
 	 * onsiteSearchTerm
@@ -177,7 +259,10 @@ public interface PageInfo {
 	 * @param onsiteSearchTerm String
 	 * @return {@code this}
 	 */
-	PageInfoImpl onsiteSearchTerm(Object onsiteSearchTerm);
+	public PageInfo onsiteSearchTerm(final Object onsiteSearchTerm) {
+		items.put(ONSITE_SEARCH_TERMS, onsiteSearchTerm);
+		return this;
+	}
 
 	/**
 	 * onsiteSearchResults
@@ -189,7 +274,10 @@ public interface PageInfo {
 	 * @param onsiteSearchResults String
 	 * @return {@code this}
 	 */
-	PageInfoImpl onsiteSearchResults(Object onsiteSearchResults);
+	public PageInfo onsiteSearchResults(final Object onsiteSearchResults) {
+		items.put(ONSITE_SEARCH_RESULTS, onsiteSearchResults);
+		return this;
+	}
 
 	/**
 	 * Custom PageInfo property
@@ -200,6 +288,8 @@ public interface PageInfo {
 	 *            Custom property value
 	 * @return {@code this}
 	 */
-	PageInfoImpl custom(String name, Object value);
-
+	public PageInfo custom(final String name, final Object value) {
+		items.put(name, value);
+		return this;
+	}
 }

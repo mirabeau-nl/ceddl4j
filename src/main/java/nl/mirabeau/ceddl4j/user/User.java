@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import nl.mirabeau.ceddl4j.DigitalData;
-import nl.mirabeau.ceddl4j.shared.Attributes;
-import nl.mirabeau.ceddl4j.shared.impl.AttributesImpl;
 
-import com.google.gson.annotations.Expose;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * The User object captures the profile of a user who is interacting with the
@@ -17,10 +15,10 @@ public class User {
 
 	private final DigitalData parent;
 
-	@Expose
-	private AttributesImpl<User> segment;
+	@JsonProperty
+	private Segment segment;
 
-	@Expose
+	@JsonProperty
 	private List<Profile> profile;
 
 	/**
@@ -53,9 +51,9 @@ public class User {
 	 * 
 	 * @return Attributes object
 	 */
-	public Attributes<User> segment() {
+	public Segment segment() {
 		if (segment == null) {
-			segment = new AttributesImpl<User>(this);
+			segment = new Segment(this);
 		}
 		return segment;
 	}
@@ -71,9 +69,9 @@ public class User {
 	 */
 	public User addSegment(final String name, final String value) {
 		if (segment == null) {
-			segment = new AttributesImpl<User>(this);
+			segment = new Segment(this);
 		}
-		segment.attribute(name, value);
+		segment.segment(name, value);
 		return this;
 	}
 
@@ -95,5 +93,4 @@ public class User {
 		profile.add(userProfile);
 		return userProfile;
 	}
-
 }

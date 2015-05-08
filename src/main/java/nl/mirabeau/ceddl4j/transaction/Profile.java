@@ -2,10 +2,8 @@ package nl.mirabeau.ceddl4j.transaction;
 
 import nl.mirabeau.ceddl4j.shared.Address;
 import nl.mirabeau.ceddl4j.shared.ProfileInfo;
-import nl.mirabeau.ceddl4j.shared.impl.AddressImpl;
-import nl.mirabeau.ceddl4j.shared.impl.ProfileInfoImpl;
 
-import com.google.gson.annotations.Expose;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * A profile for information about the purchaser, typically associated with a
@@ -15,14 +13,14 @@ public class Profile {
 
 	private final Transaction parent;
 
-	@Expose
-	private ProfileInfoImpl<Profile> profileInfo;
+	@JsonProperty
+	private ProfileInfo<Profile> profileInfo;
 
-	@Expose
-	private AddressImpl<Profile> address;
+	@JsonProperty
+	private Address<Profile> address;
 
-	@Expose
-	private AddressImpl<Profile> shippingAddress;
+	@JsonProperty
+	private Address<Profile> shippingAddress;
 
 	/**
 	 * Constructor, sets the parent
@@ -52,7 +50,7 @@ public class Profile {
 	 */
 	public ProfileInfo<Profile> profileInfo() {
 		if (profileInfo == null) {
-			profileInfo = new ProfileInfoImpl<Profile>(this);
+			profileInfo = new ProfileInfo<Profile>(this);
 		}
 		return profileInfo;
 	}
@@ -67,7 +65,7 @@ public class Profile {
 	 */
 	public Address<Profile> address() {
 		if (address == null) {
-			address = new AddressImpl<Profile>(this);
+			address = new Address<Profile>(this);
 		}
 		return address;
 	}
@@ -82,9 +80,8 @@ public class Profile {
 	 */
 	public Address<Profile> shippingAddress() {
 		if (shippingAddress == null) {
-			shippingAddress = new AddressImpl<Profile>(this);
+			shippingAddress = new Address<Profile>(this);
 		}
 		return shippingAddress;
 	}
-
 }

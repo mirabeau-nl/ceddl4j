@@ -3,10 +3,8 @@ package nl.mirabeau.ceddl4j.component;
 import nl.mirabeau.ceddl4j.DigitalData;
 import nl.mirabeau.ceddl4j.shared.Attributes;
 import nl.mirabeau.ceddl4j.shared.Category;
-import nl.mirabeau.ceddl4j.shared.impl.AttributesImpl;
-import nl.mirabeau.ceddl4j.shared.impl.CategoryImpl;
 
-import com.google.gson.annotations.Expose;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * The Component object is intended to capture information about a content
@@ -17,14 +15,14 @@ public class Component {
 
 	private DigitalData parent;
 
-	@Expose
-	private ComponentInfoImpl componentInfo;
+	@JsonProperty
+	private ComponentInfo componentInfo;
 
-	@Expose
-	private CategoryImpl<Component> category;
+	@JsonProperty
+	private Category<Component> category;
 
-	@Expose
-	private AttributesImpl<Component> attributes;
+	@JsonProperty
+	private Attributes<Component> attributes;
 
 	/**
 	 * Constructor. Sets the parent.
@@ -61,7 +59,7 @@ public class Component {
 	 */
 	public ComponentInfo componentInfo() {
 		if (componentInfo == null) {
-			componentInfo = new ComponentInfoImpl(this);
+			componentInfo = new ComponentInfo(this);
 		}
 		return componentInfo;
 	}
@@ -76,7 +74,7 @@ public class Component {
 	 */
 	public Category<Component> category() {
 		if (category == null) {
-			category = new CategoryImpl<Component>(this);
+			category = new Category<Component>(this);
 		}
 		return category;
 	}
@@ -93,7 +91,7 @@ public class Component {
 	 */
 	public Attributes<Component> attributes() {
 		if (attributes == null) {
-			attributes = new AttributesImpl<Component>(this);
+			attributes = new Attributes<Component>(this);
 		}
 		return attributes;
 	}
@@ -107,7 +105,7 @@ public class Component {
 	 */
 	public Component addAttribuut(final String name, final Object value) {
 		if (attributes == null) {
-			attributes = new AttributesImpl<Component>(this);
+			attributes = new Attributes<Component>(this);
 		}
 		attributes.attribute(name, value);
 		return this;
@@ -121,7 +119,7 @@ public class Component {
 	 */
 	public Component addPrimaryCategory(final String primaryCategory) {
 		if (category == null) {
-			category = new CategoryImpl<Component>(this);
+			category = new Category<Component>(this);
 		}
 
 		category.category(Category.PRIMARY_CATEGORY_NAME, primaryCategory);
@@ -137,10 +135,9 @@ public class Component {
 	 */
 	public Component addCategory(final String name, final Object value) {
 		if (category == null) {
-			category = new CategoryImpl<Component>(this);
+			category = new Category<Component>(this);
 		}
 		category.category(name, value);
 		return this;
 	}
-
 }

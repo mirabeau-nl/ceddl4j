@@ -3,10 +3,8 @@ package nl.mirabeau.ceddl4j.page;
 import nl.mirabeau.ceddl4j.DigitalData;
 import nl.mirabeau.ceddl4j.shared.Attributes;
 import nl.mirabeau.ceddl4j.shared.Category;
-import nl.mirabeau.ceddl4j.shared.impl.AttributesImpl;
-import nl.mirabeau.ceddl4j.shared.impl.CategoryImpl;
 
-import com.google.gson.annotations.Expose;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * The Page object carries significant details about the page, and the most
@@ -18,14 +16,14 @@ public class Page {
 
 	private DigitalData parent;
 
-	@Expose
-	private PageInfoImpl pageInfo;
+	@JsonProperty
+	private PageInfo pageInfo;
 
-	@Expose
-	private CategoryImpl<Page> category;
+	@JsonProperty
+	private Category<Page> category;
 
-	@Expose
-	private AttributesImpl<Page> attributes;
+	@JsonProperty
+	private Attributes<Page> attributes;
 
 	/**
 	 * Constructor. Sets the parent.
@@ -62,7 +60,7 @@ public class Page {
 	 */
 	public PageInfo pageInfo() {
 		if (pageInfo == null) {
-			pageInfo = new PageInfoImpl(this);
+			pageInfo = new PageInfo(this);
 		}
 		return pageInfo;
 	}
@@ -80,7 +78,7 @@ public class Page {
 	 */
 	public Category<Page> category() {
 		if (category == null) {
-			category = new CategoryImpl<Page>(this);
+			category = new Category<Page>(this);
 		}
 		return category;
 	}
@@ -96,7 +94,7 @@ public class Page {
 	 */
 	public Attributes<Page> attributes() {
 		if (attributes == null) {
-			attributes = new AttributesImpl<Page>(this);
+			attributes = new Attributes<Page>(this);
 		}
 		return attributes;
 	}
@@ -110,7 +108,7 @@ public class Page {
 	 */
 	public Page addAttribute(final String name, final Object value) {
 		if (attributes == null) {
-			attributes = new AttributesImpl<Page>(this);
+			attributes = new Attributes<Page>(this);
 		}
 		attributes.attribute(name, value);
 		return this;
@@ -124,9 +122,8 @@ public class Page {
 	 */
 	public Page addPrimaryCategory(final Object primaryCategory) {
 		if (category == null) {
-			category = new CategoryImpl<Page>(this);
+			category = new Category<Page>(this);
 		}
-
 		category.category(Category.PRIMARY_CATEGORY_NAME, primaryCategory);
 		return this;
 	}
@@ -140,11 +137,9 @@ public class Page {
 	 */
 	public Page addCategory(final String name, final Object value) {
 		if (category == null) {
-			category = new CategoryImpl<Page>(this);
+			category = new Category<Page>(this);
 		}
-
 		category.category(name, value);
 		return this;
 	}
-
 }
