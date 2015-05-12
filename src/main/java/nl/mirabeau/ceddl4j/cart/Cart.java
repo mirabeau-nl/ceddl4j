@@ -33,10 +33,10 @@ public class Cart {
 	private List<Item<Cart>> item;
 
 	/**
-	 * Constructor, does set the parent
+	 * Constructs a Cart object.
 	 * 
 	 * @param parent
-	 *            DigitalData parent Object
+	 *            The parent Object
 	 */
 	public Cart(final DigitalData parent) {
 		super();
@@ -44,14 +44,14 @@ public class Cart {
 	}
 
 	/**
-	 * Constructor, does not set the parent
+	 * Constructs a Cart object.
 	 */
 	public Cart() {
 		super();
 	}
 
 	/**
-	 * Return to the parent DigitalData object
+	 * Returns to the parent object.
 	 * 
 	 * @return DigitalData parent object or {@code null} when not available
 	 */
@@ -106,7 +106,7 @@ public class Cart {
 	}
 
 	/**
-	 * Directly add a new attribute to the Cart's attributes
+	 * Directly adds a new attribute to the Cart's attributes
 	 * 
 	 * @param name Name of the attribute
 	 * @param value Value for the attribute
@@ -121,7 +121,7 @@ public class Cart {
 	}
 
 	/**
-	 * Add a new item to the list of items in the Cart.
+	 * Adds a new item to the list of items in the Cart.
 	 * 
 	 * @return a new Item object
 	 */

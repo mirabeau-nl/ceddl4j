@@ -12,9 +12,10 @@ public class ComponentInfo extends BaseItem {
 	private final Component parent;
 
 	/**
-	 * Constructor, sets the parent
+	 * Constructs an ComponentInfo object.
 	 * 
 	 * @param parent
+	 *            The parent Object
 	 */
 	public ComponentInfo(final Component parent) {
 		super();
@@ -22,7 +23,7 @@ public class ComponentInfo extends BaseItem {
 	}
 
 	/**
-	 * Return to the parent Component object
+	 * Returns to the parent Component object.
 	 * 
 	 * @return parent Component object
 	 */
@@ -31,9 +32,10 @@ public class ComponentInfo extends BaseItem {
 	}
 
 	/**
-	 * componentID
+	 * Sets the componentID.
 	 * 
-	 * @param componentID String
+	 * @param componentID
+	 *            String
 	 * @return {@code this}
 	 */
 	public ComponentInfo componentID(final String componentID) {
@@ -42,10 +44,12 @@ public class ComponentInfo extends BaseItem {
 	}
 
 	/**
-	 * Custom ComponentInfo property
+	 * Sets a custom ComponentInfo property.
 	 * 
-	 * @param name Custom property name
-	 * @param value Custom property value
+	 * @param name
+	 *            Custom property name
+	 * @param value
+	 *            Custom property value
 	 * @return {@code this}
 	 */
 	public ComponentInfo custom(final String name, final Object value) {

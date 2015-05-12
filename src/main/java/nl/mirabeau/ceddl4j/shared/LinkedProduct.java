@@ -14,9 +14,9 @@ public class LinkedProduct<T> {
 	private ProductInfo<LinkedProduct<T>> productInfo;
 
 	/**
-	 * Constructor, sets the parent
+	 * Constructs a LinkedProduct object
 	 * 
-	 * @param parent
+	 * @param parent The parent object
 	 */
 	public LinkedProduct(final T parent) {
 		super();
@@ -24,7 +24,7 @@ public class LinkedProduct<T> {
 	}
 
 	/**
-	 * Return to the parent Item object
+	 * Returns to the parent object
 	 * 
 	 * @return parent Item object or null when not available
 	 */

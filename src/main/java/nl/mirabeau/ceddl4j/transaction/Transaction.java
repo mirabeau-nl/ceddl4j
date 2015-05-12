@@ -23,7 +23,7 @@ public class Transaction {
 	private String transactionID;
 
 	@JsonProperty
-	private Profile profile;
+	private TransactionProfile profile;
 
 	@JsonProperty
 	private Price<Transaction> total;
@@ -35,9 +35,10 @@ public class Transaction {
 	private List<Item<Transaction>> item;
 
 	/**
-	 * Constructor, sets the parent
+	 * Constructs a Transaction object.
 	 * 
 	 * @param parent
+	 *            The parent Object
 	 */
 	public Transaction(final DigitalData parent) {
 		super();
@@ -45,14 +46,14 @@ public class Transaction {
 	}
 
 	/**
-	 * Constructor, does not set the parent
+	 * Constructs a Transaction object.
 	 */
 	public Transaction() {
 		super();
 	}
 
 	/**
-	 * Return to the parent DigitalData object
+	 * Returns to the parent DigitalData object
 	 * 
 	 * @return parent DigitalData object or null when not available
 	 */
@@ -61,12 +62,12 @@ public class Transaction {
 	}
 
 	/**
-	 * Set the transactionID
+	 * Sets the transactionID
 	 * 
 	 * @param transactionID
 	 *            A unique identifier for a particular transaction; usually an
 	 *            existing order identifier.
-	 * @return The current Transaction object
+	 * @return {@code this}
 	 */
 	public Transaction transactionID(final String transactionID) {
 		this.transactionID = transactionID;
@@ -81,9 +82,9 @@ public class Transaction {
 	 * 
 	 * @return the Profile object for this Transaction
 	 */
-	public Profile profile() {
+	public TransactionProfile profile() {
 		if (profile == null) {
-			profile = new Profile(this);
+			profile = new TransactionProfile(this);
 		}
 		return profile;
 	}
@@ -123,7 +124,7 @@ public class Transaction {
 	}
 
 	/**
-	 * Directly add a new attribute to the Transaction's attributes
+	 * Directly adds a new attribute to the Transaction's attributes
 	 * 
 	 * @param name Name of the attribute
 	 * @param value Value for the attribute
@@ -138,7 +139,7 @@ public class Transaction {
 	}
 
 	/**
-	 * Add a new Item to the list of items in the transaction.
+	 * Adds a new Item to the list of items in the transaction.
 	 * 
 	 * @return a new Item in the transaction
 	 */

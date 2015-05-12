@@ -9,28 +9,29 @@ import nl.mirabeau.ceddl4j.BaseItem;
  */
 public class Social extends BaseItem {
 
-	private final Profile parent;
+	private final UserProfile parent;
 
 	/**
-	 * Constructor, sets the parent
+	 * Constructs an Social object.
 	 * 
 	 * @param parent
+	 *            The parent Object
 	 */
-	public Social(final Profile parent) {
+	public Social(final UserProfile parent) {
 		this.parent = parent;
 	}
 
 	/**
-	 * Return to the parent object
+	 * Returns to the parent object.
 	 * 
 	 * @return parent object
 	 */
-	public Profile endSocial() {
+	public UserProfile endSocial() {
 		return parent;
 	}
 
 	/**
-	 * Add a social information item
+	 * Adds a social information item.
 	 * 
 	 * @param name Name of the social information item
 	 * @param value value of the social information item

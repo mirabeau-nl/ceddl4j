@@ -26,9 +26,10 @@ public class Event {
 	private Attributes<Event> attributes;
 
 	/**
-	 * Constructor. Sets the parent.
+	 * Constructs an Event object.
 	 * 
-	 * @param parent DigitalData parent Object
+	 * @param parent
+	 *            The parent Object
 	 */
 	public Event(final DigitalData parent) {
 		super();
@@ -36,16 +37,16 @@ public class Event {
 	}
 
 	/**
-	 * Constructor. Does not set the parent
+	 * Constructs an Event object.
 	 */
 	public Event() {
 		super();
 	}
 
 	/**
-	 * Return to the parent DigitalData object
+	 * Returns to the parent object
 	 * 
-	 * @return  DigitalData parent object or {@code null} when not available
+	 * @return DigitalData parent object or {@code null} when not available
 	 */
 	public DigitalData endEvent() {
 		return parent;
@@ -90,11 +91,13 @@ public class Event {
 	}
 
 	/**
-	 * Directly add a new attribute to the Events's attributes
+	 * Directly adds a new attribute to the Events's attributes
 	 * 
-	 * @param name Name of the attribute
-	 * @param value Value for the attribute
-	 * @return  {@code this}
+	 * @param name
+	 *            Name of the attribute
+	 * @param value
+	 *            Value for the attribute
+	 * @return {@code this}
 	 */
 	public Event addAttribute(final String name, final Object value) {
 		if (attributes == null) {
@@ -105,10 +108,11 @@ public class Event {
 	}
 
 	/**
-	 * Directly set the primary category for the Event
+	 * Directly sets the primary category for the Event
 	 * 
-	 * @param primaryCategory Value for the primary category
-	 * @return  {@code this}
+	 * @param primaryCategory
+	 *            Value for the primary category
+	 * @return {@code this}
 	 */
 	public Event addPrimaryCategory(final String primaryCategory) {
 		if (category == null) {
@@ -119,11 +123,13 @@ public class Event {
 	}
 
 	/**
-	 * Directly add a custom category to the Event's categories
+	 * Directly adds a custom category to the Event's categories
 	 * 
-	 * @param name Name of the category
-	 * @param value Value for the attribute
-	 * @return  {@code this}
+	 * @param name
+	 *            Name of the category
+	 * @param value
+	 *            Value for the attribute
+	 * @return {@code this}
 	 */
 	public Event addCategory(final String name, final Object value) {
 		if (category == null) {

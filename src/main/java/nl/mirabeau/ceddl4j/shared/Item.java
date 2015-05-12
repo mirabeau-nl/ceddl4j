@@ -7,8 +7,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Item in a list of items in a Cart or Transaction.
- *
- * @param <T> Parent object type
+ * 
+ * @param <T>
+ *            Parent object type
  */
 public class Item<T> {
 
@@ -33,7 +34,7 @@ public class Item<T> {
 	private Attributes<Item<T>> attributes;
 
 	/**
-	 * Constructor, sets the parent
+	 * Constructs a Item object
 	 * 
 	 * @param parent
 	 */
@@ -43,7 +44,7 @@ public class Item<T> {
 	}
 
 	/**
-	 * Return to the parent object
+	 * Returns to the parent object
 	 * 
 	 * @return parent object
 	 */
@@ -81,7 +82,7 @@ public class Item<T> {
 	}
 
 	/**
-	 * Quantity of this particular item in the cart.
+	 * Sets the quantity of this particular item in the cart or transaction.
 	 * 
 	 * @return {@code this}
 	 */
@@ -103,7 +104,7 @@ public class Item<T> {
 	}
 
 	/**
-	 * Add a linked product.
+	 * Adds a new linked product to this Item.
 	 * 
 	 * @return new LinkedProduct object for the Item
 	 */
@@ -111,7 +112,8 @@ public class Item<T> {
 		if (linkedProducts == null) {
 			linkedProducts = new ArrayList<LinkedProduct<Item<T>>>();
 		}
-		final LinkedProduct<Item<T>> newProduct = new LinkedProduct<Item<T>>(this);
+		final LinkedProduct<Item<T>> newProduct = new LinkedProduct<Item<T>>(
+				this);
 		linkedProducts.add(newProduct);
 
 		return newProduct;
@@ -130,10 +132,12 @@ public class Item<T> {
 	}
 
 	/**
-	 * Directly add a new attribute to the Item's attributes
+	 * Directly adds a new attribute to the Item's attributes
 	 * 
-	 * @param name Name of the attribute
-	 * @param value Value for the attribute
+	 * @param name
+	 *            Name of the attribute
+	 * @param value
+	 *            Value for the attribute
 	 * @return {@code this}
 	 */
 	public Item<T> addAttribuut(final String name, final Object value) {
@@ -145,9 +149,10 @@ public class Item<T> {
 	}
 
 	/**
-	 * Directly add the primary category to the Item's categories
+	 * Directly adds the primary category to the Item's categories
 	 * 
-	 * @param primaryCategory Value for the primary category
+	 * @param primaryCategory
+	 *            Value for the primary category
 	 * @return {@code this}
 	 */
 	public Item<T> addPrimaryCategory(final String primaryCategory) {
@@ -159,10 +164,12 @@ public class Item<T> {
 	}
 
 	/**
-	 * Directly add a custom category to the Page categories
+	 * Directly adds a custom category to the Page categories
 	 * 
-	 * @param name Name of the category
-	 * @param value Value for the attribute
+	 * @param name
+	 *            Name of the category
+	 * @param value
+	 *            Value for the attribute
 	 * @return {@code this}
 	 */
 	public Item<T> addCategory(final String name, final Object value) {

@@ -20,9 +20,10 @@ public class EventInfo extends BaseItem {
 	private final Event parent;
 
 	/**
-	 * Constructor, sets the parent
+	 * Constructs an EventInfo object.
 	 * 
 	 * @param parent
+	 *            The parent Object
 	 */
 	public EventInfo(final Event parent) {
 		super();
@@ -30,21 +31,22 @@ public class EventInfo extends BaseItem {
 	}
 
 	/**
-	 * Return to the parent Event object
+	 * Returns to the parent object.
 	 * 
-	 * @return parent Product object
+	 * @return The parent object
 	 */
 	public Event endEventInfo() {
 		return parent;
 	}
 
 	/**
-	 * eventName.
+	 * Sets the eventName.
 	 * 
 	 * The eventInfo object MUST include eventName.
 	 * 
-	 * @param eventName String
-	 * @return  {@code this}
+	 * @param eventName
+	 *            String
+	 * @return {@code this}
 	 */
 	public EventInfo eventName(final String eventName) {
 		items.put(EVENT_NAME, eventName);
@@ -52,9 +54,10 @@ public class EventInfo extends BaseItem {
 	}
 
 	/**
-	 * eventAction.
+	 * Sets the eventAction.
 	 * 
-	 * @param eventAction String
+	 * @param eventAction
+	 *            String
 	 * @return {@code this}
 	 */
 	public EventInfo eventAction(final String eventAction) {
@@ -63,10 +66,11 @@ public class EventInfo extends BaseItem {
 	}
 
 	/**
-	 * eventPoints
+	 * Sets the eventPoints.
 	 * 
-	 * @param eventPoints Number
-	 * @return  {@code this}
+	 * @param eventPoints
+	 *            Number
+	 * @return {@code this}
 	 */
 	public EventInfo eventPoints(final Number eventPoints) {
 		items.put(EVENT_POINTS, eventPoints);
@@ -74,10 +78,11 @@ public class EventInfo extends BaseItem {
 	}
 
 	/**
-	 * Type
+	 * Sets the Type.
 	 * 
-	 * @param type String
-	 * @return  {@code this}
+	 * @param type
+	 *            String
+	 * @return {@code this}
 	 */
 	public EventInfo type(final String type) {
 		items.put(TYPE, type);
@@ -85,10 +90,11 @@ public class EventInfo extends BaseItem {
 	}
 
 	/**
-	 * TimeStamp
+	 * Sets the TimeStamp.
 	 * 
-	 * @param timeStamp String
-	 * @return  {@code this}
+	 * @param timeStamp
+	 *            String
+	 * @return {@code this}
 	 */
 	public EventInfo timeStamp(final String timeStamp) {
 		items.put(TIME_STAMP, timeStamp);
@@ -96,10 +102,11 @@ public class EventInfo extends BaseItem {
 	}
 
 	/**
-	 * TimeStamp
+	 * Sets the TimeStamp.
 	 * 
-	 * @param timeStamp Date
-	 * @return  {@code this}
+	 * @param timeStamp
+	 *            Date
+	 * @return {@code this}
 	 */
 	public EventInfo timeStamp(final Date timeStamp) {
 		items.put(TIME_STAMP, timeStamp);
@@ -107,10 +114,11 @@ public class EventInfo extends BaseItem {
 	}
 
 	/**
-	 * Cause
+	 * Sets the Cause.
 	 * 
-	 * @param cause String
-	 * @return  {@code this}
+	 * @param cause
+	 *            String
+	 * @return {@code this}
 	 */
 	public EventInfo cause(final String cause) {
 		items.put(CAUSE, cause);
@@ -118,10 +126,11 @@ public class EventInfo extends BaseItem {
 	}
 
 	/**
-	 * Effect
+	 * Sets the Effect.
 	 * 
-	 * @param effect String
-	 * @return  {@code this}
+	 * @param effect
+	 *            String
+	 * @return {@code this}
 	 */
 	public EventInfo effect(final String effect) {
 		items.put(EFFECT, effect);
@@ -129,10 +138,12 @@ public class EventInfo extends BaseItem {
 	}
 
 	/**
-	 * Custom EventInfo property
+	 * Sets a custom EventInfo property.
 	 * 
-	 * @param name Custom property name
-	 * @param value Custom property value
+	 * @param name
+	 *            Custom property name
+	 * @param value
+	 *            Custom property value
 	 * @return {@code this}
 	 */
 	public EventInfo custom(final String name, final Object value) {

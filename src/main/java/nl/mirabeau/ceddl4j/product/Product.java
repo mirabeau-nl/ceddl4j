@@ -35,23 +35,24 @@ public class Product {
 	private Attributes<Product> attributes;
 
 	/**
-	 * Constructor, does not set the parent
+	 * Constructs a Page object.
 	 */
 	public Product() {
 		super();
 	}
 
 	/**
-	 * Constructor, sets the parent
+	 * Constructs a Product object.
 	 * 
 	 * @param parent
+	 *            The parent Object
 	 */
 	public Product(final DigitalData parent) {
 		this.parent = parent;
 	}
 
 	/**
-	 * Return to the parent DigitalData object
+	 * Returns to the parent object.
 	 * 
 	 * @return DigitalData parent object or {@code null} when not available
 	 */
@@ -94,7 +95,7 @@ public class Product {
 	}
 
 	/**
-	 * Add a new Linked Product to the list of linked products.
+	 * Adds a new Linked Product to the list of linked products.
 	 * 
 	 * @return a new Linked Product
 	 */
@@ -127,7 +128,7 @@ public class Product {
 	}
 
 	/**
-	 * Directly add a new attribute to the Products's attributes
+	 * Directly adds a new attribute to the Products's attributes
 	 * 
 	 * @param name Name of the attribute
 	 * @param value Value for the attribute
@@ -142,7 +143,7 @@ public class Product {
 	}
 
 	/**
-	 * Directly add the primary category to the Product's categories
+	 * Directly adds the primary category to the Product's categories
 	 * 
 	 * @param primaryCategory Value for the primary category
 	 * @return The current Product object
@@ -156,7 +157,7 @@ public class Product {
 	}
 
 	/**
-	 * Directly add a custom category to the Product's categories
+	 * Directly adds a custom category to the Product's categories
 	 * 
 	 * @param name Name of the category
 	 * @param value Value for the attribute

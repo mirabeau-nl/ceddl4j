@@ -19,19 +19,20 @@ public class User {
 	private Segment segment;
 
 	@JsonProperty
-	private List<Profile> profile;
+	private List<UserProfile> profile;
 
 	/**
-	 * Constructor. Does not set the parent.
+	 * Constructs an User object.
 	 */
 	public User() {
 		super();
 	}
 
 	/**
-	 * Constructor. Sets the parent.
+	 * Constructs an User object.
 	 * 
 	 * @param parent
+	 *            The parent Object
 	 */
 	public User(final DigitalData parent) {
 		super();
@@ -39,9 +40,9 @@ public class User {
 	}
 
 	/**
-	 * Return to the parent DigitalData object
+	 * Returns to the parent object.
 	 * 
-	 * @return parent DigitalData object or {@code null} when not available
+	 * @return parent object or {@code null} when not available
 	 */
 	public DigitalData endUser() {
 		return parent;
@@ -66,7 +67,7 @@ public class User {
 	}
 
 	/**
-	 * Directly add a new segment to the Profile.
+	 * Directly adds a new segment to the Profile.
 	 * 
 	 * @param name
 	 *            Name of the segment
@@ -83,20 +84,20 @@ public class User {
 	}
 
 	/**
-	 * Add a new profile for the user.
+	 * Adds a new profile for the user.
 	 * 
 	 * A profile for information about the user, typically associated with a
 	 * registered user. (Although typically a user might have only a single
 	 * profile, this object is an array and can capture multiple profiles per
 	 * user.)
 	 * 
-	 * @return  a new Profile object
+	 * @return  a new (User)Profile object
 	 */
-	public Profile addProfile() {
+	public UserProfile addProfile() {
 		if (profile == null) {
-			profile = new ArrayList<Profile>();
+			profile = new ArrayList<UserProfile>();
 		}
-		final Profile userProfile = new Profile(this);
+		final UserProfile userProfile = new UserProfile(this);
 		profile.add(userProfile);
 		return userProfile;
 	}
