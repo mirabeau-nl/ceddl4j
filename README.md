@@ -1,20 +1,20 @@
-# CEDDL4J #
+# Cedddl4j #
 
 [![Build Status](https://travis-ci.org/mirabeau-nl/ceddl4j.svg?branch=master)](https://travis-ci.org/mirabeau-nl/ceddl4j)
 [![Coverage Status](https://coveralls.io/repos/mirabeau-nl/ceddl4j/badge.svg)](https://coveralls.io/r/mirabeau-nl/ceddl4j)
 [![Coverity Scan Status] (https://scan.coverity.com/projects/4986/badge.svg)](https://scan.coverity.com/projects/4986)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/nl.mirabeau/ceddl4j/badge.svg)](https://maven-badges.herokuapp.com/maven-central/nl.mirabeau/ceddl4j)
 
-## What is CEDDL4J? ##
+## About Ceddl4j ##
 
-CEDDL4J is a Java Library for creating a Data Layer that follows the Customer Experience Digital Data Layer (CEDDL) specification.
+Ceddl4j is a Java Library for creating a Data Layer that follows the Customer Experience Digital Data Layer (CEDDL) specification.
 
 The CEDDL specification 
 > "describes a method for surfacing customer experience digital data on a web or other digital resource as a JavaScript Object which can be used for communicating this data to digital analytics and reporting servers."
 
 The complete CEDDL specification can be found at http://www.w3.org/2013/12/ceddl-201312.pdf
 
-CEDDL4J currently implements the full CEDDL specification except for the Privacy and Security objects.
+Ceddl4j currently implements the full CEDDL specification except for the Privacy and Security objects.
 
 For the API/ JavaDoc see: http://www.javadoc.io/doc/nl.mirabeau/ceddl4j/
 
@@ -57,7 +57,7 @@ Will generate the following Data Layer:
             
             
 
-### How do I get set up? ###
+### Usage ###
 Add the following dependency to your project's Maven POM. 
 
         <dependency>
