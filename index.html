@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Ceddl4j by mirabeau-nl</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Ceddl4j</h1>
+      <h2 class="project-tagline">Ceddl4j is a Java Library for creating a Data Layer that follows the Customer Experience Digital Data Layer (CEDDL) specification.</h2>
+      <a href="https://github.com/mirabeau-nl/ceddl4j" class="btn">View on GitHub</a>
+      <a href="https://github.com/mirabeau-nl/ceddl4j/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/mirabeau-nl/ceddl4j/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="cedddl4j" class="anchor" href="#cedddl4j" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cedddl4j</h1>
+
+<p><a href="https://travis-ci.org/mirabeau-nl/ceddl4j"><img src="https://travis-ci.org/mirabeau-nl/ceddl4j.svg?branch=master" alt="Build Status"></a>
+<a href="https://coveralls.io/r/mirabeau-nl/ceddl4j"><img src="https://coveralls.io/repos/mirabeau-nl/ceddl4j/badge.svg" alt="Coverage Status"></a>
+<a href="https://scan.coverity.com/projects/4986"><img src="https://scan.coverity.com/projects/4986/badge.svg" alt="Coverity Scan Status"></a>
+<a href="https://maven-badges.herokuapp.com/maven-central/nl.mirabeau/ceddl4j"><img src="https://maven-badges.herokuapp.com/maven-central/nl.mirabeau/ceddl4j/badge.svg" alt="Maven Central"></a></p>
+
+<h2>
+<a id="about-ceddl4j" class="anchor" href="#about-ceddl4j" aria-hidden="true"><span class="octicon octicon-link"></span></a>About Ceddl4j</h2>
+
+<p>Ceddl4j is a Java Library for creating a Data Layer that follows the Customer Experience Digital Data Layer (CEDDL) specification.</p>
+
+<p>The CEDDL specification </p>
+
+<blockquote>
+<p>"describes a method for surfacing customer experience digital data on a web or other digital resource as a JavaScript Object which can be used for communicating this data to digital analytics and reporting servers."</p>
+</blockquote>
+
+<p>The complete CEDDL specification can be found at <a href="http://www.w3.org/2013/12/ceddl-201312.pdf">http://www.w3.org/2013/12/ceddl-201312.pdf</a></p>
+
+<p>Ceddl4j currently implements the full CEDDL specification except for the Privacy and Security objects.</p>
+
+<p>For the API/ JavaDoc see: <a href="http://www.javadoc.io/doc/nl.mirabeau/ceddl4j/">http://www.javadoc.io/doc/nl.mirabeau/ceddl4j/</a></p>
+
+<h3>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example</h3>
+
+<p>This code:</p>
+
+<pre><code>        DigitalData dd = DigitalData.create("MyHomePage-Production")
+            .page()
+            .pageInfo()
+            .pageID("Home Page")
+            .destinationURL("http://mysite.com/index.html")
+            .endPageInfo()
+            .addPrimaryCategory("FAQ Pages")
+            .addCategory("subCategory1", "ProductInfo")
+            .addCategory("pageType", "FAQ")
+            .addAttribute("country", "US")
+            .addAttribute("language", "en-US")
+            .endPage();
+</code></pre>
+
+<p>Will generate the following Data Layer:</p>
+
+<pre><code>        digitalData = {
+            pageInstanceID: "MyHomePage-Production",
+            page:{
+                pageInfo:{
+                    pageID: "Home Page",
+                    destinationURL: "http://mysite.com/index.html"
+                },
+                category:{
+                    primaryCategory: "FAQ Pages",
+                    subCategory1: "ProductInfo",
+                    pageType: "FAQ"
+                },
+                attributes:{
+                    country: "US",
+                    language: "en-US"
+                }
+            }
+        };
+</code></pre>
+
+<h3>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h3>
+
+<p>Add the following dependency to your project's Maven POM. </p>
+
+<pre><code>    &lt;dependency&gt;
+        &lt;groupId&gt;nl.mirabeau&lt;/groupId&gt;
+        &lt;artifactId&gt;ceddl4j&lt;/artifactId&gt;
+        &lt;version&gt;0.2.0&lt;/version&gt;
+    &lt;/dependency&gt;
+</code></pre>
+
+<p>For other build tools see: <a href="https://maven-badges.herokuapp.com/maven-central/nl.mirabeau/ceddl4j">https://maven-badges.herokuapp.com/maven-central/nl.mirabeau/ceddl4j</a></p>
+
+<h3>
+<a id="contribution-guidelines" class="anchor" href="#contribution-guidelines" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contribution guidelines</h3>
+
+<ul>
+<li>Comments, methods and variables in English.</li>
+<li>Create unit tests where possible.</li>
+<li>Try to stick to the existing coding style.</li>
+<li>Give a short description in the pull request what you're doing and why.</li>
+</ul>
+
+<h3>
+<a id="license-information" class="anchor" href="#license-information" aria-hidden="true"><span class="octicon octicon-link"></span></a>License information</h3>
+
+<pre><code>Copyright (c) 2015, Mirabeau B.V.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+    * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+    * Neither the name of the &lt;organization&gt; nor the
+    names of its contributors may be used to endorse or promote products
+    derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL &lt;COPYRIGHT HOLDER&gt; BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</code></pre>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/mirabeau-nl/ceddl4j">Ceddl4j</a> is maintained by <a href="https://github.com/mirabeau-nl">mirabeau-nl</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-63036790-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
+
