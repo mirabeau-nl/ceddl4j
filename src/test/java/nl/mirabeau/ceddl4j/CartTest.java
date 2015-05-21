@@ -60,7 +60,7 @@ public class CartTest {
 
 		System.out.println(ddb.toString());
 
-		final String expected = new TestUtil().loadJsonFromFile("/tests/cartTest.json");
+		final String expected = new TestUtil().loadJsonFromFile("/cartTest.json");
 
 		JSONAssert.assertEquals(expected, ddb.toString(), true);
 	}

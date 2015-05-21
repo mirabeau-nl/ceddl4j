@@ -57,7 +57,7 @@ public class Example1 {
 		System.out.println(ddb.toString());
 
 		final String expected = new TestUtil()
-		.loadJsonFromFile("/examples/example1.json");
+		.loadJsonFromFile("/example1.json");
 
 		JSONAssert.assertEquals(expected, ddb.toString(), false);
 	}

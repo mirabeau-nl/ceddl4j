@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/mirabeau-nl/ceddl4j.svg?branch=master)](https://travis-ci.org/mirabeau-nl/ceddl4j)
 [![Coverage Status](https://coveralls.io/repos/mirabeau-nl/ceddl4j/badge.svg)](https://coveralls.io/r/mirabeau-nl/ceddl4j)
 [![Coverity Scan Status] (https://scan.coverity.com/projects/4986/badge.svg)](https://scan.coverity.com/projects/4986)
+[![Dependency Status](https://www.versioneye.com/user/projects/55579dd1b2ff6d477b00001c/badge.svg?style=flat)](https://www.versioneye.com/user/projects/55579dd1b2ff6d477b00001c)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/nl.mirabeau/ceddl4j/badge.svg)](https://maven-badges.herokuapp.com/maven-central/nl.mirabeau/ceddl4j)
 
 ## About Ceddl4j ##

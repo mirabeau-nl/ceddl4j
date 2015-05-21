@@ -53,7 +53,7 @@ public class DigitalDataTest {
 		System.out.println(ddb.toString());
 
 		final String expected = new TestUtil()
-		.loadJsonFromFile("/tests/settersTest.json");
+		.loadJsonFromFile("/settersTest.json");
 
 		JSONAssert.assertEquals(expected, ddb.toString(), true);
 	}

@@ -72,7 +72,7 @@ public class TransactionTest {
 
 		System.out.println(ddb.toString());
 
-		final String expected = new TestUtil().loadJsonFromFile("/tests/transactionTest.json");
+		final String expected = new TestUtil().loadJsonFromFile("/transactionTest.json");
 
 		JSONAssert.assertEquals(expected, ddb.toString(), true);
 	}

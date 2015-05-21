@@ -53,7 +53,7 @@ public class PageTest {
 
 		System.out.println(ddb.toString());
 
-		final String expected = new TestUtil().loadJsonFromFile("/tests/pageTest.json");
+		final String expected = new TestUtil().loadJsonFromFile("/pageTest.json");
 
 		JSONAssert.assertEquals(expected, ddb.toString(), true);
 	}
@@ -102,7 +102,7 @@ public class PageTest {
 
 		System.out.println(ddb.toString());
 
-		final String expected = new TestUtil().loadJsonFromFile("/tests/pageTest.json");
+		final String expected = new TestUtil().loadJsonFromFile("/pageTest.json");
 
 		JSONAssert.assertEquals(expected, ddb.toString(), true);
 	}

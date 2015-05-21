@@ -37,7 +37,7 @@ public class ComponentTest {
 
 		System.out.println(ddb.toString());
 
-		final String expected = new TestUtil().loadJsonFromFile("/tests/componentTest.json");
+		final String expected = new TestUtil().loadJsonFromFile("/componentTest.json");
 
 		JSONAssert.assertEquals(expected, ddb.toString(), true);
 	}
@@ -70,7 +70,7 @@ public class ComponentTest {
 
 		System.out.println(ddb.toString());
 
-		final String expected = new TestUtil().loadJsonFromFile("/tests/componentTest.json");
+		final String expected = new TestUtil().loadJsonFromFile("/componentTest.json");
 
 		JSONAssert.assertEquals(expected, ddb.toString(), true);
 	}
