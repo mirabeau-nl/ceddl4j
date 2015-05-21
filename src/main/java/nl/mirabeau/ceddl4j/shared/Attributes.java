@@ -14,16 +14,16 @@ public class Attributes<T> extends BaseItem {
 	private final T parent;
 
 	/**
-	 * Constructor, sets the parent
+	 * Constructs an Attributes object
 	 * 
-	 * @param parent
+	 * @param parent The parent object
 	 */
 	public Attributes(final T parent) {
 		this.parent = parent;
 	}
 
 	/**
-	 * Return to the parent object
+	 * Returns to the parent object
 	 * 
 	 * @return parent object
 
@@ -33,7 +33,7 @@ public class Attributes<T> extends BaseItem {
 	}
 
 	/**
-	 * Custom attribute
+	 * Sets a custom attribute
 	 * 
 	 * @param name
 	 *            Custom attribute name

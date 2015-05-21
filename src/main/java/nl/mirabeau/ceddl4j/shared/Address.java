@@ -4,8 +4,9 @@ import nl.mirabeau.ceddl4j.BaseItem;
 
 /**
  * An extensible object for providing address information for the user.
- *
- * @param <T> Parent object type
+ * 
+ * @param <T>
+ *            Parent object type
  */
 public class Address<T> extends BaseItem {
 
@@ -19,9 +20,10 @@ public class Address<T> extends BaseItem {
 	private final T parent;
 
 	/**
-	 * Constructor, sets the parent
+	 * Constructs an Address object
 	 * 
 	 * @param parent
+	 *            The parent Object
 	 */
 	public Address(final T parent) {
 		super();
@@ -29,7 +31,7 @@ public class Address<T> extends BaseItem {
 	}
 
 	/**
-	 * Return to the parent object
+	 * Returns to the parent object
 	 * 
 	 * @return parent object
 	 */
@@ -38,7 +40,7 @@ public class Address<T> extends BaseItem {
 	}
 
 	/**
-	 * Address line 1
+	 * Sets the address line 1
 	 * 
 	 * @param line1
 	 *            String
@@ -50,10 +52,11 @@ public class Address<T> extends BaseItem {
 	}
 
 	/**
-	 * Address line 2
+	 * Sets address line 2
 	 * 
 	 * @param line2
 	 *            String
+	 * @return {@code this}
 	 */
 	public Address<T> line2(final String line2) {
 		items.put(LINE2, line2);
@@ -61,7 +64,10 @@ public class Address<T> extends BaseItem {
 	}
 
 	/**
+	 * Sets the city
+	 * 
 	 * @param city
+	 *            String
 	 * @return {@code this}
 	 */
 	public Address<T> city(final String city) {
@@ -70,7 +76,7 @@ public class Address<T> extends BaseItem {
 	}
 
 	/**
-	 * State or Province
+	 * Sets the state or province
 	 * 
 	 * @param stateProvince
 	 *            String
@@ -82,7 +88,7 @@ public class Address<T> extends BaseItem {
 	}
 
 	/**
-	 * PostalCode
+	 * Sets the postalCode
 	 * 
 	 * @param postalCode
 	 *            String
@@ -94,7 +100,7 @@ public class Address<T> extends BaseItem {
 	}
 
 	/**
-	 * Country
+	 * Sets the country
 	 * 
 	 * @param country
 	 *            String
@@ -106,7 +112,7 @@ public class Address<T> extends BaseItem {
 	}
 
 	/**
-	 * Custom Address property
+	 * Sets a custom address property
 	 * 
 	 * @param name
 	 *            Custom property name

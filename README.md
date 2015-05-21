@@ -1,20 +1,21 @@
-# CEDDL4J #
+# Cedddl4j #
 
 [![Build Status](https://travis-ci.org/mirabeau-nl/ceddl4j.svg?branch=master)](https://travis-ci.org/mirabeau-nl/ceddl4j)
 [![Coverage Status](https://coveralls.io/repos/mirabeau-nl/ceddl4j/badge.svg)](https://coveralls.io/r/mirabeau-nl/ceddl4j)
 [![Coverity Scan Status] (https://scan.coverity.com/projects/4986/badge.svg)](https://scan.coverity.com/projects/4986)
+[![Dependency Status](https://www.versioneye.com/user/projects/55579dd1b2ff6d477b00001c/badge.svg?style=flat)](https://www.versioneye.com/user/projects/55579dd1b2ff6d477b00001c)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/nl.mirabeau/ceddl4j/badge.svg)](https://maven-badges.herokuapp.com/maven-central/nl.mirabeau/ceddl4j)
 
-## What is CEDDL4J? ##
+## About Ceddl4j ##
 
-CEDDL4J is a Java Library for creating a Data Layer that follows the Customer Experience Digital Data Layer (CEDDL) specification.
+Ceddl4j is a Java API for generating a website data layer compliant with the CEDDL specification.
 
-The CEDDL specification 
+The Customer Experience Digital Data Layer (CEDDL) specification 
 > "describes a method for surfacing customer experience digital data on a web or other digital resource as a JavaScript Object which can be used for communicating this data to digital analytics and reporting servers."
 
 The complete CEDDL specification can be found at http://www.w3.org/2013/12/ceddl-201312.pdf
 
-CEDDL4J currently implements the full CEDDL specification except for the Privacy and Security objects.
+Ceddl4j currently implements the full CEDDL specification except for the Privacy and Security objects.
 
 For the API/ JavaDoc see: http://www.javadoc.io/doc/nl.mirabeau/ceddl4j/
 
@@ -57,13 +58,13 @@ Will generate the following Data Layer:
             
             
 
-### How do I get set up? ###
+### Usage ###
 Add the following dependency to your project's Maven POM. 
 
         <dependency>
             <groupId>nl.mirabeau</groupId>
             <artifactId>ceddl4j</artifactId>
-            <version>0.1.0</version>
+            <version>0.2.0</version>
         </dependency>
         
 For other build tools see: https://maven-badges.herokuapp.com/maven-central/nl.mirabeau/ceddl4j

@@ -4,7 +4,6 @@ import java.util.Date;
 
 import nl.mirabeau.ceddl4j.BaseItem;
 
-
 /**
  * Describes details about the page.
  */
@@ -32,10 +31,10 @@ public class PageInfo extends BaseItem {
 	private final Page parent;
 
 	/**
-	 * Constructor. Sets the parent.
+	 * Constructs an PageInfo object.
 	 * 
 	 * @param parent
-	 *            Page parent Object
+	 *            The parent Object
 	 */
 	protected PageInfo(final Page parent) {
 		super();
@@ -43,15 +42,17 @@ public class PageInfo extends BaseItem {
 	}
 
 	/**
-	 * Return to the parent Page object
+	 * Returns to the parent object.
 	 * 
-	 * @return Page parent object
+	 * @return The parent object
 	 */
 	public Page endPageInfo() {
 		return parent;
 	}
 
 	/**
+	 * Sets the pageID.
+	 * 
 	 * An identifier for a page or other piece of content, may be unique only
 	 * within a particular environment.
 	 * 
@@ -65,7 +66,7 @@ public class PageInfo extends BaseItem {
 	}
 
 	/**
-	 * pageName
+	 * Sets the pageName.
 	 * 
 	 * @param pageName
 	 *            String
@@ -77,9 +78,9 @@ public class PageInfo extends BaseItem {
 	}
 
 	/**
-	 * destinationURL
+	 * Sets the destinationURL.
 	 * 
-	 * For destinationURL RECOMMENDED value is document.location
+	 * For destinationURL RECOMMENDED value is document.location.
 	 * 
 	 * @param destinationURL
 	 *            String
@@ -91,7 +92,7 @@ public class PageInfo extends BaseItem {
 	}
 
 	/**
-	 * referringURL
+	 * Sets the referringURL.
 	 * 
 	 * For referringURL RECOMMENDED value is document.referrer
 	 * 
@@ -105,7 +106,7 @@ public class PageInfo extends BaseItem {
 	}
 
 	/**
-	 * sysEnv
+	 * Sets the sysEnv.
 	 * 
 	 * @param sysEnv
 	 *            String
@@ -117,7 +118,7 @@ public class PageInfo extends BaseItem {
 	}
 
 	/**
-	 * variant
+	 * Sets the variant.
 	 * 
 	 * @param variant
 	 *            String
@@ -129,7 +130,7 @@ public class PageInfo extends BaseItem {
 	}
 
 	/**
-	 * version
+	 * Sets the version.
 	 * 
 	 * @param version
 	 *            String
@@ -141,7 +142,7 @@ public class PageInfo extends BaseItem {
 	}
 
 	/**
-	 * breadCrumb
+	 * Sets the breadCrumbs.
 	 * 
 	 * @param breadCrumbs
 	 *            String
@@ -153,7 +154,7 @@ public class PageInfo extends BaseItem {
 	}
 
 	/**
-	 * author
+	 * Sets the author.
 	 * 
 	 * @param author
 	 *            String
@@ -165,9 +166,10 @@ public class PageInfo extends BaseItem {
 	}
 
 	/**
-	 * issueDate
+	 * Sets the issueDate.
 	 * 
-	 * @param issueDate Date Object
+	 * @param issueDate
+	 *            Date Object
 	 * @return {@code this}
 	 */
 	public PageInfo issueDate(final String issueDate) {
@@ -176,9 +178,10 @@ public class PageInfo extends BaseItem {
 	}
 
 	/**
-	 * issueDate
+	 * Sets the issueDate.
 	 * 
-	 * @param issueDate String
+	 * @param issueDate
+	 *            String
 	 * @return {@code this}
 	 */
 	public PageInfo issueDate(final Date issueDate) {
@@ -187,9 +190,10 @@ public class PageInfo extends BaseItem {
 	}
 
 	/**
-	 * effectiveDate
+	 * Sets the effectiveDate.
 	 * 
-	 * @param effectiveDate String
+	 * @param effectiveDate
+	 *            String
 	 * @return {@code this}
 	 */
 	public PageInfo effectiveDate(final String effectiveDate) {
@@ -198,9 +202,10 @@ public class PageInfo extends BaseItem {
 	}
 
 	/**
-	 * effectiveDate
+	 * Sets the effectiveDate.
 	 * 
-	 * @param effectiveDate Date Object
+	 * @param effectiveDate
+	 *            Date Object
 	 * @return {@code this}
 	 */
 	public PageInfo effectiveDate(final Date effectiveDate) {
@@ -208,11 +213,11 @@ public class PageInfo extends BaseItem {
 		return this;
 	}
 
-
 	/**
-	 * expiryDate
+	 * Sets the expiryDate.
 	 * 
-	 * @param expiryDate String
+	 * @param expiryDate
+	 *            String
 	 * @return {@code this}
 	 */
 	public PageInfo expiryDate(final String expiryDate) {
@@ -221,9 +226,10 @@ public class PageInfo extends BaseItem {
 	}
 
 	/**
-	 * expiryDate
+	 * Sets the expiryDate.
 	 * 
-	 * @param expiryDate Date
+	 * @param expiryDate
+	 *            Date
 	 * @return {@code this}
 	 */
 	public PageInfo expiryDate(final Date expiryDate) {
@@ -232,7 +238,7 @@ public class PageInfo extends BaseItem {
 	}
 
 	/**
-	 * language
+	 * Sets the language.
 	 * 
 	 * For fields containing language or locale, ISO 3166 and 639 are
 	 * RECOMMENDED.
@@ -247,7 +253,7 @@ public class PageInfo extends BaseItem {
 	}
 
 	/**
-	 * geoRegion
+	 * Sets the geoRegion.
 	 * 
 	 * @param geoRegion
 	 *            String
@@ -259,7 +265,7 @@ public class PageInfo extends BaseItem {
 	}
 
 	/**
-	 * industryCodes
+	 * Sets the industryCodes.
 	 * 
 	 * @param industryCodes
 	 *            String
@@ -271,7 +277,7 @@ public class PageInfo extends BaseItem {
 	}
 
 	/**
-	 * publisher
+	 * Sets the publisher.
 	 * 
 	 * @param publisher
 	 *            String
@@ -283,13 +289,14 @@ public class PageInfo extends BaseItem {
 	}
 
 	/**
-	 * onsiteSearchTerm
+	 * Sets the onsiteSearchTerm.
 	 * 
 	 * The properties onsiteSearchTerm and onsiteSearchResults are RECOMMENDED
 	 * for measuring the query term and number of results returned for onsite
 	 * search functions.
 	 * 
-	 * @param onsiteSearchTerm String
+	 * @param onsiteSearchTerm
+	 *            String
 	 * @return {@code this}
 	 */
 	public PageInfo onsiteSearchTerm(final String onsiteSearchTerm) {
@@ -298,13 +305,14 @@ public class PageInfo extends BaseItem {
 	}
 
 	/**
-	 * onsiteSearchResults
+	 * Sets the onsiteSearchResults.
 	 * 
 	 * The properties onsiteSearchTerm and onsiteSearchResults are RECOMMENDED
 	 * for measuring the query term and number of results returned for onsite
 	 * search functions.
 	 * 
-	 * @param onsiteSearchResults String
+	 * @param onsiteSearchResults
+	 *            String
 	 * @return {@code this}
 	 */
 	public PageInfo onsiteSearchResults(final Number onsiteSearchResults) {
@@ -313,7 +321,7 @@ public class PageInfo extends BaseItem {
 	}
 
 	/**
-	 * Custom PageInfo property
+	 * Sets a custom PageInfo property.
 	 * 
 	 * @param name
 	 *            Custom property name

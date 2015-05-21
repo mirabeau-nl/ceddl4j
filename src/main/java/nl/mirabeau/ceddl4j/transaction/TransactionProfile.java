@@ -9,31 +9,32 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * A profile for information about the purchaser, typically associated with a
  * registered user.
  */
-public class Profile {
+public class TransactionProfile {
 
 	private final Transaction parent;
 
 	@JsonProperty
-	private ProfileInfo<Profile> profileInfo;
+	private ProfileInfo<TransactionProfile> profileInfo;
 
 	@JsonProperty
-	private Address<Profile> address;
+	private Address<TransactionProfile> address;
 
 	@JsonProperty
-	private Address<Profile> shippingAddress;
+	private Address<TransactionProfile> shippingAddress;
 
 	/**
-	 * Constructor, sets the parent
+	 * Constructs a (Transaction)Profile object.
 	 * 
 	 * @param parent
+	 *            The parent Object
 	 */
-	public Profile(final Transaction parent) {
+	public TransactionProfile(final Transaction parent) {
 		super();
 		this.parent = parent;
 	}
 
 	/**
-	 * Return to the parent Transaction object
+	 * Returns to the parent Transaction object
 	 * 
 	 * @return Transaction parent object or {@code null} when not available
 	 */
@@ -48,9 +49,9 @@ public class Profile {
 	 * 
 	 * @return the ProfileInfo object for this Profile
 	 */
-	public ProfileInfo<Profile> profileInfo() {
+	public ProfileInfo<TransactionProfile> profileInfo() {
 		if (profileInfo == null) {
-			profileInfo = new ProfileInfo<Profile>(this);
+			profileInfo = new ProfileInfo<TransactionProfile>(this);
 		}
 		return profileInfo;
 	}
@@ -63,9 +64,9 @@ public class Profile {
 	 * 
 	 * @return The Address object for this Profile
 	 */
-	public Address<Profile> address() {
+	public Address<TransactionProfile> address() {
 		if (address == null) {
-			address = new Address<Profile>(this);
+			address = new Address<TransactionProfile>(this);
 		}
 		return address;
 	}
@@ -78,9 +79,9 @@ public class Profile {
 	 * 
 	 * @return The Shipping Address for this Profile
 	 */
-	public Address<Profile> shippingAddress() {
+	public Address<TransactionProfile> shippingAddress() {
 		if (shippingAddress == null) {
-			shippingAddress = new Address<Profile>(this);
+			shippingAddress = new Address<TransactionProfile>(this);
 		}
 		return shippingAddress;
 	}

@@ -10,42 +10,35 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * A profile for information about the user, typically associated with a
  * registered user.
  */
-public class Profile {
+public class UserProfile {
 
-	private User parent;
-
-	@JsonProperty
-	private ProfileInfo<Profile> profileInfo;
+	private final User parent;
 
 	@JsonProperty
-	private Address<Profile> address;
+	private ProfileInfo<UserProfile> profileInfo;
+
+	@JsonProperty
+	private Address<UserProfile> address;
 
 	@JsonProperty
 	private Social social;
 
 	@JsonProperty
-	private Attributes<Profile> attributes;
+	private Attributes<UserProfile> attributes;
 
 	/**
-	 * Constructor, does not set the parent.
-	 */
-	public Profile() {
-		super();
-	}
-
-	/**
-	 * Constructor, sets the parent
+	 * Constructs an (User)Profile object.
 	 * 
 	 * @param parent
-	 *            User parent Object
+	 *            The parent Object
 	 */
-	public Profile(final User parent) {
+	public UserProfile(final User parent) {
 		super();
 		this.parent = parent;
 	}
 
 	/**
-	 * Return to the parent User object
+	 * Returns to the parent object.
 	 * 
 	 * @return User parent object or {@code null} when not available
 	 */
@@ -60,9 +53,9 @@ public class Profile {
 	 * 
 	 * @return ProfileInfo object for the Profile
 	 */
-	public ProfileInfo<Profile> profileInfo() {
+	public ProfileInfo<UserProfile> profileInfo() {
 		if (profileInfo == null) {
-			profileInfo = new ProfileInfo<Profile>(this);
+			profileInfo = new ProfileInfo<UserProfile>(this);
 		}
 		return profileInfo;
 	}
@@ -74,9 +67,9 @@ public class Profile {
 	 * 
 	 * @return Address object for the Profile
 	 */
-	public Address<Profile> address() {
+	public Address<UserProfile> address() {
 		if (address == null) {
-			address = new Address<Profile>(this);
+			address = new Address<UserProfile>(this);
 		}
 		return address;
 	}
@@ -97,7 +90,7 @@ public class Profile {
 	}
 
 	/**
-	 * Directly add new social information to the Profile
+	 * Directly adds new social information to the Profile.
 	 * 
 	 * @param name
 	 *            Name of the social information
@@ -105,7 +98,7 @@ public class Profile {
 	 *            Value for the social information
 	 * @return {@code this}
 	 */
-	public Profile addSocial(final String name, final String value) {
+	public UserProfile addSocial(final String name, final String value) {
 		if (social == null) {
 			social = new Social(this);
 		}
@@ -114,21 +107,21 @@ public class Profile {
 	}
 
 	/**
-	 * Gives access to the attributes object for the user profile.
+	 * Provides access to the attributes object for the user profile.
 	 * 
 	 * This object provides extensibility to the profile.
 	 * 
 	 * @return Attributes object for the Profile
 	 */
-	public Attributes<Profile> attributes() {
+	public Attributes<UserProfile> attributes() {
 		if (attributes == null) {
-			attributes = new Attributes<Profile>(this);
+			attributes = new Attributes<UserProfile>(this);
 		}
 		return attributes;
 	}
 
 	/**
-	 * Directly add a new attribute to the Profile's Attributes
+	 * Directly adds a new attribute to the Profile's Attributes
 	 * 
 	 * @param name
 	 *            Name of the attribute
@@ -136,9 +129,9 @@ public class Profile {
 	 *            Value for the attribute
 	 * @return {@code this}
 	 */
-	public Profile addAttribute(final String name, final String value) {
+	public UserProfile addAttribute(final String name, final String value) {
 		if (attributes == null) {
-			attributes = new Attributes<Profile>(this);
+			attributes = new Attributes<UserProfile>(this);
 		}
 		attributes.attribute(name, value);
 		return this;

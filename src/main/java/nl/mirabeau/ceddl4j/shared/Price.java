@@ -23,9 +23,9 @@ public class Price<T> extends BaseItem {
 	private final T parent;
 
 	/**
-	 * Constructor, sets the parent
+	 * Constructs a Price object
 	 * 
-	 * @param parent
+	 * @param parent The parent object
 	 */
 	public Price(final T parent) {
 		super();
@@ -33,7 +33,7 @@ public class Price<T> extends BaseItem {
 	}
 
 	/**
-	 * Return to the parent object
+	 * Returns to the parent object
 	 * 
 	 * @return parent object
 
@@ -43,6 +43,7 @@ public class Price<T> extends BaseItem {
 	}
 
 	/**
+	 * Sets the basePrice.
 	 * 
 	 * The basePrice SHOULD be the price of the items before applicable
 	 * discounts, shipping charges, and tax.
@@ -57,7 +58,7 @@ public class Price<T> extends BaseItem {
 	}
 
 	/**
-	 * voucherCode
+	 * Sets the voucherCode.
 	 * 
 	 * @param voucherCode
 	 *            String
@@ -69,7 +70,7 @@ public class Price<T> extends BaseItem {
 	}
 
 	/**
-	 * voucherDiscount
+	 * Sets the voucherDiscount.
 	 * 
 	 * @param voucherDiscount
 	 *            Number
@@ -81,10 +82,12 @@ public class Price<T> extends BaseItem {
 	}
 
 	/**
-	 * Currency.
+	 * Sets the currency.
+	 * 
+	 * For currency values, ISO 4217 is RECOMMENDED.
 	 * 
 	 * @param currency
-	 *            String. For currency values, ISO 4217 is RECOMMENDED.
+	 *            String.
 	 * @return {@code this}
 	 */
 	public Price<T> currency(final String currency) {
@@ -93,7 +96,7 @@ public class Price<T> extends BaseItem {
 	}
 
 	/**
-	 * Taxrate
+	 * Sets the taxrate.
 	 * 
 	 * @param taxRate
 	 *            Number
@@ -105,7 +108,7 @@ public class Price<T> extends BaseItem {
 	}
 
 	/**
-	 * Shipping
+	 * Sets the shipping.
 	 * 
 	 * @param shipping
 	 *            Number
@@ -117,7 +120,7 @@ public class Price<T> extends BaseItem {
 	}
 
 	/**
-	 * ShippingMethod
+	 * Sets the shippingMethod.
 	 * 
 	 * @param shippingMethod
 	 *            String
@@ -129,7 +132,7 @@ public class Price<T> extends BaseItem {
 	}
 
 	/**
-	 * PriceWithTax
+	 * Sets the PriceWithTax.
 	 * 
 	 * @param priceWithTax
 	 *            Number
@@ -141,6 +144,8 @@ public class Price<T> extends BaseItem {
 	}
 
 	/**
+	 * Sets the cartTotal.
+	 * 
 	 * The cartTotal SHOULD be the total price inclusive of all discounts,
 	 * charges, and tax.
 	 * 
@@ -154,6 +159,8 @@ public class Price<T> extends BaseItem {
 	}
 
 	/**
+	 * Sets the transactionTotal.
+	 * 
 	 * The transactionTotal SHOULD be the total price inclusive of all
 	 * discounts, charges, and tax.
 	 * 
@@ -166,7 +173,7 @@ public class Price<T> extends BaseItem {
 	}
 
 	/**
-	 * Custom Price property
+	 * Sets a custom Price property.
 	 * 
 	 * @param name
 	 *            Name for the custom property

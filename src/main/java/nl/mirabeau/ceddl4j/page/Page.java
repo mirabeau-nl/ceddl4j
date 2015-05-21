@@ -26,9 +26,10 @@ public class Page {
 	private Attributes<Page> attributes;
 
 	/**
-	 * Constructor. Sets the parent.
+	 * Constructs a Page object
 	 * 
-	 * @param parent DigitalData parent Object
+	 * @param parent
+	 *            The parent Object
 	 */
 	public Page(final DigitalData parent) {
 		super();
@@ -36,14 +37,14 @@ public class Page {
 	}
 
 	/**
-	 * Constructor. Does not set the parent
+	 * Constructs a Page object
 	 */
 	public Page() {
 		super();
 	}
 
 	/**
-	 * Return to the parent DigitalData object
+	 * Returns to the parent object.
 	 * 
 	 * @return  DigitalData parent object or {@code null} when not available
 	 */
@@ -100,7 +101,7 @@ public class Page {
 	}
 
 	/**
-	 * Directly add a new attribute to the Page's attributes
+	 * Directly adds a new attribute to the Page's attributes
 	 * 
 	 * @param name Name of the attribute
 	 * @param value Value for the attribute
@@ -115,7 +116,7 @@ public class Page {
 	}
 
 	/**
-	 * Directly add the primary category to the Page's categories
+	 * Directly adds the primary category to the Page's categories
 	 * 
 	 * @param primaryCategory Value for the primary category
 	 * @return  {@code this}
@@ -129,7 +130,7 @@ public class Page {
 	}
 
 	/**
-	 * Directly add a custom category to the Page's categories
+	 * Directly adds a custom category to the Page's categories
 	 * 
 	 * @param name Name of the category
 	 * @param value Value for the attribute

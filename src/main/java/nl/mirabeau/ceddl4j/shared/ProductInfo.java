@@ -24,9 +24,9 @@ public class ProductInfo<T> extends BaseItem {
 	private final T parent;
 
 	/**
-	 * Constructor, sets the parent
+	 * Constructs a ProductInfo object
 	 * 
-	 * @param parent
+	 * @param parent The parent object
 	 */
 	public ProductInfo(final T parent) {
 		super();
@@ -34,7 +34,7 @@ public class ProductInfo<T> extends BaseItem {
 	}
 
 	/**
-	 * Return to the parent object
+	 * Returns to the parent object.
 	 * 
 	 * @return parent object
 	 */
@@ -43,7 +43,7 @@ public class ProductInfo<T> extends BaseItem {
 	}
 
 	/**
-	 * productID
+	 * Sets the productID.
 	 * 
 	 * @param productID
 	 *            String
@@ -55,7 +55,7 @@ public class ProductInfo<T> extends BaseItem {
 	}
 
 	/**
-	 * productName
+	 * Sets the productName.
 	 * 
 	 * @param productName
 	 *            String
@@ -67,7 +67,7 @@ public class ProductInfo<T> extends BaseItem {
 	}
 
 	/**
-	 * Description
+	 * Sets the description.
 	 * 
 	 * @param description
 	 *            String
@@ -79,7 +79,7 @@ public class ProductInfo<T> extends BaseItem {
 	}
 
 	/**
-	 * productURL
+	 * Sets the productURL.
 	 * 
 	 * @param productURL
 	 *            String
@@ -91,7 +91,7 @@ public class ProductInfo<T> extends BaseItem {
 	}
 
 	/**
-	 * productImage
+	 * Sets the productImage.
 	 * 
 	 * @param productImage
 	 *            String
@@ -103,7 +103,7 @@ public class ProductInfo<T> extends BaseItem {
 	}
 
 	/**
-	 * productThumbnail
+	 * Sets the productThumbnail.
 	 * 
 	 * @param productThumbnail
 	 *            String
@@ -115,7 +115,7 @@ public class ProductInfo<T> extends BaseItem {
 	}
 
 	/**
-	 * manufacturer
+	 * Sets the manufacturer.
 	 * 
 	 * @param manufacturer
 	 *            String
@@ -127,7 +127,7 @@ public class ProductInfo<T> extends BaseItem {
 	}
 
 	/**
-	 * sku
+	 * Sets the sku.
 	 * 
 	 * @param sku
 	 *            String
@@ -139,7 +139,7 @@ public class ProductInfo<T> extends BaseItem {
 	}
 
 	/**
-	 * color
+	 * Sets the color.
 	 * 
 	 * @param color
 	 *            String
@@ -151,7 +151,7 @@ public class ProductInfo<T> extends BaseItem {
 	}
 
 	/**
-	 * size
+	 * Sets the size.
 	 * 
 	 * @param size
 	 *            String
@@ -163,7 +163,7 @@ public class ProductInfo<T> extends BaseItem {
 	}
 
 	/**
-	 * Custom ProductInfo property
+	 * Sets a custom ProductInfo property
 	 * 
 	 * @param name
 	 *            Name for the custom property

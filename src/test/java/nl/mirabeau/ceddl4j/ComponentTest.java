@@ -37,7 +37,40 @@ public class ComponentTest {
 
 		System.out.println(ddb.toString());
 
-		final String expected = new TestUtil().loadJsonFromFile("/tests/componentTest.json");
+		final String expected = new TestUtil().loadJsonFromFile("/componentTest.json");
+
+		JSONAssert.assertEquals(expected, ddb.toString(), true);
+	}
+
+	@Test
+	public void testComponent2() throws IOException, JSONException {
+
+		final DigitalData ddb = DigitalData.create()
+				.addComponent()
+				.componentInfo()
+				.componentID("rog300v")
+				.custom("componentName", "How to Use Rogaine")
+				.custom("description", "Hair Treatment Video")
+				.endComponentInfo()
+				.attributes()
+				.attribute("testAttribuut2", "testattr2")
+				.endAttributes()
+				.addAttribuut("testAttribuut", "testattr")
+				.category()
+				.category("customcat2", "testCat2")
+				.endCategory()
+				.addPrimaryCategory("test")
+				.addCategory("customcat", "testCat")
+				.endComponent()
+				.addComponent()
+				.componentInfo()
+				.componentID("rog400v")
+				.endComponentInfo()
+				.endComponent();
+
+		System.out.println(ddb.toString());
+
+		final String expected = new TestUtil().loadJsonFromFile("/componentTest.json");
 
 		JSONAssert.assertEquals(expected, ddb.toString(), true);
 	}

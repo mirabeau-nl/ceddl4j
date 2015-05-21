@@ -25,9 +25,10 @@ public class Component {
 	private Attributes<Component> attributes;
 
 	/**
-	 * Constructor. Sets the parent.
+	 * Constructs an Component object.
 	 * 
 	 * @param parent
+	 *            The parent Object
 	 */
 	public Component(final DigitalData parent) {
 		super();
@@ -35,16 +36,16 @@ public class Component {
 	}
 
 	/**
-	 * Constructor. Does not set the parent.
+	 * Constructs an Component object.
 	 */
 	public Component() {
 		super();
 	}
 
 	/**
-	 * Return to the parent DigitalData object.
+	 * Returns to the parent object.
 	 * 
-	 * @return DigitalData parent object or {@code null} when not available
+	 * @return Parent object or {@code null} when not available
 	 */
 	public DigitalData endComponent() {
 		return parent;
@@ -97,7 +98,7 @@ public class Component {
 	}
 
 	/**
-	 * Directly add a new attribute to the Component's attributes
+	 * Directly adds a new attribute to the Component's attributes
 	 * 
 	 * @param name Name of the attribute
 	 * @param value Value for the attribute
@@ -112,7 +113,7 @@ public class Component {
 	}
 
 	/**
-	 * Directly add the primary category to the Component's categories.
+	 * Directly adds the primary category to the Component's categories.
 	 * 
 	 * @param primaryCategory Value for the primary category
 	 * @return  {@code this}
@@ -127,7 +128,7 @@ public class Component {
 	}
 
 	/**
-	 * Directly add a custom category to the Component's categories.
+	 * Directly adds a custom category to the Component's categories.
 	 * 
 	 * @param name Name of the category
 	 * @param value Value for the attribute

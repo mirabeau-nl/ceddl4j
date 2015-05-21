@@ -1,0 +1,37 @@
+{
+  "pageInstanceID" : "ProductDetailPageNikonCamera-Staging",
+  "page" : {
+    "pageInfo" : {
+      "pageID" : "ProductDetailPageNikonCamera",
+      "pageName" : "Nikon SLR Camera",
+      "destinationURL" : "http://www,testshop.nl/nikon/",
+      "referringURL" : "http://www,testshop.nl/home/",
+      "sysEnv" : "staging",
+      "variant" : "Variant A",
+      "version" : "78",
+      "breadcrumbs" : [ "camera", "Nikon", "SLR" ],
+      "author" : "S. Veenstra",
+      "issueDate" : "1970-01-01T00:00:00Z",
+      "effectiveDate" : "1970-01-01T00:00:00Z",
+      "expiryDate" : "1970-01-01T00:00:00Z",
+      "language" : "nl",
+      "geoRegion" : "The Netherlands",
+      "industryCodes" : "test",
+      "publisher" : "me",
+      "onsiteSearchTerm" : "search terms",
+      "onsiteSearchResults" : 42,
+      "custom pageinfo" : "example"
+    },
+    "category" : {
+      "primaryCategory" : "Cameras",
+      "subCategory1" : "Nikon",
+      "test" : "testvalue"
+    },
+    "attributes" : {
+      "Seasonal" : "Christmas",
+      "customdateattribuut" : "1970-01-01T00:00:00Z",
+      "customnumberattribuut" : 100
+    }
+  },
+  "version" : "1.0"
+}

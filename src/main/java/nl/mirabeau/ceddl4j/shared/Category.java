@@ -15,9 +15,9 @@ public class Category<T> extends BaseItem {
 	private final T parent;
 
 	/**
-	 * Constructor, sets the parent
+	 * Constructs a Category object
 	 * 
-	 * @param parent
+	 * @param parent The parent object
 	 */
 	public Category(final T parent) {
 		super();
@@ -25,7 +25,7 @@ public class Category<T> extends BaseItem {
 	}
 
 	/**
-	 * Return to the parent object
+	 * Returns to the parent object
 	 * 
 	 * @return parent object
 	 */
@@ -34,7 +34,7 @@ public class Category<T> extends BaseItem {
 	}
 
 	/**
-	 * Set the primaryCategory.
+	 * Sets the primaryCategory.
 	 * 
 	 * The name primaryCategory is RECOMMENDED if you included only one set of
 	 * categories for products, or for your primary set of categories.
@@ -49,7 +49,7 @@ public class Category<T> extends BaseItem {
 	}
 
 	/**
-	 * Custom category
+	 * Sets a custom category
 	 * 
 	 * @param name
 	 *            Custom category name

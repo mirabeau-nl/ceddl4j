@@ -116,17 +116,17 @@ public class DigitalData {
 	private List<User> user;
 
 	@JsonProperty
-	private Object version;
+	private String version;
 
 	/**
-	 * Constructor
+	 * Constructs a DigitalData object.
 	 */
 	public DigitalData() {
 		super();
 	}
 
 	/**
-	 * Create a new DigitalData object.
+	 * Creates a new DigitalData object.
 	 * 
 	 * @return new DigitalData object
 	 */
@@ -135,7 +135,7 @@ public class DigitalData {
 	}
 
 	/**
-	 * Create a new DigitalData object and set the pageInstanceID
+	 * Creates a new DigitalData object and set the pageInstanceID.
 	 * 
 	 * @return new DigitalData object
 	 */
@@ -144,7 +144,7 @@ public class DigitalData {
 	}
 
 	/**
-	 * Set the Page Identifier Object
+	 * Sets the Page Identifier Object.
 	 * 
 	 * @param pageInstanceID
 	 *            A unique identifier for a page or other piece of content for
@@ -174,7 +174,7 @@ public class DigitalData {
 	}
 
 	/**
-	 * Set the Page object
+	 * Sets the Page object.
 	 * 
 	 * The Page object carries significant details about the page, and the most
 	 * commonly used data elements are captured by the specification below.
@@ -189,7 +189,7 @@ public class DigitalData {
 	}
 
 	/**
-	 * Add a new Product to the list of products.
+	 * Adds a new Product to the list of products.
 	 * 
 	 * The Product object carries details about a particular product with
 	 * frequently used properties listed below. This is intended for data about
@@ -210,7 +210,7 @@ public class DigitalData {
 	}
 
 	/**
-	 * Add a provided Product to the list of products.
+	 * Adds a provided Product to the list of products.
 	 * 
 	 * The Product object carries details about a particular product with
 	 * frequently used properties listed below. This is intended for data about
@@ -249,7 +249,7 @@ public class DigitalData {
 	}
 
 	/**
-	 * Set the Cart object
+	 * Sets the Cart object.
 	 * 
 	 * The Cart object carries details about a shopping cart or basket and the
 	 * products that have been added to it. The Cart object is intended for a
@@ -283,7 +283,7 @@ public class DigitalData {
 	}
 
 	/**
-	 * Set the Transaction object
+	 * Sets the Transaction object
 	 * 
 	 * The Transaction object is similar to the Cart object, but represents a
 	 * completed order. The Transaction object contains analogous sub-objects to
@@ -300,7 +300,7 @@ public class DigitalData {
 	}
 
 	/**
-	 * Add a new Event to the list of events that were measured.
+	 * Adds a new Event to the list of events that were measured.
 	 * 
 	 * The Event object collects information about an interaction event by the
 	 * user. An event might be a button click, the addition of a portal widget,
@@ -319,7 +319,7 @@ public class DigitalData {
 	}
 
 	/**
-	 * Add a provided Event to the list of events that were measured.
+	 * Adds a provided Event to the list of events that were measured.
 	 * 
 	 * The Event object collects information about an interaction event by the
 	 * user. An event might be a button click, the addition of a portal widget,
@@ -339,11 +339,11 @@ public class DigitalData {
 	}
 
 	/**
-	 * Add a new Component to the list of page components.
+	 * Adds a new Component to the list of page components.
 	 * 
 	 * The Component object is intended to capture information about a content
 	 * component included as part of a page, such as a video. Interactions with
-	 * the component — such as playing the video — would be an Event, captured
+	 * the component  - such as playing the video - would be an Event, captured
 	 * by the Event object above.
 	 * 
 	 * @return a new Component object
@@ -358,11 +358,11 @@ public class DigitalData {
 	}
 
 	/**
-	 * Add a provided Component to the list of page components.
+	 * Adds a provided Component to the list of page components.
 	 * 
 	 * The Component object is intended to capture information about a content
 	 * component included as part of a page, such as a video. Interactions with
-	 * the component — such as playing the video — would be an Event, captured
+	 * the component - such as playing the video - would be an Event, captured
 	 * by the Event object above.
 	 * 
 	 * @param newComponent
@@ -378,7 +378,7 @@ public class DigitalData {
 	}
 
 	/**
-	 * Add a new user to the list of list of users interacting with the page.
+	 * Adds a new user to the list of list of users interacting with the page.
 	 * 
 	 * The User object captures the profile of a user who is interacting with
 	 * the website.
@@ -399,7 +399,7 @@ public class DigitalData {
 	}
 
 	/**
-	 * Add a provided object user to the list of list of users interacting with
+	 * Adds a provided object user to the list of list of users interacting with
 	 * the page.
 	 * 
 	 * The User object captures the profile of a user who is interacting with
@@ -421,7 +421,7 @@ public class DigitalData {
 	}
 
 	/**
-	 * Set the version of the CEDDL specification used by the digitalData object
+	 * Sets the version of the CEDDL specification used by the digitalData object
 	 * to a custom value.
 	 * 
 	 * @param version
@@ -434,8 +434,8 @@ public class DigitalData {
 	}
 
 	/**
-	 * Set the version of the CEDDL specification used by the digitalData object
-	 * to "1.0"
+	 * Sets the version of the CEDDL specification used by the digitalData object
+	 * to "1.0".
 	 * 
 	 * @return The current DigitalData object
 	 */
@@ -445,8 +445,7 @@ public class DigitalData {
 	}
 
 	/**
-	 * Returns the DigitalData Object as a JSON String. This does not include
-	 * {@code digitalData =}
+	 * Returns the DigitalData Object as a JSON String not including {@code digitalData =}.
 	 * 
 	 * @return String containing DigitalData in JSON format, not starting with
 	 *         {@code digitalData =}
@@ -469,8 +468,7 @@ public class DigitalData {
 	}
 
 	/**
-	 * Returns the DigitalData Object as a JSON String. This does start with
-	 * {@code digitalData =}
+	 * Returns the DigitalData Object as a JSON String including {@code digitalData =}.
 	 * 
 	 * @return String containing DigitalData in JSON format, starting with
 	 *         {@code digitalData =}

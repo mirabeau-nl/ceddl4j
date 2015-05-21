@@ -14,16 +14,17 @@ public class Segment extends BaseItem {
 	private final User parent;
 
 	/**
-	 * Constructor, sets the parent
+	 * Constructs an Segment object.
 	 * 
 	 * @param parent
+	 *            The parent Object
 	 */
 	public Segment(final User parent) {
 		this.parent = parent;
 	}
 
 	/**
-	 * Return to the parent object
+	 * Returns to the parent object.
 	 * 
 	 * @return parent object
 	 */
@@ -32,7 +33,7 @@ public class Segment extends BaseItem {
 	}
 
 	/**
-	 * Add a segment information item
+	 * Adds a segment information item.
 	 * 
 	 * @param name
 	 *            Name of the segment information item

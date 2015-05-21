@@ -19,9 +19,9 @@ public class ProfileInfo<T> extends BaseItem {
 	private final T parent;
 
 	/**
-	 * Constructor, sets the parent
+	 * Constructs a ProfileInfo object.
 	 * 
-	 * @param parent
+	 * @param parent The parent object
 	 */
 	public ProfileInfo(final T parent) {
 		super();
@@ -29,7 +29,7 @@ public class ProfileInfo<T> extends BaseItem {
 	}
 
 	/**
-	 * Return to the parent object
+	 * Returns to the parent object.
 	 * 
 	 * @return parent object
 	 */
@@ -38,7 +38,7 @@ public class ProfileInfo<T> extends BaseItem {
 	}
 
 	/**
-	 * profileID
+	 * Sets the profileID.
 	 * 
 	 * @param profileID String
 	 * @return {@code this}
@@ -49,7 +49,7 @@ public class ProfileInfo<T> extends BaseItem {
 	}
 
 	/**
-	 * userName
+	 * Sets the userName.
 	 * 
 	 * @param userName String
 	 * @return {@code this}
@@ -60,7 +60,7 @@ public class ProfileInfo<T> extends BaseItem {
 	}
 
 	/**
-	 * email
+	 * Sets the email.
 	 * 
 	 * @param email String
 	 * @return {@code this}
@@ -71,7 +71,7 @@ public class ProfileInfo<T> extends BaseItem {
 	}
 
 	/**
-	 * language
+	 * Sets the language.
 	 * 
 	 * @param language String
 	 * @return {@code this}
@@ -82,7 +82,7 @@ public class ProfileInfo<T> extends BaseItem {
 	}
 
 	/**
-	 * returningStatus
+	 * Sets the returningStatus.
 	 * 
 	 * @param returningStatus String
 	 * @return {@code this}
@@ -93,7 +93,7 @@ public class ProfileInfo<T> extends BaseItem {
 	}
 
 	/**
-	 * type
+	 * Sets the type.
 	 * 
 	 * @param type String
 	 * @return {@code this}
@@ -104,7 +104,7 @@ public class ProfileInfo<T> extends BaseItem {
 	}
 
 	/**
-	 * Custom ProfileInfo property
+	 * Sets a custom ProfileInfo property.
 	 * 
 	 * @param name Name for the custom property
 	 * @param value Value for the custom property
