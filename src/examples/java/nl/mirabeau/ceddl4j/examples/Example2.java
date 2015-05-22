@@ -12,7 +12,7 @@ import org.skyscreamer.jsonassert.JSONAssert;
 public class Example2 {
 
 	/**
-	 * Generate the following example from the CEDDL spec on page 10.
+	 * Generate the following example from the CEDDL specification on page 10.
 	 * 
 	 * <pre>
 	 * {@code
@@ -76,7 +76,7 @@ public class Example2 {
 		final String expected = new TestUtil()
 		.loadJsonFromFile("/example2.json");
 
-		JSONAssert.assertEquals(expected, ddb.toString(), false);
+		JSONAssert.assertEquals(expected, ddb.toString(), true);
 	}
 
 }

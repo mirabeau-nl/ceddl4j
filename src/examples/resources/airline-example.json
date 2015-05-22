@@ -1,0 +1,32 @@
+{
+  "product" : [ {
+    "productInfo" : {
+      "productID" : "734565538989889110",
+      "description" : "Business Class One-Way Ticket",
+      "originAirportCode" : "RDU",
+      "originCity" : "Raleigh",
+      "originState" : "North Carolina",
+      "originCounty" : "USA",
+      "destinationAirportCode" : "BOM",
+      "destinationState" : "Maharashtra",
+      "destinationCountry" : "India",
+      "departureDate" : "2013-12-15T14:20:00Z",
+      "arrivalDate" : "2013-12-16T21:40:00Z",
+      "numberOfTravellers" : 1
+    }
+  } ],
+  "cart" : {
+    "price" : {
+      "basePrice" : 1000.0,
+      "currency" : "USD",
+      "fees" : 200,
+      "taxRate" : 0.08,
+      "cartTotal" : 1296.0
+    }
+  },
+  "user" : [ {
+    "segment" : {
+      "frequentFlyerClub" : "Silver Elite"
+    }
+  } ]
+}
