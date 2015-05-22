@@ -1,0 +1,27 @@
+{
+  "pageInstanceID" : "MyHomePage-Production",
+  "member" : [ {
+    "memberID" : "2723 49202388 01",
+    "age" : "41",
+    "groupRelationship" : "436378",
+    "groupName" : "Employer, Inc.",
+    "relation" : "Spouse",
+    "gender" : "M",
+    "originalJoinDate" : "2011-01-21",
+    "postalCode" : "15214"
+  } ],
+  "application" : {
+    "appID" : "7565-2373-0086-8937",
+    "source" : "Telephone",
+    "status" : "Pending",
+    "creationDate" : "2013-12-15T14:20:02Z",
+    "completionDate" : "2013-12-15T16:05:16Z"
+  },
+  "plan" : {
+    "name" : "Family Advantage 250",
+    "type" : "EPO",
+    "policyStatus" : "Current",
+    "premium" : 454.25,
+    "effectiveDate" : "2013-12-15T16:05:16Z"
+  }
+}

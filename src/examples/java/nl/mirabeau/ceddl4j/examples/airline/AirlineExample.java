@@ -1,4 +1,4 @@
-package nl.mirabeau.ceddl4j.examples;
+package nl.mirabeau.ceddl4j.examples.airline;
 
 import java.io.IOException;
 import java.util.Calendar;
@@ -18,7 +18,7 @@ import org.skyscreamer.jsonassert.JSONAssert;
 public class AirlineExample {
 
 	/**
-	 * Generate the air travel booking website example from the CEDDL specification on page 30.
+	 * Generates the air travel booking website example from the CEDDL specification on page 30.
 	 * 
 	 * @throws IOException
 	 * @throws JSONException

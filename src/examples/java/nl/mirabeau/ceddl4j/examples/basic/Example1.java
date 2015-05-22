@@ -1,4 +1,4 @@
-package nl.mirabeau.ceddl4j.examples;
+package nl.mirabeau.ceddl4j.examples.basic;
 
 import java.io.IOException;
 
@@ -12,7 +12,7 @@ import org.skyscreamer.jsonassert.JSONAssert;
 public class Example1 {
 
 	/**
-	 * Generate the following example from the CEDDL specification on page 9.
+	 * Generates the following example from the CEDDL specification on page 9.
 	 * 
 	 * <pre>
 	 * {@code
