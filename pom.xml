@@ -144,8 +144,8 @@
 	</build>
 
 	<name>ceddl4j</name>
-	<description>CEDDL4J is a Java Library, with a fluent API, for creating a Data Layer that follows the Customer Experience Digital Data Layer (CEDDL) specification.</description>
-	<url>https://github.com/mirabeau-nl/</url>
+	<description>Ceddl4j is a Java API for generating a website data layer compliant with the CEDDL specification.</description>
+	<url>https://mirabeau-nl.github.io/ceddl4j/</url>
 	<inceptionYear>2015</inceptionYear>
 	<licenses>
 		<license>
