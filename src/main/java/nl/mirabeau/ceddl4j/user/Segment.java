@@ -1,6 +1,6 @@
 package nl.mirabeau.ceddl4j.user;
 
-import nl.mirabeau.ceddl4j.BaseItem;
+import nl.mirabeau.ceddl4j.internal.BaseItem;
 
 /**
  * This object provides population segmentation information for the user, such
@@ -9,7 +9,7 @@ import nl.mirabeau.ceddl4j.BaseItem;
  * All names are optional and should fit the individual implementation needs in
  * both naming and values passed.
  */
-public class Segment extends BaseItem {
+public class Segment extends BaseItem<Segment> {
 
 	private final User parent;
 
@@ -42,7 +42,12 @@ public class Segment extends BaseItem {
 	 * @return {@code this}
 	 */
 	public Segment segment(final String name, final Object value) {
-		items.put(name, value);
+		addItem(name, value);
+		return this;
+	}
+
+	@Override
+	protected Segment returnSelf() {
 		return this;
 	}
 }

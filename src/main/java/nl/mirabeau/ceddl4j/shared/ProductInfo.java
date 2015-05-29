@@ -1,6 +1,6 @@
 package nl.mirabeau.ceddl4j.shared;
 
-import nl.mirabeau.ceddl4j.BaseItem;
+import nl.mirabeau.ceddl4j.internal.BaseItem;
 
 
 /**
@@ -8,7 +8,7 @@ import nl.mirabeau.ceddl4j.BaseItem;
  *
  * @param <T> Parent object type
  */
-public class ProductInfo<T> extends BaseItem {
+public class ProductInfo<T> extends BaseItem<ProductInfo<T>> {
 
 	private static final String PRODUCT_ID = "productID";
 	private static final String PRODUCT_NAME = "productName";
@@ -50,7 +50,7 @@ public class ProductInfo<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public ProductInfo<T> productID(final String productID) {
-		items.put(PRODUCT_ID, productID);
+		addItem(PRODUCT_ID, productID);
 		return this;
 	}
 
@@ -62,7 +62,7 @@ public class ProductInfo<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public ProductInfo<T> productName(final String productName) {
-		items.put(PRODUCT_NAME, productName);
+		addItem(PRODUCT_NAME, productName);
 		return this;
 	}
 
@@ -74,7 +74,7 @@ public class ProductInfo<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public ProductInfo<T> description(final String description) {
-		items.put(DESCRIPTION, description);
+		addItem(DESCRIPTION, description);
 		return this;
 	}
 
@@ -86,7 +86,7 @@ public class ProductInfo<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public ProductInfo<T> productURL(final String productURL) {
-		items.put(PRODUCT_URL, productURL);
+		addItem(PRODUCT_URL, productURL);
 		return this;
 	}
 
@@ -98,7 +98,7 @@ public class ProductInfo<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public ProductInfo<T> productImage(final String productImage) {
-		items.put(PRODUCT_IMAGE, productImage);
+		addItem(PRODUCT_IMAGE, productImage);
 		return this;
 	}
 
@@ -110,7 +110,7 @@ public class ProductInfo<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public ProductInfo<T> productThumbnail(final String productThumbnail) {
-		items.put(PRODUCT_THUMBNAIL, productThumbnail);
+		addItem(PRODUCT_THUMBNAIL, productThumbnail);
 		return this;
 	}
 
@@ -122,7 +122,7 @@ public class ProductInfo<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public ProductInfo<T> manufacturer(final String manufacturer) {
-		items.put(MANUFACTURER, manufacturer);
+		addItem(MANUFACTURER, manufacturer);
 		return this;
 	}
 
@@ -134,7 +134,7 @@ public class ProductInfo<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public ProductInfo<T> sku(final String sku) {
-		items.put(SKU, sku);
+		addItem(SKU, sku);
 		return this;
 	}
 
@@ -146,7 +146,7 @@ public class ProductInfo<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public ProductInfo<T> color(final String color) {
-		items.put(COLOR, color);
+		addItem(COLOR, color);
 		return this;
 	}
 
@@ -158,21 +158,12 @@ public class ProductInfo<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public ProductInfo<T> size(final String size) {
-		items.put(SIZE, size);
+		addItem(SIZE, size);
 		return this;
 	}
 
-	/**
-	 * Sets a custom ProductInfo property
-	 * 
-	 * @param name
-	 *            Name for the custom property
-	 * @param value
-	 *            Value for the customn property
-	 * @return {@code this}
-	 */
-	public ProductInfo<T> custom(final String name, final Object value) {
-		items.put(name, value);
+	@Override
+	protected ProductInfo<T> returnSelf() {
 		return this;
 	}
 }

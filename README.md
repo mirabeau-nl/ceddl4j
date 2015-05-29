@@ -15,8 +15,6 @@ The Customer Experience Digital Data Layer (CEDDL) specification
 
 The complete CEDDL specification can be found at http://www.w3.org/2013/12/ceddl-201312.pdf
 
-Ceddl4j currently implements the full CEDDL specification except for the Privacy and Security objects.
-
 For the API/ JavaDoc see: http://www.javadoc.io/doc/nl.mirabeau/ceddl4j/
 
 ### Example ###
@@ -64,7 +62,7 @@ Add the following dependency to your project's Maven POM.
         <dependency>
             <groupId>nl.mirabeau</groupId>
             <artifactId>ceddl4j</artifactId>
-            <version>0.2.0</version>
+            <version>0.2.1</version>
         </dependency>
         
 For other build tools see: https://maven-badges.herokuapp.com/maven-central/nl.mirabeau/ceddl4j
@@ -87,7 +85,7 @@ For other build tools see: https://maven-badges.herokuapp.com/maven-central/nl.m
 		* Redistributions in binary form must reproduce the above copyright
 		notice, this list of conditions and the following disclaimer in the
 		documentation and/or other materials provided with the distribution.
-		* Neither the name of the <organization> nor the
+		* Neither the name of Mirabeau B.V. nor the
 		names of its contributors may be used to endorse or promote products
 		derived from this software without specific prior written permission.
 

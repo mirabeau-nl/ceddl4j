@@ -1,6 +1,6 @@
 package nl.mirabeau.ceddl4j.shared;
 
-import nl.mirabeau.ceddl4j.BaseItem;
+import nl.mirabeau.ceddl4j.internal.BaseItem;
 
 /**
  * An extensible object for providing address information for the user.
@@ -8,7 +8,7 @@ import nl.mirabeau.ceddl4j.BaseItem;
  * @param <T>
  *            Parent object type
  */
-public class Address<T> extends BaseItem {
+public class Address<T> extends BaseItem<Address<T>> {
 
 	private static final String LINE1 = "line1";
 	private static final String LINE2 = "line2";
@@ -47,7 +47,7 @@ public class Address<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public Address<T> line1(final String line1) {
-		items.put(LINE1, line1);
+		addItem(LINE1, line1);
 		return this;
 	}
 
@@ -59,7 +59,7 @@ public class Address<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public Address<T> line2(final String line2) {
-		items.put(LINE2, line2);
+		addItem(LINE2, line2);
 		return this;
 	}
 
@@ -71,7 +71,7 @@ public class Address<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public Address<T> city(final String city) {
-		items.put(CITY, city);
+		addItem(CITY, city);
 		return this;
 	}
 
@@ -83,7 +83,7 @@ public class Address<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public Address<T> stateProvince(final String stateProvince) {
-		items.put(STATE_PROVINCE, stateProvince);
+		addItem(STATE_PROVINCE, stateProvince);
 		return this;
 	}
 
@@ -95,7 +95,7 @@ public class Address<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public Address<T> postalCode(final String postalCode) {
-		items.put(POSTAL_CODE, postalCode);
+		addItem(POSTAL_CODE, postalCode);
 		return this;
 	}
 
@@ -107,21 +107,12 @@ public class Address<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public Address<T> country(final String country) {
-		items.put(COUNTRY, country);
+		addItem(COUNTRY, country);
 		return this;
 	}
 
-	/**
-	 * Sets a custom address property
-	 * 
-	 * @param name
-	 *            Custom property name
-	 * @param value
-	 *            Custom property value
-	 * @return {@code this}
-	 */
-	public Address<T> custom(final String name, final Object value) {
-		items.put(name, value);
+	@Override
+	protected Address<T> returnSelf() {
 		return this;
 	}
 }

@@ -1,0 +1,28 @@
+{
+  "cart" : {
+    "item" : [ {
+      "productInfo" : {
+        "security" : {
+          "productName" : "Analytics",
+          "description" : "Analytics",
+          "productURL" : "Analytics"
+        },
+        "productName" : "Example product name",
+        "description" : "Example description",
+        "productURL" : "http://www.exampleproducturl.com"
+      }
+    } ]
+  },
+  "privacy" : {
+    "accessCategories" : [ {
+      "categoryName" : "Default",
+      "domains" : [ "nonexistent-store.com", "audit.com" ]
+    }, {
+      "categoryName" : "Analytics",
+      "domains" : [ "calc.com" ]
+    }, {
+      "categoryName" : "Recommendations",
+      "domains" : [ "adsRus.com" ]
+    } ]
+  }
+}

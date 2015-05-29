@@ -1,13 +1,13 @@
 package nl.mirabeau.ceddl4j.shared;
 
-import nl.mirabeau.ceddl4j.BaseItem;
+import nl.mirabeau.ceddl4j.internal.BaseItem;
 
 /**
  * An extensible object for providing information about the user.
  *
  * @param <T> Parent object type
  */
-public class ProfileInfo<T> extends BaseItem {
+public class ProfileInfo<T> extends BaseItem<ProfileInfo<T>> {
 
 	private static final String PROFILE_ID = "profileID";
 	private static final String USER_NAME = "userName";
@@ -44,7 +44,7 @@ public class ProfileInfo<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public ProfileInfo<T> profileID(final String profileID) {
-		items.put(PROFILE_ID, profileID);
+		addItem(PROFILE_ID, profileID);
 		return this;
 	}
 
@@ -55,7 +55,7 @@ public class ProfileInfo<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public ProfileInfo<T> userName(final String userName) {
-		items.put(USER_NAME, userName);
+		addItem(USER_NAME, userName);
 		return this;
 	}
 
@@ -66,7 +66,7 @@ public class ProfileInfo<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public ProfileInfo<T> email(final String email) {
-		items.put(EMAIL, email);
+		addItem(EMAIL, email);
 		return this;
 	}
 
@@ -77,7 +77,7 @@ public class ProfileInfo<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public ProfileInfo<T> language(final String language) {
-		items.put(LANGUAGE, language);
+		addItem(LANGUAGE, language);
 		return this;
 	}
 
@@ -88,7 +88,7 @@ public class ProfileInfo<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public ProfileInfo<T> returningStatus(final String returningStatus) {
-		items.put(RETURNING_STATUS, returningStatus);
+		addItem(RETURNING_STATUS, returningStatus);
 		return this;
 	}
 
@@ -99,19 +99,12 @@ public class ProfileInfo<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public ProfileInfo<T> type(final String type) {
-		items.put(TYPE, type);
+		addItem(TYPE, type);
 		return this;
 	}
 
-	/**
-	 * Sets a custom ProfileInfo property.
-	 * 
-	 * @param name Name for the custom property
-	 * @param value Value for the custom property
-	 * @return {@code this}
-	 */
-	public ProfileInfo<T> custom(final String name, final Object value) {
-		items.put(name, value);
+	@Override
+	protected ProfileInfo<T> returnSelf() {
 		return this;
 	}
 }

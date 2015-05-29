@@ -1,11 +1,11 @@
 package nl.mirabeau.ceddl4j.component;
 
-import nl.mirabeau.ceddl4j.BaseItem;
+import nl.mirabeau.ceddl4j.internal.BaseItem;
 
 /**
  * This object describes the component.
  */
-public class ComponentInfo extends BaseItem {
+public class ComponentInfo extends BaseItem<ComponentInfo> {
 
 	private final static String COMPONENT_ID_NAME = "componentID";
 
@@ -39,21 +39,12 @@ public class ComponentInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public ComponentInfo componentID(final String componentID) {
-		items.put(COMPONENT_ID_NAME, componentID);
+		addItem(COMPONENT_ID_NAME, componentID);
 		return this;
 	}
 
-	/**
-	 * Sets a custom ComponentInfo property.
-	 * 
-	 * @param name
-	 *            Custom property name
-	 * @param value
-	 *            Custom property value
-	 * @return {@code this}
-	 */
-	public ComponentInfo custom(final String name, final Object value) {
-		items.put(name, value);
+	@Override
+	protected ComponentInfo returnSelf() {
 		return this;
 	}
 }

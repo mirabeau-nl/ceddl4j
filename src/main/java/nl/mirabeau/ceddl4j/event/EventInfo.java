@@ -2,12 +2,12 @@ package nl.mirabeau.ceddl4j.event;
 
 import java.util.Date;
 
-import nl.mirabeau.ceddl4j.BaseItem;
+import nl.mirabeau.ceddl4j.internal.BaseItem;
 
 /**
  * This object describes the event.
  */
-public class EventInfo extends BaseItem {
+public class EventInfo extends BaseItem<EventInfo> {
 
 	private static final String EVENT_NAME = "eventName";
 	private static final String EVENT_ACTION = "eventAction";
@@ -49,7 +49,7 @@ public class EventInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public EventInfo eventName(final String eventName) {
-		items.put(EVENT_NAME, eventName);
+		addItem(EVENT_NAME, eventName);
 		return this;
 	}
 
@@ -61,7 +61,7 @@ public class EventInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public EventInfo eventAction(final String eventAction) {
-		items.put(EVENT_ACTION, eventAction);
+		addItem(EVENT_ACTION, eventAction);
 		return this;
 	}
 
@@ -73,7 +73,7 @@ public class EventInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public EventInfo eventPoints(final Number eventPoints) {
-		items.put(EVENT_POINTS, eventPoints);
+		addItem(EVENT_POINTS, eventPoints);
 		return this;
 	}
 
@@ -85,7 +85,7 @@ public class EventInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public EventInfo type(final String type) {
-		items.put(TYPE, type);
+		addItem(TYPE, type);
 		return this;
 	}
 
@@ -97,7 +97,7 @@ public class EventInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public EventInfo timeStamp(final String timeStamp) {
-		items.put(TIME_STAMP, timeStamp);
+		addItem(TIME_STAMP, timeStamp);
 		return this;
 	}
 
@@ -109,7 +109,7 @@ public class EventInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public EventInfo timeStamp(final Date timeStamp) {
-		items.put(TIME_STAMP, timeStamp);
+		addItem(TIME_STAMP, timeStamp);
 		return this;
 	}
 
@@ -121,7 +121,7 @@ public class EventInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public EventInfo cause(final String cause) {
-		items.put(CAUSE, cause);
+		addItem(CAUSE, cause);
 		return this;
 	}
 
@@ -133,21 +133,12 @@ public class EventInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public EventInfo effect(final String effect) {
-		items.put(EFFECT, effect);
+		addItem(EFFECT, effect);
 		return this;
 	}
 
-	/**
-	 * Sets a custom EventInfo property.
-	 * 
-	 * @param name
-	 *            Custom property name
-	 * @param value
-	 *            Custom property value
-	 * @return {@code this}
-	 */
-	public EventInfo custom(final String name, final Object value) {
-		items.put(name, value);
+	@Override
+	protected EventInfo returnSelf() {
 		return this;
 	}
 }

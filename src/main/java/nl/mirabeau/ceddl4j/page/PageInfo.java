@@ -2,12 +2,12 @@ package nl.mirabeau.ceddl4j.page;
 
 import java.util.Date;
 
-import nl.mirabeau.ceddl4j.BaseItem;
+import nl.mirabeau.ceddl4j.internal.BaseItem;
 
 /**
  * Describes details about the page.
  */
-public class PageInfo extends BaseItem {
+public class PageInfo extends BaseItem<PageInfo> {
 
 	private static final String AUTHOR = "author";
 	private static final String BREADCRUMBS = "breadcrumbs";
@@ -61,7 +61,7 @@ public class PageInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public PageInfo pageID(final String pageID) {
-		items.put(PAGE_ID, pageID);
+		addItem(PAGE_ID, pageID);
 		return this;
 	}
 
@@ -73,7 +73,7 @@ public class PageInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public PageInfo pageName(final String pageName) {
-		items.put(PAGE_NAME, pageName);
+		addItem(PAGE_NAME, pageName);
 		return this;
 	}
 
@@ -87,7 +87,7 @@ public class PageInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public PageInfo destinationURL(final String destinationURL) {
-		items.put(DESTINATION_URL, destinationURL);
+		addItem(DESTINATION_URL, destinationURL);
 		return this;
 	}
 
@@ -101,7 +101,7 @@ public class PageInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public PageInfo referringURL(final String referringURL) {
-		items.put(REFERRING_URL, referringURL);
+		addItem(REFERRING_URL, referringURL);
 		return this;
 	}
 
@@ -113,7 +113,7 @@ public class PageInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public PageInfo sysEnv(final String sysEnv) {
-		items.put(SYS_ENV, sysEnv);
+		addItem(SYS_ENV, sysEnv);
 		return this;
 	}
 
@@ -125,7 +125,7 @@ public class PageInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public PageInfo variant(final String variant) {
-		items.put(VARIANT, variant);
+		addItem(VARIANT, variant);
 		return this;
 	}
 
@@ -137,7 +137,7 @@ public class PageInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public PageInfo version(final String version) {
-		items.put(VERSION, version);
+		addItem(VERSION, version);
 		return this;
 	}
 
@@ -149,7 +149,7 @@ public class PageInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public PageInfo breadCrumbs(final String... breadCrumbs) {
-		items.put(BREADCRUMBS, breadCrumbs);
+		addItem(BREADCRUMBS, breadCrumbs);
 		return this;
 	}
 
@@ -161,7 +161,7 @@ public class PageInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public PageInfo author(final String author) {
-		items.put(AUTHOR, author);
+		addItem(AUTHOR, author);
 		return this;
 	}
 
@@ -173,7 +173,7 @@ public class PageInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public PageInfo issueDate(final String issueDate) {
-		items.put(ISSUE_DATE, issueDate);
+		addItem(ISSUE_DATE, issueDate);
 		return this;
 	}
 
@@ -185,7 +185,7 @@ public class PageInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public PageInfo issueDate(final Date issueDate) {
-		items.put(ISSUE_DATE, issueDate);
+		addItem(ISSUE_DATE, issueDate);
 		return this;
 	}
 
@@ -197,7 +197,7 @@ public class PageInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public PageInfo effectiveDate(final String effectiveDate) {
-		items.put(EFFECTIVE_DATE, effectiveDate);
+		addItem(EFFECTIVE_DATE, effectiveDate);
 		return this;
 	}
 
@@ -209,7 +209,7 @@ public class PageInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public PageInfo effectiveDate(final Date effectiveDate) {
-		items.put(EFFECTIVE_DATE, effectiveDate);
+		addItem(EFFECTIVE_DATE, effectiveDate);
 		return this;
 	}
 
@@ -221,7 +221,7 @@ public class PageInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public PageInfo expiryDate(final String expiryDate) {
-		items.put(EXPIRY_DATE, expiryDate);
+		addItem(EXPIRY_DATE, expiryDate);
 		return this;
 	}
 
@@ -233,7 +233,7 @@ public class PageInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public PageInfo expiryDate(final Date expiryDate) {
-		items.put(EXPIRY_DATE, expiryDate);
+		addItem(EXPIRY_DATE, expiryDate);
 		return this;
 	}
 
@@ -248,7 +248,7 @@ public class PageInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public PageInfo language(final String language) {
-		items.put(LANGUAGE, language);
+		addItem(LANGUAGE, language);
 		return this;
 	}
 
@@ -260,7 +260,7 @@ public class PageInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public PageInfo geoRegion(final String geoRegion) {
-		items.put(GEO_REGION, geoRegion);
+		addItem(GEO_REGION, geoRegion);
 		return this;
 	}
 
@@ -272,7 +272,7 @@ public class PageInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public PageInfo industryCodes(final String industryCodes) {
-		items.put(INDUSTRY_CODES, industryCodes);
+		addItem(INDUSTRY_CODES, industryCodes);
 		return this;
 	}
 
@@ -284,7 +284,7 @@ public class PageInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public PageInfo publisher(final String publisher) {
-		items.put(PUBLISHER, publisher);
+		addItem(PUBLISHER, publisher);
 		return this;
 	}
 
@@ -300,7 +300,7 @@ public class PageInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public PageInfo onsiteSearchTerm(final String onsiteSearchTerm) {
-		items.put(ONSITE_SEARCH_TERMS, onsiteSearchTerm);
+		addItem(ONSITE_SEARCH_TERMS, onsiteSearchTerm);
 		return this;
 	}
 
@@ -316,21 +316,12 @@ public class PageInfo extends BaseItem {
 	 * @return {@code this}
 	 */
 	public PageInfo onsiteSearchResults(final Number onsiteSearchResults) {
-		items.put(ONSITE_SEARCH_RESULTS, onsiteSearchResults);
+		addItem(ONSITE_SEARCH_RESULTS, onsiteSearchResults);
 		return this;
 	}
 
-	/**
-	 * Sets a custom PageInfo property.
-	 * 
-	 * @param name
-	 *            Custom property name
-	 * @param value
-	 *            Custom property value
-	 * @return {@code this}
-	 */
-	public PageInfo custom(final String name, final Object value) {
-		items.put(name, value);
+	@Override
+	protected PageInfo returnSelf(){
 		return this;
 	}
 }
