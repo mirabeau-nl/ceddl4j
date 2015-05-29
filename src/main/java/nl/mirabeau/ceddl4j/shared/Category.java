@@ -44,8 +44,7 @@ public class Category<T> extends BaseItem<Category<T>> {
 	 * @return {@code this}
 	 */
 	public Category<T> primaryCategory(final String primaryCategory) {
-		addItem(PRIMARY_CATEGORY_NAME, primaryCategory);
-		return this;
+		return custom(PRIMARY_CATEGORY_NAME, primaryCategory);
 	}
 
 	/**
@@ -58,8 +57,7 @@ public class Category<T> extends BaseItem<Category<T>> {
 	 * @return {@code this}
 	 */
 	public Category<T> category(final String name, final Object value) {
-		addItem(name, value);
-		return this;
+		return custom(name, value);
 	}
 
 	@Override

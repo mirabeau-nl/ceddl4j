@@ -6,6 +6,7 @@ import nl.mirabeau.ceddl4j.cart.Cart;
 import nl.mirabeau.ceddl4j.component.Component;
 import nl.mirabeau.ceddl4j.event.Event;
 import nl.mirabeau.ceddl4j.page.Page;
+import nl.mirabeau.ceddl4j.privacy.Privacy;
 import nl.mirabeau.ceddl4j.product.Product;
 import nl.mirabeau.ceddl4j.transaction.Transaction;
 import nl.mirabeau.ceddl4j.user.User;
@@ -48,7 +49,13 @@ public class DigitalDataTest {
 		final Component component = new Component();
 		component.componentInfo().componentID("componentID");
 		ddb.addComponent(component);
+
+		final Privacy privacy = new Privacy();
+		privacy.addDefaultAccessCategory().domains("www.example.com");
+		ddb.setPrivacy(privacy);
+
 		ddb.version("1.0");
+
 
 		System.out.println(ddb.toString());
 

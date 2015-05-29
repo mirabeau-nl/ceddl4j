@@ -19,6 +19,7 @@ public class ProductTest {
 				.manufacturer("Pharma")
 				.size( "300ml")
 				.sku("sku123")
+				.color("blue")
 				.custom("customprop1", "example1")
 				.endProductInfo().addLinkedProduct()
 				.productInfo()

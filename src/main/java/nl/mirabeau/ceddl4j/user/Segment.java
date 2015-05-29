@@ -42,8 +42,7 @@ public class Segment extends BaseItem<Segment> {
 	 * @return {@code this}
 	 */
 	public Segment segment(final String name, final Object value) {
-		addItem(name, value);
-		return this;
+		return custom(name, value);
 	}
 
 	@Override

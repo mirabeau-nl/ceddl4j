@@ -70,8 +70,7 @@ public class Cart extends BaseItem<Cart> {
 	 * @return The current Cart object
 	 */
 	public Cart cartID(final String cartID) {
-		addItem(CART_ID, cartID);
-		return this;
+		return custom(CART_ID, cartID);
 	}
 
 	/**

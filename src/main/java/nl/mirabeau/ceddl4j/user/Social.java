@@ -38,8 +38,7 @@ public class Social extends BaseItem<Social> {
 	 * @return {@code this}
 	 */
 	public Social social(final String name, final Object value) {
-		addItem(name, value);
-		return this;
+		return custom(name, value);
 	}
 
 	@Override

@@ -1,40 +1,36 @@
 {
-  "product": [
-    {
-      "productInfo": {
-        "productID": "rog3000",
-        "productName": "Rogaine",
-        "description": "Hair Regrowth",
-        "productURL": "http://site.com/r.html",
-        "productImage": "http://site.com/rog300_large.png",
-        "productThumbnail": "http://site.com/rog300_large.png",
-        "manufacturer": "Pharma",
-        "size": "300ml",
-        "sku": "sku123",
-        "customprop1": "example1"
-      },
-      "linkedProducts": [
-        {
-          "productInfo": {
-            "description": "test"
-          }
-        }
-      ]
+  "product" : [ {
+    "productInfo" : {
+      "productID" : "rog3000",
+      "productName" : "Rogaine",
+      "description" : "Hair Regrowth",
+      "productURL" : "http://site.com/r.html",
+      "productImage" : "http://site.com/rog300_large.png",
+      "productThumbnail" : "http://site.com/rog300_large.png",
+      "manufacturer" : "Pharma",
+      "size" : "300ml",
+      "sku" : "sku123",
+      "color" : "blue",
+      "customprop1" : "example1"
     },
-    {
-      "productInfo": {
-        "productID": "rog4000",
-        "customprop1": "example2"
-      },
-      "category": {
-        "primaryCategory": "Hair",
-        "testcategory": "testvalue",
-        "anothertestcategory": "anothertestvalue"
-      },
-      "attributes": {
-        "testattribuut": "testvalue",
-        "anothertestattribuut": "anothertestvalue"
+    "linkedProducts" : [ {
+      "productInfo" : {
+        "description" : "test"
       }
+    } ]
+  }, {
+    "productInfo" : {
+      "productID" : "rog4000",
+      "customprop1" : "example2"
+    },
+    "category" : {
+      "primaryCategory" : "Hair",
+      "testcategory" : "testvalue",
+      "anothertestcategory" : "anothertestvalue"
+    },
+    "attributes" : {
+      "testattribuut" : "testvalue",
+      "anothertestattribuut" : "anothertestvalue"
     }
-  ]
+  } ]
 }

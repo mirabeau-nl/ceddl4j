@@ -70,8 +70,7 @@ public class Transaction extends BaseItem<Transaction> {
 	 * @return {@code this}
 	 */
 	public Transaction transactionID(final String transactionID) {
-		addItem(TRANSACTION_ID, transactionID);
-		return this;
+		return custom(TRANSACTION_ID, transactionID);
 	}
 
 	/**

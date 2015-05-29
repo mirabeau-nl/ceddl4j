@@ -27,5 +27,11 @@
     }
   } ],
   "user" : [ { } ],
+  "privacy" : {
+    "accessCategories" : [ {
+      "categoryName" : "Default",
+      "domains" : [ "www.example.com" ]
+    } ]
+  },
   "version" : "1.0"
 }

@@ -1,37 +1,34 @@
 {
-  "user": [
-    {
-      "segment": {
-        "membership": "basic membership"
+  "user" : [ {
+    "segment" : {
+      "membership" : "basic membership"
+    },
+    "profile" : [ {
+      "profileInfo" : {
+        "profileID" : "humanbeing12345",
+        "userName" : "me",
+        "email" : "me@humanbeing12345.nl",
+        "language" : "nl",
+        "returningStatus" : "new",
+        "type" : "user",
+        "test" : "value"
       },
-      "profile": [
-        {
-          "profileInfo": {
-            "profileID": "humanbeing12345",
-            "userName": "me",
-            "email": "me@humanbeing12345.nl",
-            "language": "nl",
-            "returningStatus": "new",
-            "type": "user"
-          },
-          "address": {
-            "line1": "673 My Street",
-            "line2": "Apt 1",
-            "city": "Austin",
-            "stateProvince": "TX",
-            "postalCode": "78610",
-            "country": "USA",
-            "extra adress info": "ring twice"
-          },
-          "social": {
-            "twitter:": "somebody",
-            "facebook": "othervalue"
-          },
-          "attributes": {
-            "example": "something"
-          }
-        }
-      ]
-    }
-  ]
+      "address" : {
+        "line1" : "673 My Street",
+        "line2" : "Apt 1",
+        "city" : "Austin",
+        "stateProvince" : "TX",
+        "postalCode" : "78610",
+        "country" : "USA",
+        "extra adress info" : "ring twice"
+      },
+      "social" : {
+        "twitter:" : "somebody",
+        "facebook" : "othervalue"
+      },
+      "attributes" : {
+        "example" : "something"
+      }
+    } ]
+  } ]
 }
