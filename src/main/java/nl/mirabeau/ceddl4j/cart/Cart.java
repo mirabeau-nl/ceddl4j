@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import nl.mirabeau.ceddl4j.DigitalData;
+import nl.mirabeau.ceddl4j.internal.BaseItem;
 import nl.mirabeau.ceddl4j.shared.Attributes;
 import nl.mirabeau.ceddl4j.shared.Item;
 import nl.mirabeau.ceddl4j.shared.Price;
@@ -16,7 +17,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * purchase that has not yet been completed. See the Transaction object for
  * completed orders.
  */
-public class Cart {
+public class Cart extends BaseItem<Cart> {
+
+	private static final String CART_ID = "cartID";
 
 	private DigitalData parent;
 
@@ -67,7 +70,7 @@ public class Cart {
 	 * @return The current Cart object
 	 */
 	public Cart cartID(final String cartID) {
-		this.cartID = cartID;
+		addItem(CART_ID, cartID);
 		return this;
 	}
 
@@ -132,5 +135,10 @@ public class Cart {
 		final Item<Cart> newItem = new Item<Cart>(this);
 		item.add(newItem);
 		return newItem;
+	}
+
+	@Override
+	protected Cart returnSelf() {
+		return this;
 	}
 }

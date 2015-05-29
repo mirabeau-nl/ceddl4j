@@ -1,6 +1,6 @@
 package nl.mirabeau.ceddl4j.shared;
 
-import nl.mirabeau.ceddl4j.BaseItem;
+import nl.mirabeau.ceddl4j.internal.BaseItem;
 
 /**
  * This object provides extensibility to the Parent object. All names are optional
@@ -9,7 +9,7 @@ import nl.mirabeau.ceddl4j.BaseItem;
  * 
  * @param <T> Parent object type
  */
-public class Attributes<T> extends BaseItem {
+public class Attributes<T> extends BaseItem<Attributes<T>> {
 
 	private final T parent;
 
@@ -42,7 +42,12 @@ public class Attributes<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public Attributes<T> attribute(final String name, final Object value) {
-		items.put(name, value);
+		addItem(name, value);
+		return this;
+	}
+
+	@Override
+	protected Attributes<T> returnSelf() {
 		return this;
 	}
 }

@@ -1,0 +1,23 @@
+{
+  "pageInstanceID" : "ProductDetailPageNikonCamera-Staging",
+  "page" : {
+    "pageInfo" : {
+      "security" : {
+        "pageID" : "Default",
+        "pageName" : [ "Analytics", "Personalization" ],
+        "destinationURL" : "Analytics",
+        "custom pageinfo" : "Default"
+      },
+      "pageID" : "ProductDetailPageNikonCamera",
+      "pageName" : "Nikon SLR Camera",
+      "destinationURL" : "http://www,testshop.nl/nikon/",
+      "custom pageinfo" : "example"
+    },
+    "attributes" : {
+      "security" : {
+        "test" : [ "Analytics", "Personalization" ]
+      },
+      "test" : "example"
+    }
+  }
+}

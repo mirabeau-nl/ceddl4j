@@ -11,6 +11,7 @@ import nl.mirabeau.ceddl4j.cart.Cart;
 import nl.mirabeau.ceddl4j.component.Component;
 import nl.mirabeau.ceddl4j.event.Event;
 import nl.mirabeau.ceddl4j.page.Page;
+import nl.mirabeau.ceddl4j.privacy.Privacy;
 import nl.mirabeau.ceddl4j.product.Product;
 import nl.mirabeau.ceddl4j.transaction.Transaction;
 import nl.mirabeau.ceddl4j.user.User;
@@ -87,6 +88,11 @@ public class DigitalData {
 	public static final String VERSION_1_0 = "1.0";
 
 	/**
+	 * Constant for the Default security category.
+	 */
+	public static final String DEFAULT_SECURITY = "Default";
+
+	/**
 	 * Name of the Root JavaScript Object: digitalData
 	 */
 	public static final String ROOT_JSO = "digitalData";
@@ -114,6 +120,9 @@ public class DigitalData {
 
 	@JsonProperty
 	private List<User> user;
+
+	@JsonProperty
+	private Privacy privacy;
 
 	@JsonProperty
 	private String version;
@@ -417,6 +426,30 @@ public class DigitalData {
 			user = new ArrayList<User>();
 		}
 		user.add(newUser);
+		return this;
+	}
+
+	/**
+	 * Provides access to the Privacy object.
+	 * 
+	 * @return Privacy Object
+	 */
+	public Privacy privacy() {
+		if (privacy == null) {
+			privacy = new Privacy(this);
+		}
+		return privacy;
+	}
+
+	/**
+	 * Sets the Privacy object.
+	 * 
+	 * @param privacy
+	 *            The Privacy Object to set.
+	 * @return {@code this}
+	 */
+	public DigitalData setPrivacy(final Privacy privacy) {
+		this.privacy = privacy;
 		return this;
 	}
 

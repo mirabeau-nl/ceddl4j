@@ -1,13 +1,13 @@
 package nl.mirabeau.ceddl4j.shared;
 
-import nl.mirabeau.ceddl4j.BaseItem;
+import nl.mirabeau.ceddl4j.internal.BaseItem;
 
 /**
  * This object provides details of the Price.
  *
  * @param <T> Parent object type
  */
-public class Price<T> extends BaseItem {
+public class Price<T> extends BaseItem<Price<T>> {
 
 	private static final String BASE_PRICE = "basePrice";
 	private static final String VOUCHER_CODE = "voucherCode";
@@ -53,7 +53,7 @@ public class Price<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public Price<T> basePrice(final Number basePrice) {
-		items.put(BASE_PRICE, basePrice);
+		addItem(BASE_PRICE, basePrice);
 		return this;
 	}
 
@@ -65,7 +65,7 @@ public class Price<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public Price<T> voucherCode(final String voucherCode) {
-		items.put(VOUCHER_CODE, voucherCode);
+		addItem(VOUCHER_CODE, voucherCode);
 		return this;
 	}
 
@@ -77,7 +77,7 @@ public class Price<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public Price<T> voucherDiscount(final Number voucherDiscount) {
-		items.put(VOUCHER_DISCOUNT, voucherDiscount);
+		addItem(VOUCHER_DISCOUNT, voucherDiscount);
 		return this;
 	}
 
@@ -91,7 +91,7 @@ public class Price<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public Price<T> currency(final String currency) {
-		items.put(CURRENCY, currency);
+		addItem(CURRENCY, currency);
 		return this;
 	}
 
@@ -103,7 +103,7 @@ public class Price<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public Price<T> taxRate(final Number taxRate) {
-		items.put(TAX_RATE, taxRate);
+		addItem(TAX_RATE, taxRate);
 		return this;
 	}
 
@@ -115,7 +115,7 @@ public class Price<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public Price<T> shipping(final Number shipping) {
-		items.put(SHIPPING, shipping);
+		addItem(SHIPPING, shipping);
 		return this;
 	}
 
@@ -127,7 +127,7 @@ public class Price<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public Price<T> shippingMethod(final String shippingMethod) {
-		items.put(SHIPPING_METHOD, shippingMethod);
+		addItem(SHIPPING_METHOD, shippingMethod);
 		return this;
 	}
 
@@ -139,7 +139,7 @@ public class Price<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public Price<T> priceWithTax(final Number priceWithTax) {
-		items.put(PRICE_WITH_TAX, priceWithTax);
+		addItem(PRICE_WITH_TAX, priceWithTax);
 		return this;
 	}
 
@@ -154,7 +154,7 @@ public class Price<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public Price<T> cartTotal(final Number cartTotal) {
-		items.put(CART_TOTAL, cartTotal);
+		addItem(CART_TOTAL, cartTotal);
 		return this;
 	}
 
@@ -168,21 +168,12 @@ public class Price<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public Price<T> transactionTotal(final Number transactionTotal) {
-		items.put(TRANSACTION_TOTAL, transactionTotal);
+		addItem(TRANSACTION_TOTAL, transactionTotal);
 		return this;
 	}
 
-	/**
-	 * Sets a custom Price property.
-	 * 
-	 * @param name
-	 *            Name for the custom property
-	 * @param value
-	 *            Value for the custom property
-	 * @return {@code this}
-	 */
-	public Price<T> custom(final String name, final Object value) {
-		items.put(name, value);
+	@Override
+	protected Price<T> returnSelf() {
 		return this;
 	}
 }

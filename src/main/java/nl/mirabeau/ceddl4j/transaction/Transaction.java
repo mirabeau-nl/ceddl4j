@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import nl.mirabeau.ceddl4j.DigitalData;
+import nl.mirabeau.ceddl4j.internal.BaseItem;
 import nl.mirabeau.ceddl4j.shared.Attributes;
 import nl.mirabeau.ceddl4j.shared.Item;
 import nl.mirabeau.ceddl4j.shared.Price;
@@ -15,12 +16,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * completed order. The Transaction object contains analogous sub-objects to the
  * Cart object as well as additional sub-objects specific to completed orders.
  */
-public class Transaction {
+public class Transaction extends BaseItem<Transaction> {
+
+	private static final String TRANSACTION_ID = "transactionID";
 
 	private DigitalData parent;
-
-	@JsonProperty
-	private String transactionID;
 
 	@JsonProperty
 	private TransactionProfile profile;
@@ -70,7 +70,7 @@ public class Transaction {
 	 * @return {@code this}
 	 */
 	public Transaction transactionID(final String transactionID) {
-		this.transactionID = transactionID;
+		addItem(TRANSACTION_ID, transactionID);
 		return this;
 	}
 
@@ -150,5 +150,10 @@ public class Transaction {
 		final Item<Transaction> newItem = new Item<Transaction>(this);
 		item.add(newItem);
 		return newItem;
+	}
+
+	@Override
+	protected Transaction returnSelf() {
+		return this;
 	}
 }

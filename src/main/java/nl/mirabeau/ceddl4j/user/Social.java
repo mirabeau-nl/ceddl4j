@@ -1,13 +1,13 @@
 package nl.mirabeau.ceddl4j.user;
 
-import nl.mirabeau.ceddl4j.BaseItem;
+import nl.mirabeau.ceddl4j.internal.BaseItem;
 
 /**
  * An extensible object for providing social information for the user profile.
  * All names are optional and should fit the individual implementation needs in
  * both naming and values passed.
  */
-public class Social extends BaseItem {
+public class Social extends BaseItem<Social> {
 
 	private final UserProfile parent;
 
@@ -38,7 +38,12 @@ public class Social extends BaseItem {
 	 * @return {@code this}
 	 */
 	public Social social(final String name, final Object value) {
-		items.put(name, value);
+		addItem(name, value);
+		return this;
+	}
+
+	@Override
+	protected Social returnSelf() {
 		return this;
 	}
 }

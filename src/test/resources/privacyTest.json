@@ -1,0 +1,14 @@
+{
+  "privacy" : {
+    "accessCategories" : [ {
+      "categoryName" : "Default",
+      "domains" : [ "nonexistent-store.com", "audit.com" ]
+    }, {
+      "categoryName" : "Analytics",
+      "domains" : [ "calc.com" ]
+    }, {
+      "categoryName" : "Recommendations",
+      "domains" : [ "adsRus.com" ]
+    } ]
+  }
+}

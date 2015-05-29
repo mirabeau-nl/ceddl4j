@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
+import nl.mirabeau.ceddl4j.CustomObject;
 import nl.mirabeau.ceddl4j.TestUtil;
 
 import org.json.JSONException;
@@ -15,14 +16,11 @@ public class HealthcareInsuranceExample {
 
 	/**
 	 * Generates the healthcare inurance example from the CEDDL specification on
-	 * page 31.
+	 * page 31. This example extends CEDDL with 3 new Object (Member, Application and
+	 * Plan).
 	 * 
-	 * This example extends CEDDL with 3 new Object (Member, Application and
-	 * Plan). Our solution is to create 3 classes for Member, Application and
-	 * Plan each class extends BaseItem. We also create a new class
-	 * HealthcareDigitalData which extends DigitalData
-	 * 
-	 * 
+	 * We create a new class HealthcareDigitalData which extends DigitalData.
+	 * HealthcareDigitalData adds Objects for (Member, Application and Plan) based on CustomObject.
 	 * 
 	 * @throws IOException
 	 * @throws JSONException
@@ -48,7 +46,7 @@ public class HealthcareInsuranceExample {
 		//			postalCode: "15214"
 		//	};
 
-		final Member member = new Member()
+		final CustomObject member = new CustomObject()
 		.custom("memberID", "2723 49202388 01")
 		.custom("age", "41")
 		.custom("groupRelationship", "436378")
@@ -72,25 +70,10 @@ public class HealthcareInsuranceExample {
 
 
 		// Setup the dates.
-		final GregorianCalendar creationDate = new GregorianCalendar();
-		creationDate.setTimeZone(TimeZone.getTimeZone("UTC"));
-		creationDate.set(Calendar.YEAR, 2013);
-		creationDate.set(Calendar.MONTH, 11);
-		creationDate.set(Calendar.DAY_OF_MONTH, 15);
-		creationDate.set(Calendar.HOUR_OF_DAY, 14);
-		creationDate.set(Calendar.MINUTE, 20);
-		creationDate.set(Calendar.SECOND, 02);
+		final GregorianCalendar creationDate = getCreationDate();
+		final GregorianCalendar completionDate = completionDate();
 
-		final GregorianCalendar completionDate = new GregorianCalendar();
-		completionDate.setTimeZone(TimeZone.getTimeZone("UTC"));
-		completionDate.set(Calendar.YEAR, 2013);
-		completionDate.set(Calendar.MONTH, 11);
-		completionDate.set(Calendar.DAY_OF_MONTH, 15);
-		completionDate.set(Calendar.HOUR_OF_DAY, 16);
-		completionDate.set(Calendar.MINUTE, 05);
-		completionDate.set(Calendar.SECOND, 16);
-
-		final Application application = new Application()
+		final CustomObject application = new CustomObject()
 		.custom("appID", "7565-2373-0086-8937")
 		.custom("source", "Telephone")
 		.custom("status", "Pending")
@@ -107,16 +90,9 @@ public class HealthcareInsuranceExample {
 		//		effectiveDate: new Date("December 15, 2013 16:05:16")
 		// };
 
-		final GregorianCalendar effectiveDate = new GregorianCalendar();
-		effectiveDate.setTimeZone(TimeZone.getTimeZone("UTC"));
-		effectiveDate.set(Calendar.YEAR, 2013);
-		effectiveDate.set(Calendar.MONTH, 11);
-		effectiveDate.set(Calendar.DAY_OF_MONTH, 15);
-		effectiveDate.set(Calendar.HOUR_OF_DAY, 16);
-		effectiveDate.set(Calendar.MINUTE, 05);
-		effectiveDate.set(Calendar.SECOND, 16);
+		final GregorianCalendar effectiveDate = completionDate();
 
-		final Plan plan = new Plan()
+		final CustomObject plan = new CustomObject()
 		.custom("name", "Family Advantage 250")
 		.custom("type", "EPO")
 		.custom("policyStatus", "Current")
@@ -136,5 +112,29 @@ public class HealthcareInsuranceExample {
 		final String expected = new TestUtil().loadJsonFromFile("/healthcare-example.json");
 
 		JSONAssert.assertEquals(expected, ddb.toString(), true);
+	}
+
+	private GregorianCalendar completionDate() {
+		final GregorianCalendar completionDate = new GregorianCalendar();
+		completionDate.setTimeZone(TimeZone.getTimeZone("UTC"));
+		completionDate.set(Calendar.YEAR, 2013);
+		completionDate.set(Calendar.MONTH, 11);
+		completionDate.set(Calendar.DAY_OF_MONTH, 15);
+		completionDate.set(Calendar.HOUR_OF_DAY, 16);
+		completionDate.set(Calendar.MINUTE, 05);
+		completionDate.set(Calendar.SECOND, 16);
+		return completionDate;
+	}
+
+	private GregorianCalendar getCreationDate() {
+		final GregorianCalendar creationDate = new GregorianCalendar();
+		creationDate.setTimeZone(TimeZone.getTimeZone("UTC"));
+		creationDate.set(Calendar.YEAR, 2013);
+		creationDate.set(Calendar.MONTH, 11);
+		creationDate.set(Calendar.DAY_OF_MONTH, 15);
+		creationDate.set(Calendar.HOUR_OF_DAY, 14);
+		creationDate.set(Calendar.MINUTE, 20);
+		creationDate.set(Calendar.SECOND, 02);
+		return creationDate;
 	}
 }

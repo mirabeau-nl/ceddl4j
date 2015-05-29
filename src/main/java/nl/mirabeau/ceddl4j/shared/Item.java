@@ -3,6 +3,8 @@ package nl.mirabeau.ceddl4j.shared;
 import java.util.ArrayList;
 import java.util.List;
 
+import nl.mirabeau.ceddl4j.internal.BaseItem;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
@@ -11,7 +13,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @param <T>
  *            Parent object type
  */
-public class Item<T> {
+public class Item<T>  extends BaseItem<Item<T>>  {
+
+	private static final String QUANTITY = "quantity";
 
 	private final T parent;
 
@@ -20,9 +24,6 @@ public class Item<T> {
 
 	@JsonProperty
 	private Category<Item<T>> category;
-
-	@JsonProperty
-	private Number quantity;
 
 	@JsonProperty
 	private Price<Item<T>> price;
@@ -87,7 +88,7 @@ public class Item<T> {
 	 * @return {@code this}
 	 */
 	public Item<T> quantity(final Number quantity) {
-		this.quantity = quantity;
+		addItem(QUANTITY, quantity);
 		return this;
 	}
 
@@ -177,6 +178,11 @@ public class Item<T> {
 			category = new Category<Item<T>>(this);
 		}
 		category.category(name, value);
+		return this;
+	}
+
+	@Override
+	protected Item<T> returnSelf() {
 		return this;
 	}
 }

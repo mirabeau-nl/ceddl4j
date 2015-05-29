@@ -1,6 +1,6 @@
 package nl.mirabeau.ceddl4j.shared;
 
-import nl.mirabeau.ceddl4j.BaseItem;
+import nl.mirabeau.ceddl4j.internal.BaseItem;
 
 /**
  * Because of the wide range of methods for categorization, an object literal is
@@ -8,7 +8,7 @@ import nl.mirabeau.ceddl4j.BaseItem;
  * 
  * @param <T> Parent object type
  */
-public class Category<T> extends BaseItem {
+public class Category<T> extends BaseItem<Category<T>> {
 
 	public final static String PRIMARY_CATEGORY_NAME = "primaryCategory";
 
@@ -44,7 +44,7 @@ public class Category<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public Category<T> primaryCategory(final String primaryCategory) {
-		items.put(PRIMARY_CATEGORY_NAME, primaryCategory);
+		addItem(PRIMARY_CATEGORY_NAME, primaryCategory);
 		return this;
 	}
 
@@ -58,7 +58,12 @@ public class Category<T> extends BaseItem {
 	 * @return {@code this}
 	 */
 	public Category<T> category(final String name, final Object value) {
-		items.put(name, value);
+		addItem(name, value);
+		return this;
+	}
+
+	@Override
+	protected Category<T> returnSelf() {
 		return this;
 	}
 }
