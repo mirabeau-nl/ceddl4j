@@ -62,7 +62,7 @@ Add the following dependency to your project's Maven POM.
         <dependency>
             <groupId>nl.mirabeau</groupId>
             <artifactId>ceddl4j</artifactId>
-            <version>0.2.1</version>
+            <version>1.0.0</version>
         </dependency>
         
 For other build tools see: https://maven-badges.herokuapp.com/maven-central/nl.mirabeau/ceddl4j
