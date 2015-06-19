@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Ceddl4j by mirabeau-nl</title>
+    <title>Ceddl4j - A CEDDL data layer from Java by mirabeau-nl</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -11,8 +11,8 @@
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">Ceddl4j</h1>
-      <h2 class="project-tagline">Ceddl4j is a Java API for generating a website data layer compliant with the CEDDL specification.</h2>
+      <h1 class="project-name">Ceddl4j - A CEDDL data layer from Java</h1>
+      <h2 class="project-tagline">Ceddl4j is a Java component for a website data layer compliant with the CEDDL specification.</h2>
       <a href="https://github.com/mirabeau-nl/ceddl4j" class="btn">View on GitHub</a>
       <a href="https://github.com/mirabeau-nl/ceddl4j/zipball/master" class="btn">Download .zip</a>
       <a href="https://github.com/mirabeau-nl/ceddl4j/tarball/master" class="btn">Download .tar.gz</a>
@@ -20,7 +20,7 @@
 
     <section class="main-content">
       <h1>
-<a id="cedddl4j" class="anchor" href="#cedddl4j" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cedddl4j</h1>
+<a id="ceddl4j---a-ceddl-data-layer-from-java" class="anchor" href="#ceddl4j---a-ceddl-data-layer-from-java" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ceddl4j - A CEDDL data layer from Java</h1>
 
 <p><a href="https://travis-ci.org/mirabeau-nl/ceddl4j"><img src="https://travis-ci.org/mirabeau-nl/ceddl4j.svg?branch=master" alt="Build Status"></a>
 <a href="https://coveralls.io/r/mirabeau-nl/ceddl4j"><img src="https://coveralls.io/repos/mirabeau-nl/ceddl4j/badge.svg" alt="Coverage Status"></a>
@@ -31,7 +31,7 @@
 <h2>
 <a id="about-ceddl4j" class="anchor" href="#about-ceddl4j" aria-hidden="true"><span class="octicon octicon-link"></span></a>About Ceddl4j</h2>
 
-<p>Ceddl4j is a Java API for generating a website data layer compliant with the CEDDL specification.</p>
+<p>Ceddl4j is a Java component for a website data layer compliant with the <a href="http://www.w3.org/2013/12/ceddl-201312.pdf">CEDDL specification</a>.</p>
 
 <p>The Customer Experience Digital Data Layer (CEDDL) specification </p>
 
@@ -39,30 +39,12 @@
 <p>"describes a method for surfacing customer experience digital data on a web or other digital resource as a JavaScript Object which can be used for communicating this data to digital analytics and reporting servers."</p>
 </blockquote>
 
-<p>The complete CEDDL specification can be found at <a href="http://www.w3.org/2013/12/ceddl-201312.pdf">http://www.w3.org/2013/12/ceddl-201312.pdf</a></p>
-
-<p>For the API/ JavaDoc see: <a href="http://www.javadoc.io/doc/nl.mirabeau/ceddl4j/">http://www.javadoc.io/doc/nl.mirabeau/ceddl4j/</a></p>
+<p>For more background information, see our article <a href="https://github.com/mirabeau-nl/ceddl4j/wiki/Ceddl4j:-What-&amp;-why%3F">Ceddl4j: What &amp; why?</a> </p>
 
 <h3>
 <a id="example" class="anchor" href="#example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example</h3>
 
-<p>This code:</p>
-
-<pre><code>        DigitalData dd = DigitalData.create("MyHomePage-Production")
-            .page()
-            .pageInfo()
-            .pageID("Home Page")
-            .destinationURL("http://mysite.com/index.html")
-            .endPageInfo()
-            .addPrimaryCategory("FAQ Pages")
-            .addCategory("subCategory1", "ProductInfo")
-            .addCategory("pageType", "FAQ")
-            .addAttribute("country", "US")
-            .addAttribute("language", "en-US")
-            .endPage();
-</code></pre>
-
-<p>Will generate the following Data Layer:</p>
+<p>To build the following Data Layer:</p>
 
 <pre><code>        digitalData = {
             pageInstanceID: "MyHomePage-Production",
@@ -84,6 +66,22 @@
         };
 </code></pre>
 
+<p>You can use this code:</p>
+
+<pre><code>        DigitalData dd = DigitalData.create("MyHomePage-Production")
+            .page()
+            .pageInfo()
+            .pageID("Home Page")
+            .destinationURL("http://mysite.com/index.html")
+            .endPageInfo()
+            .addPrimaryCategory("FAQ Pages")
+            .addCategory("subCategory1", "ProductInfo")
+            .addCategory("pageType", "FAQ")
+            .addAttribute("country", "US")
+            .addAttribute("language", "en-US")
+            .endPage();
+</code></pre>
+
 <h3>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h3>
 
@@ -96,7 +94,9 @@
     &lt;/dependency&gt;
 </code></pre>
 
-<p>For other build tools see: <a href="https://maven-badges.herokuapp.com/maven-central/nl.mirabeau/ceddl4j">https://maven-badges.herokuapp.com/maven-central/nl.mirabeau/ceddl4j</a></p>
+<p>See <a href="https://maven-badges.herokuapp.com/maven-central/nl.mirabeau/ceddl4j">Maven Central</a>  for other build tools </p>
+
+<p>To get started read our <a href="https://github.com/mirabeau-nl/ceddl4j/wiki/Getting-started-guide">Getting started guide</a> and see the <a href="http://www.javadoc.io/doc/nl.mirabeau/ceddl4j/">JavaDoc</a>.</p>
 
 <h3>
 <a id="contribution-guidelines" class="anchor" href="#contribution-guidelines" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contribution guidelines</h3>
@@ -128,7 +128,7 @@ modification, are permitted provided that the following conditions are met:
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
 ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL &lt;COPYRIGHT HOLDER&gt; BE LIABLE FOR ANY
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY
 DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
 (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
 LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
@@ -138,7 +138,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 </code></pre>
 
       <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/mirabeau-nl/ceddl4j">Ceddl4j</a> is maintained by <a href="https://github.com/mirabeau-nl">mirabeau-nl</a>.</span>
+        <span class="site-footer-owner"><a href="https://github.com/mirabeau-nl/ceddl4j">Ceddl4j - A CEDDL data layer from Java</a> is maintained by <a href="https://github.com/mirabeau-nl">mirabeau-nl</a>.</span>
 
         <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
