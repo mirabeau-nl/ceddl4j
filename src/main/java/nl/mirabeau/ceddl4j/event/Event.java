@@ -73,7 +73,7 @@ public class Event {
 	 */
 	public Category<Event> category() {
 		if (category == null) {
-			category = new Category<Event>(this);
+			category = new Category<>(this);
 		}
 		return category;
 	}
@@ -85,7 +85,7 @@ public class Event {
 	 */
 	public Attributes<Event> attributes() {
 		if (attributes == null) {
-			attributes = new Attributes<Event>(this);
+			attributes = new Attributes<>(this);
 		}
 		return attributes;
 	}
@@ -101,7 +101,7 @@ public class Event {
 	 */
 	public Event addAttribute(final String name, final Object value) {
 		if (attributes == null) {
-			attributes = new Attributes<Event>(this);
+			attributes = new Attributes<>(this);
 		}
 		attributes.attribute(name, value);
 		return this;
@@ -116,7 +116,7 @@ public class Event {
 	 */
 	public Event addPrimaryCategory(final String primaryCategory) {
 		if (category == null) {
-			category = new Category<Event>(this);
+			category = new Category<>(this);
 		}
 		category.primaryCategory(primaryCategory);
 		return this;
@@ -133,7 +133,7 @@ public class Event {
 	 */
 	public Event addCategory(final String name, final Object value) {
 		if (category == null) {
-			category = new Category<Event>(this);
+			category = new Category<>(this);
 		}
 
 		category.category(name, value);

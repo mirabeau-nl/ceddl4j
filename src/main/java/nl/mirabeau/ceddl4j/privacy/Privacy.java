@@ -53,7 +53,7 @@ public class Privacy {
 	 */
 	public AccessCategory addAccessCategory() {
 		if (accessCategories == null) {
-			accessCategories = new ArrayList<AccessCategory>();
+			accessCategories = new ArrayList<>();
 		}
 		final AccessCategory accessCategory = new AccessCategory(this);
 		accessCategories.add(accessCategory);
@@ -67,7 +67,7 @@ public class Privacy {
 	 */
 	public AccessCategory addDefaultAccessCategory() {
 		if (accessCategories == null) {
-			accessCategories = new ArrayList<AccessCategory>();
+			accessCategories = new ArrayList<>();
 		}
 		final AccessCategory accessCategory = new AccessCategory(this);
 		accessCategories.add(accessCategory);

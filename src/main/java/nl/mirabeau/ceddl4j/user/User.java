@@ -95,7 +95,7 @@ public class User {
 	 */
 	public UserProfile addProfile() {
 		if (profile == null) {
-			profile = new ArrayList<UserProfile>();
+			profile = new ArrayList<>();
 		}
 		final UserProfile userProfile = new UserProfile(this);
 		profile.add(userProfile);

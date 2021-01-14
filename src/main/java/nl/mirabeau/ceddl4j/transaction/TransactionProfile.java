@@ -51,7 +51,7 @@ public class TransactionProfile {
 	 */
 	public ProfileInfo<TransactionProfile> profileInfo() {
 		if (profileInfo == null) {
-			profileInfo = new ProfileInfo<TransactionProfile>(this);
+			profileInfo = new ProfileInfo<>(this);
 		}
 		return profileInfo;
 	}
@@ -66,7 +66,7 @@ public class TransactionProfile {
 	 */
 	public Address<TransactionProfile> address() {
 		if (address == null) {
-			address = new Address<TransactionProfile>(this);
+			address = new Address<>(this);
 		}
 		return address;
 	}
@@ -81,7 +81,7 @@ public class TransactionProfile {
 	 */
 	public Address<TransactionProfile> shippingAddress() {
 		if (shippingAddress == null) {
-			shippingAddress = new Address<TransactionProfile>(this);
+			shippingAddress = new Address<>(this);
 		}
 		return shippingAddress;
 	}

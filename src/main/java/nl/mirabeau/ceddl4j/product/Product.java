@@ -69,7 +69,7 @@ public class Product {
 	 */
 	public ProductInfo<Product> productInfo() {
 		if (productInfo == null) {
-			productInfo = new ProductInfo<Product>(this);
+			productInfo = new ProductInfo<>(this);
 		}
 		return productInfo;
 	}
@@ -89,7 +89,7 @@ public class Product {
 	 */
 	public Category<Product> category() {
 		if (category == null) {
-			category = new Category<Product>(this);
+			category = new Category<>(this);
 		}
 		return category;
 	}
@@ -101,9 +101,9 @@ public class Product {
 	 */
 	public LinkedProduct<Product> addLinkedProduct() {
 		if (linkedProducts == null) {
-			linkedProducts = new ArrayList<LinkedProduct<Product>>();
+			linkedProducts = new ArrayList<>();
 		}
-		final LinkedProduct<Product> newProduct = new LinkedProduct<Product>(
+		final LinkedProduct<Product> newProduct = new LinkedProduct<>(
 				this);
 		linkedProducts.add(newProduct);
 
@@ -122,7 +122,7 @@ public class Product {
 	 */
 	public Attributes<Product> attributes() {
 		if (attributes == null) {
-			attributes = new Attributes<Product>(this);
+			attributes = new Attributes<>(this);
 		}
 		return attributes;
 	}
@@ -136,7 +136,7 @@ public class Product {
 	 */
 	public Product addAttribute(final String name, final Object value) {
 		if (attributes == null) {
-			attributes = new Attributes<Product>(this);
+			attributes = new Attributes<>(this);
 		}
 		attributes.attribute(name, value);
 		return this;
@@ -150,7 +150,7 @@ public class Product {
 	 */
 	public Product addPrimaryCategory(final String primaryCategory) {
 		if (category == null) {
-			category = new Category<Product>(this);
+			category = new Category<>(this);
 		}
 		category.primaryCategory(primaryCategory);
 		return this;
@@ -165,7 +165,7 @@ public class Product {
 	 */
 	public Product addCategory(final String name, final Object value) {
 		if (category == null) {
-			category = new Category<Product>(this);
+			category = new Category<>(this);
 		}
 
 		category.category(name, value);

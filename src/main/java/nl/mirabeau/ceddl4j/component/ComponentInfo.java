@@ -7,7 +7,7 @@ import nl.mirabeau.ceddl4j.internal.BaseItem;
  */
 public class ComponentInfo extends BaseItem<ComponentInfo> {
 
-	private final static String COMPONENT_ID_NAME = "componentID";
+	private static final String COMPONENT_ID_NAME = "componentID";
 
 	private final Component parent;
 

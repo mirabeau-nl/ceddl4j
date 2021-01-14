@@ -17,7 +17,7 @@ public class Security {
 		super();
 	}
 
-	protected Map<String, Object> items = new LinkedHashMap<String, Object>();
+	protected Map<String, Object> items = new LinkedHashMap<>();
 
 	@JsonAnyGetter
 	public Map<String,Object> getMap() {

@@ -10,7 +10,7 @@ import nl.mirabeau.ceddl4j.internal.BaseItem;
  */
 public class Category<T> extends BaseItem<Category<T>> {
 
-	public final static String PRIMARY_CATEGORY_NAME = "primaryCategory";
+	public static final String PRIMARY_CATEGORY_NAME = "primaryCategory";
 
 	private final T parent;
 

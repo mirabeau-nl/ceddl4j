@@ -62,7 +62,7 @@ public class Item<T>  extends BaseItem<Item<T>>  {
 	 */
 	public ProductInfo<Item<T>> productInfo() {
 		if (productInfo == null) {
-			productInfo = new ProductInfo<Item<T>>(this);
+			productInfo = new ProductInfo<>(this);
 		}
 		return productInfo;
 	}
@@ -77,7 +77,7 @@ public class Item<T>  extends BaseItem<Item<T>>  {
 	 */
 	public Category<Item<T>> category() {
 		if (category == null) {
-			category = new Category<Item<T>>(this);
+			category = new Category<>(this);
 		}
 		return category;
 	}
@@ -99,7 +99,7 @@ public class Item<T>  extends BaseItem<Item<T>>  {
 	 */
 	public Price<Item<T>> price() {
 		if (price == null) {
-			price = new Price<Item<T>>(this);
+			price = new Price<>(this);
 		}
 		return price;
 	}
@@ -111,9 +111,9 @@ public class Item<T>  extends BaseItem<Item<T>>  {
 	 */
 	public LinkedProduct<Item<T>> addLinkedProduct() {
 		if (linkedProducts == null) {
-			linkedProducts = new ArrayList<LinkedProduct<Item<T>>>();
+			linkedProducts = new ArrayList<>();
 		}
-		final LinkedProduct<Item<T>> newProduct = new LinkedProduct<Item<T>>(
+		final LinkedProduct<Item<T>> newProduct = new LinkedProduct<>(
 				this);
 		linkedProducts.add(newProduct);
 
@@ -127,7 +127,7 @@ public class Item<T>  extends BaseItem<Item<T>>  {
 	 */
 	public Attributes<Item<T>> attributes() {
 		if (attributes == null) {
-			attributes = new Attributes<Item<T>>(this);
+			attributes = new Attributes<>(this);
 		}
 		return attributes;
 	}
@@ -143,7 +143,7 @@ public class Item<T>  extends BaseItem<Item<T>>  {
 	 */
 	public Item<T> addAttribuut(final String name, final Object value) {
 		if (attributes == null) {
-			attributes = new Attributes<Item<T>>(this);
+			attributes = new Attributes<>(this);
 		}
 		attributes.attribute(name, value);
 		return this;
@@ -158,7 +158,7 @@ public class Item<T>  extends BaseItem<Item<T>>  {
 	 */
 	public Item<T> addPrimaryCategory(final String primaryCategory) {
 		if (category == null) {
-			category = new Category<Item<T>>(this);
+			category = new Category<>(this);
 		}
 		category.primaryCategory(primaryCategory);
 		return this;
@@ -175,7 +175,7 @@ public class Item<T>  extends BaseItem<Item<T>>  {
 	 */
 	public Item<T> addCategory(final String name, final Object value) {
 		if (category == null) {
-			category = new Category<Item<T>>(this);
+			category = new Category<>(this);
 		}
 		category.category(name, value);
 		return this;

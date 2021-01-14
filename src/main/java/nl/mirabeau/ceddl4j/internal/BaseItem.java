@@ -13,11 +13,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public abstract class BaseItem <K extends BaseItem<K>> {
 
-	public BaseItem() {
+	protected BaseItem() {
 		super();
 	}
 
-	private final Map<String, Object> items = new LinkedHashMap<String, Object>();
+	private final Map<String, Object> items = new LinkedHashMap<>();
 
 	@JsonProperty
 	private Security security;

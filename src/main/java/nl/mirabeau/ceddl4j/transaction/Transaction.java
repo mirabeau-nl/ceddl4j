@@ -100,7 +100,7 @@ public class Transaction extends BaseItem<Transaction> {
 	 */
 	public Price<Transaction> total() {
 		if (total == null) {
-			total = new Price<Transaction>(this);
+			total = new Price<>(this);
 		}
 		return total;
 	}
@@ -117,7 +117,7 @@ public class Transaction extends BaseItem<Transaction> {
 	 */
 	public Attributes<Transaction> attributes() {
 		if (attributes == null) {
-			attributes = new Attributes<Transaction>(this);
+			attributes = new Attributes<>(this);
 		}
 		return attributes;
 	}
@@ -131,7 +131,7 @@ public class Transaction extends BaseItem<Transaction> {
 	 */
 	public Transaction addAttribuut(final String name, final Object value) {
 		if (attributes == null) {
-			attributes = new Attributes<Transaction>(this);
+			attributes = new Attributes<>(this);
 		}
 		attributes.attribute(name, value);
 		return this;
@@ -144,9 +144,9 @@ public class Transaction extends BaseItem<Transaction> {
 	 */
 	public Item<Transaction> addItem() {
 		if (item == null) {
-			item = new LinkedList<Item<Transaction>>();
+			item = new LinkedList<>();
 		}
-		final Item<Transaction> newItem = new Item<Transaction>(this);
+		final Item<Transaction> newItem = new Item<>(this);
 		item.add(newItem);
 		return newItem;
 	}

@@ -75,7 +75,7 @@ public class Component {
 	 */
 	public Category<Component> category() {
 		if (category == null) {
-			category = new Category<Component>(this);
+			category = new Category<>(this);
 		}
 		return category;
 	}
@@ -92,7 +92,7 @@ public class Component {
 	 */
 	public Attributes<Component> attributes() {
 		if (attributes == null) {
-			attributes = new Attributes<Component>(this);
+			attributes = new Attributes<>(this);
 		}
 		return attributes;
 	}
@@ -106,7 +106,7 @@ public class Component {
 	 */
 	public Component addAttribuut(final String name, final Object value) {
 		if (attributes == null) {
-			attributes = new Attributes<Component>(this);
+			attributes = new Attributes<>(this);
 		}
 		attributes.attribute(name, value);
 		return this;
@@ -120,7 +120,7 @@ public class Component {
 	 */
 	public Component addPrimaryCategory(final String primaryCategory) {
 		if (category == null) {
-			category = new Category<Component>(this);
+			category = new Category<>(this);
 		}
 
 		category.category(Category.PRIMARY_CATEGORY_NAME, primaryCategory);
@@ -136,7 +136,7 @@ public class Component {
 	 */
 	public Component addCategory(final String name, final Object value) {
 		if (category == null) {
-			category = new Category<Component>(this);
+			category = new Category<>(this);
 		}
 		category.category(name, value);
 		return this;
