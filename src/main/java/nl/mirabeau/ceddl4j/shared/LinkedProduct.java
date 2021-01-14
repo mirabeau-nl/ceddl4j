@@ -39,7 +39,7 @@ public class LinkedProduct<T> {
 	 */
 	public ProductInfo<LinkedProduct<T>> productInfo() {
 		if (productInfo == null) {
-			productInfo = new ProductInfo<LinkedProduct<T>>(this);
+			productInfo = new ProductInfo<>(this);
 		}
 		return productInfo;
 	}

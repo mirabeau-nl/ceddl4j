@@ -85,7 +85,7 @@ public class Cart extends BaseItem<Cart> {
 	 */
 	public Price<Cart> price() {
 		if (price == null) {
-			price = new Price<Cart>(this);
+			price = new Price<>(this);
 		}
 		return price;
 	}
@@ -102,7 +102,7 @@ public class Cart extends BaseItem<Cart> {
 	 */
 	public Attributes<Cart> attributes() {
 		if (attributes == null) {
-			attributes = new Attributes<Cart>(this);
+			attributes = new Attributes<>(this);
 		}
 		return attributes;
 	}
@@ -116,7 +116,7 @@ public class Cart extends BaseItem<Cart> {
 	 */
 	public Cart addAttribuut(final String name, final Object value) {
 		if (attributes == null) {
-			attributes = new Attributes<Cart>(this);
+			attributes = new Attributes<>(this);
 		}
 		attributes.attribute(name, value);
 		return this;
@@ -129,9 +129,9 @@ public class Cart extends BaseItem<Cart> {
 	 */
 	public Item<Cart> addItem() {
 		if (item == null) {
-			item = new ArrayList<Item<Cart>>();
+			item = new ArrayList<>();
 		}
-		final Item<Cart> newItem = new Item<Cart>(this);
+		final Item<Cart> newItem = new Item<>(this);
 		item.add(newItem);
 		return newItem;
 	}

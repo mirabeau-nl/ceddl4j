@@ -55,7 +55,7 @@ public class UserProfile {
 	 */
 	public ProfileInfo<UserProfile> profileInfo() {
 		if (profileInfo == null) {
-			profileInfo = new ProfileInfo<UserProfile>(this);
+			profileInfo = new ProfileInfo<>(this);
 		}
 		return profileInfo;
 	}
@@ -69,7 +69,7 @@ public class UserProfile {
 	 */
 	public Address<UserProfile> address() {
 		if (address == null) {
-			address = new Address<UserProfile>(this);
+			address = new Address<>(this);
 		}
 		return address;
 	}
@@ -115,7 +115,7 @@ public class UserProfile {
 	 */
 	public Attributes<UserProfile> attributes() {
 		if (attributes == null) {
-			attributes = new Attributes<UserProfile>(this);
+			attributes = new Attributes<>(this);
 		}
 		return attributes;
 	}
@@ -131,7 +131,7 @@ public class UserProfile {
 	 */
 	public UserProfile addAttribute(final String name, final String value) {
 		if (attributes == null) {
-			attributes = new Attributes<UserProfile>(this);
+			attributes = new Attributes<>(this);
 		}
 		attributes.attribute(name, value);
 		return this;

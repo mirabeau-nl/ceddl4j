@@ -52,7 +52,7 @@ public class Component {
 	}
 
 	/**
-	 * Provides access to the ComnponentInfo object.
+	 * Provides access to the ComponentInfo object.
 	 * 
 	 * ComponentInfo describes the component.
 	 * 
@@ -75,7 +75,7 @@ public class Component {
 	 */
 	public Category<Component> category() {
 		if (category == null) {
-			category = new Category<Component>(this);
+			category = new Category<>(this);
 		}
 		return category;
 	}
@@ -92,7 +92,7 @@ public class Component {
 	 */
 	public Attributes<Component> attributes() {
 		if (attributes == null) {
-			attributes = new Attributes<Component>(this);
+			attributes = new Attributes<>(this);
 		}
 		return attributes;
 	}
@@ -104,9 +104,21 @@ public class Component {
 	 * @param value Value for the attribute
 	 * @return {@code this}
 	 */
+	@Deprecated
 	public Component addAttribuut(final String name, final Object value) {
+		return addAttribute(name,value);
+	}
+
+	/**
+	 * Directly adds a new attribute to the Component's attributes
+	 *
+	 * @param name Name of the attribute
+	 * @param value Value for the attribute
+	 * @return {@code this}
+	 */
+	public Component addAttribute(final String name, final Object value) {
 		if (attributes == null) {
-			attributes = new Attributes<Component>(this);
+			attributes = new Attributes<>(this);
 		}
 		attributes.attribute(name, value);
 		return this;
@@ -120,7 +132,7 @@ public class Component {
 	 */
 	public Component addPrimaryCategory(final String primaryCategory) {
 		if (category == null) {
-			category = new Category<Component>(this);
+			category = new Category<>(this);
 		}
 
 		category.category(Category.PRIMARY_CATEGORY_NAME, primaryCategory);
@@ -136,7 +148,7 @@ public class Component {
 	 */
 	public Component addCategory(final String name, final Object value) {
 		if (category == null) {
-			category = new Category<Component>(this);
+			category = new Category<>(this);
 		}
 		category.category(name, value);
 		return this;

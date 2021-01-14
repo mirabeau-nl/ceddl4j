@@ -96,7 +96,7 @@ public class Price<T> extends BaseItem<Price<T>> {
 	}
 
 	/**
-	 * Sets the taxrate.
+	 * Sets the tax rate.
 	 * 
 	 * @param taxRate
 	 *            Number

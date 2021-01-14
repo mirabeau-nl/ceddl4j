@@ -79,7 +79,7 @@ public class Page {
 	 */
 	public Category<Page> category() {
 		if (category == null) {
-			category = new Category<Page>(this);
+			category = new Category<>(this);
 		}
 		return category;
 	}
@@ -95,7 +95,7 @@ public class Page {
 	 */
 	public Attributes<Page> attributes() {
 		if (attributes == null) {
-			attributes = new Attributes<Page>(this);
+			attributes = new Attributes<>(this);
 		}
 		return attributes;
 	}
@@ -109,7 +109,7 @@ public class Page {
 	 */
 	public Page addAttribute(final String name, final Object value) {
 		if (attributes == null) {
-			attributes = new Attributes<Page>(this);
+			attributes = new Attributes<>(this);
 		}
 		attributes.attribute(name, value);
 		return this;
@@ -123,7 +123,7 @@ public class Page {
 	 */
 	public Page addPrimaryCategory(final String primaryCategory) {
 		if (category == null) {
-			category = new Category<Page>(this);
+			category = new Category<>(this);
 		}
 		category.primaryCategory(primaryCategory);
 		return this;
@@ -138,7 +138,7 @@ public class Page {
 	 */
 	public Page addCategory(final String name, final Object value) {
 		if (category == null) {
-			category = new Category<Page>(this);
+			category = new Category<>(this);
 		}
 		category.category(name, value);
 		return this;

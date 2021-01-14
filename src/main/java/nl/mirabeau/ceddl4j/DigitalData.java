@@ -210,7 +210,7 @@ public class DigitalData {
 	 */
 	public Product addProduct() {
 		if (product == null) {
-			product = new ArrayList<Product>();
+			product = new ArrayList<>();
 		}
 		final Product newProduct = new Product(this);
 		product.add(newProduct);
@@ -233,7 +233,7 @@ public class DigitalData {
 	 */
 	public DigitalData addProduct(final Product newProduct) {
 		if (product == null) {
-			product = new ArrayList<Product>();
+			product = new ArrayList<>();
 		}
 		product.add(newProduct);
 
@@ -320,7 +320,7 @@ public class DigitalData {
 	 */
 	public Event addEvent() {
 		if (event == null) {
-			event = new ArrayList<Event>();
+			event = new ArrayList<>();
 		}
 		final Event newEvent = new Event(this);
 		event.add(newEvent);
@@ -341,7 +341,7 @@ public class DigitalData {
 	 */
 	public DigitalData addEvent(final Event newEvent) {
 		if (event == null) {
-			event = new ArrayList<Event>();
+			event = new ArrayList<>();
 		}
 		event.add(newEvent);
 		return this;
@@ -359,7 +359,7 @@ public class DigitalData {
 	 */
 	public Component addComponent() {
 		if (component == null) {
-			component = new ArrayList<Component>();
+			component = new ArrayList<>();
 		}
 		final Component newComponent = new Component(this);
 		component.add(newComponent);
@@ -380,7 +380,7 @@ public class DigitalData {
 	 */
 	public DigitalData addComponent(final Component newComponent) {
 		if (component == null) {
-			component = new ArrayList<Component>();
+			component = new ArrayList<>();
 		}
 		component.add(newComponent);
 		return this;
@@ -399,7 +399,7 @@ public class DigitalData {
 	 */
 	public User addUser() {
 		if (user == null) {
-			user = new ArrayList<User>();
+			user = new ArrayList<>();
 		}
 		final User newUser = new User(this);
 		user.add(newUser);
@@ -423,7 +423,7 @@ public class DigitalData {
 	 */
 	public DigitalData addUser(final User newUser) {
 		if (user == null) {
-			user = new ArrayList<User>();
+			user = new ArrayList<>();
 		}
 		user.add(newUser);
 		return this;
@@ -496,7 +496,7 @@ public class DigitalData {
 		try {
 			return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(this);
 		} catch (final JsonProcessingException e) {
-			throw new RuntimeException(e);
+			throw new JsonWriteException(e);
 		}
 	}
 
