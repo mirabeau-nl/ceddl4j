@@ -17,7 +17,7 @@ public class Security {
 		super();
 	}
 
-	protected Map<String, Object> items = new LinkedHashMap<>();
+	protected final Map<String, Object> items = new LinkedHashMap<>();
 
 	@JsonAnyGetter
 	public Map<String,Object> getMap() {
@@ -28,7 +28,7 @@ public class Security {
 	 * Adds a field to the Security object.
 	 * This is called from .security() and .defaultSecurity().
 	 * 
-	 * @param field Fieldname
+	 * @param field fieldName
 	 * @param accessCategories accessCategories for field.
 	 */
 	public void addSecurity(final String field, final String ...accessCategories) {

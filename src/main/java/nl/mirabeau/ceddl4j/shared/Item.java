@@ -37,7 +37,7 @@ public class Item<T>  extends BaseItem<Item<T>>  {
 	/**
 	 * Constructs a Item object
 	 * 
-	 * @param parent
+	 * @param parent The parent object
 	 */
 	public Item(final T parent) {
 		super();
@@ -141,7 +141,21 @@ public class Item<T>  extends BaseItem<Item<T>>  {
 	 *            Value for the attribute
 	 * @return {@code this}
 	 */
+	@Deprecated
 	public Item<T> addAttribuut(final String name, final Object value) {
+		return addAttribute(name,value);
+	}
+
+	/**
+	 * Directly adds a new attribute to the Item's attributes
+	 *
+	 * @param name
+	 *            Name of the attribute
+	 * @param value
+	 *            Value for the attribute
+	 * @return {@code this}
+	 */
+	public Item<T> addAttribute(final String name, final Object value) {
 		if (attributes == null) {
 			attributes = new Attributes<>(this);
 		}

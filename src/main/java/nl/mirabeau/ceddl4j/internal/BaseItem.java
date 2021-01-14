@@ -54,7 +54,7 @@ public abstract class BaseItem <K extends BaseItem<K>> {
 	 * </pre>
 	 * This method will throw an IllegalStateException when a previous Object is not available.
 	 * 
-	 * @param accessCategories
+	 * @param accessCategories One or more access categories
 	 * @return {@code this}
 	 */
 	public K security(final String ... accessCategories) {
@@ -80,8 +80,7 @@ public abstract class BaseItem <K extends BaseItem<K>> {
 	 *	.defaultSecurity()
 	 * </pre>
 	 * This method will throw an IllegalStateException when a previous Object is not available.
-	 * 
-	 * @param securityObjects
+	 *
 	 * @return {@code this}
 	 */
 	public K defaultSecurity() {

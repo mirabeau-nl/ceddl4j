@@ -52,7 +52,7 @@ public class Component {
 	}
 
 	/**
-	 * Provides access to the ComnponentInfo object.
+	 * Provides access to the ComponentInfo object.
 	 * 
 	 * ComponentInfo describes the component.
 	 * 
@@ -104,7 +104,19 @@ public class Component {
 	 * @param value Value for the attribute
 	 * @return {@code this}
 	 */
+	@Deprecated
 	public Component addAttribuut(final String name, final Object value) {
+		return addAttribute(name,value);
+	}
+
+	/**
+	 * Directly adds a new attribute to the Component's attributes
+	 *
+	 * @param name Name of the attribute
+	 * @param value Value for the attribute
+	 * @return {@code this}
+	 */
+	public Component addAttribute(final String name, final Object value) {
 		if (attributes == null) {
 			attributes = new Attributes<>(this);
 		}

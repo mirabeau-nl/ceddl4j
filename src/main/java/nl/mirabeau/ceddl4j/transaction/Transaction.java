@@ -129,7 +129,19 @@ public class Transaction extends BaseItem<Transaction> {
 	 * @param value Value for the attribute
 	 * @return The current Transaction object
 	 */
+	@Deprecated
 	public Transaction addAttribuut(final String name, final Object value) {
+		return addAttribute(name,value);
+	}
+
+	/**
+	 * Directly adds a new attribute to the Transaction's attributes
+	 *
+	 * @param name Name of the attribute
+	 * @param value Value for the attribute
+	 * @return The current Transaction object
+	 */
+	public Transaction addAttribute(final String name, final Object value) {
 		if (attributes == null) {
 			attributes = new Attributes<>(this);
 		}
